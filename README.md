@@ -1,14 +1,9 @@
-# libgphoto2
+# dart-libgphoto2
 
-A new Flutter package project.
+dart-libgphoto2 is a library that adds bindings for the libgphoto2 library. This library is originally developed with the intent to run a large 3d scanning rig. The design files and software are all designed with open source in mind. If you have any questions or would like to develope your own 3d scanning rig please feel free to contact me.
+
+This is an ongoing project and contributions are welcome.
 
 ## Getting Started
 
-This project is a starting point for a Dart
-[package](https://flutter.dev/developing-packages/),
-a library module containing code that can be shared easily across
-multiple Flutter or Dart projects.
-
-For help getting started with Flutter, view our 
-[online documentation](https://flutter.dev/docs), which offers tutorials, 
-samples, guidance on mobile development, and a full API reference.
+The final binary must include the libgphoto2 library next to it.
