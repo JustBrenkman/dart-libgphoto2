@@ -3635,6 +3635,1410 @@ class libgphoto2 {
   }
 
   _dart_gp_widget_get_readonly _gp_widget_get_readonly;
+
+  int gp_bayer_expand(
+    ffi.Pointer<ffi.Uint8> input,
+    int w,
+    int h,
+    ffi.Pointer<ffi.Uint8> output,
+    int tile,
+  ) {
+    _gp_bayer_expand ??=
+        _dylib.lookupFunction<_c_gp_bayer_expand, _dart_gp_bayer_expand>(
+            'gp_bayer_expand');
+    return _gp_bayer_expand(
+      input,
+      w,
+      h,
+      output,
+      tile,
+    );
+  }
+
+  _dart_gp_bayer_expand _gp_bayer_expand;
+
+  int gp_bayer_decode(
+    ffi.Pointer<ffi.Uint8> input,
+    int w,
+    int h,
+    ffi.Pointer<ffi.Uint8> output,
+    int tile,
+  ) {
+    _gp_bayer_decode ??=
+        _dylib.lookupFunction<_c_gp_bayer_decode, _dart_gp_bayer_decode>(
+            'gp_bayer_decode');
+    return _gp_bayer_decode(
+      input,
+      w,
+      h,
+      output,
+      tile,
+    );
+  }
+
+  _dart_gp_bayer_decode _gp_bayer_decode;
+
+  int gp_bayer_interpolate(
+    ffi.Pointer<ffi.Uint8> image,
+    int w,
+    int h,
+    int tile,
+  ) {
+    _gp_bayer_interpolate ??= _dylib.lookupFunction<_c_gp_bayer_interpolate,
+        _dart_gp_bayer_interpolate>('gp_bayer_interpolate');
+    return _gp_bayer_interpolate(
+      image,
+      w,
+      h,
+      tile,
+    );
+  }
+
+  _dart_gp_bayer_interpolate _gp_bayer_interpolate;
+
+  int gp_ahd_decode(
+    ffi.Pointer<ffi.Uint8> input,
+    int w,
+    int h,
+    ffi.Pointer<ffi.Uint8> output,
+    int tile,
+  ) {
+    _gp_ahd_decode ??= _dylib
+        .lookupFunction<_c_gp_ahd_decode, _dart_gp_ahd_decode>('gp_ahd_decode');
+    return _gp_ahd_decode(
+      input,
+      w,
+      h,
+      output,
+      tile,
+    );
+  }
+
+  _dart_gp_ahd_decode _gp_ahd_decode;
+
+  int gp_ahd_interpolate(
+    ffi.Pointer<ffi.Uint8> image,
+    int w,
+    int h,
+    int tile,
+  ) {
+    _gp_ahd_interpolate ??=
+        _dylib.lookupFunction<_c_gp_ahd_interpolate, _dart_gp_ahd_interpolate>(
+            'gp_ahd_interpolate');
+    return _gp_ahd_interpolate(
+      image,
+      w,
+      h,
+      tile,
+    );
+  }
+
+  _dart_gp_ahd_interpolate _gp_ahd_interpolate;
+
+  ffi.Pointer<ffi.Uint8> gpi_exif_get_thumbnail_and_size(
+    ffi.Pointer<ffi.Void> exifdat,
+    ffi.Pointer<ffi.Int64> size,
+  ) {
+    _gpi_exif_get_thumbnail_and_size ??= _dylib.lookupFunction<
+            _c_gpi_exif_get_thumbnail_and_size,
+            _dart_gpi_exif_get_thumbnail_and_size>(
+        'gpi_exif_get_thumbnail_and_size');
+    return _gpi_exif_get_thumbnail_and_size(
+      exifdat,
+      size,
+    );
+  }
+
+  _dart_gpi_exif_get_thumbnail_and_size _gpi_exif_get_thumbnail_and_size;
+
+  int gpi_exif_stat(
+    ffi.Pointer<ffi.Void> exifdata,
+  ) {
+    _gpi_exif_stat ??= _dylib
+        .lookupFunction<_c_gpi_exif_stat, _dart_gpi_exif_stat>('gpi_exif_stat');
+    return _gpi_exif_stat(
+      exifdata,
+    );
+  }
+
+  _dart_gpi_exif_stat _gpi_exif_stat;
+
+  int gp_gamma_fill_table(
+    ffi.Pointer<ffi.Uint8> table,
+    double g,
+  ) {
+    _gp_gamma_fill_table ??= _dylib.lookupFunction<_c_gp_gamma_fill_table,
+        _dart_gp_gamma_fill_table>('gp_gamma_fill_table');
+    return _gp_gamma_fill_table(
+      table,
+      g,
+    );
+  }
+
+  _dart_gp_gamma_fill_table _gp_gamma_fill_table;
+
+  int gp_gamma_correct_single(
+    ffi.Pointer<ffi.Uint8> table,
+    ffi.Pointer<ffi.Uint8> data,
+    int data_size,
+  ) {
+    _gp_gamma_correct_single ??= _dylib.lookupFunction<
+        _c_gp_gamma_correct_single,
+        _dart_gp_gamma_correct_single>('gp_gamma_correct_single');
+    return _gp_gamma_correct_single(
+      table,
+      data,
+      data_size,
+    );
+  }
+
+  _dart_gp_gamma_correct_single _gp_gamma_correct_single;
+
+  ffi.Pointer<chunk> gpi_jpeg_chunk_new(
+    int length,
+  ) {
+    _gpi_jpeg_chunk_new ??=
+        _dylib.lookupFunction<_c_gpi_jpeg_chunk_new, _dart_gpi_jpeg_chunk_new>(
+            'gpi_jpeg_chunk_new');
+    return _gpi_jpeg_chunk_new(
+      length,
+    );
+  }
+
+  _dart_gpi_jpeg_chunk_new _gpi_jpeg_chunk_new;
+
+  ffi.Pointer<chunk> gpi_jpeg_chunk_new_filled(
+    int length,
+    ffi.Pointer<ffi.Int8> data,
+  ) {
+    _gpi_jpeg_chunk_new_filled ??= _dylib.lookupFunction<
+        _c_gpi_jpeg_chunk_new_filled,
+        _dart_gpi_jpeg_chunk_new_filled>('gpi_jpeg_chunk_new_filled');
+    return _gpi_jpeg_chunk_new_filled(
+      length,
+      data,
+    );
+  }
+
+  _dart_gpi_jpeg_chunk_new_filled _gpi_jpeg_chunk_new_filled;
+
+  void gpi_jpeg_chunk_destroy(
+    ffi.Pointer<chunk> mychunk,
+  ) {
+    _gpi_jpeg_chunk_destroy ??= _dylib.lookupFunction<_c_gpi_jpeg_chunk_destroy,
+        _dart_gpi_jpeg_chunk_destroy>('gpi_jpeg_chunk_destroy');
+    return _gpi_jpeg_chunk_destroy(
+      mychunk,
+    );
+  }
+
+  _dart_gpi_jpeg_chunk_destroy _gpi_jpeg_chunk_destroy;
+
+  void gpi_jpeg_chunk_print(
+    ffi.Pointer<chunk> mychunk,
+  ) {
+    _gpi_jpeg_chunk_print ??= _dylib.lookupFunction<_c_gpi_jpeg_chunk_print,
+        _dart_gpi_jpeg_chunk_print>('gpi_jpeg_chunk_print');
+    return _gpi_jpeg_chunk_print(
+      mychunk,
+    );
+  }
+
+  _dart_gpi_jpeg_chunk_print _gpi_jpeg_chunk_print;
+
+  int gpi_jpeg_findff(
+    ffi.Pointer<ffi.Int32> location,
+    ffi.Pointer<chunk> picture,
+  ) {
+    _gpi_jpeg_findff ??=
+        _dylib.lookupFunction<_c_gpi_jpeg_findff, _dart_gpi_jpeg_findff>(
+            'gpi_jpeg_findff');
+    return _gpi_jpeg_findff(
+      location,
+      picture,
+    );
+  }
+
+  _dart_gpi_jpeg_findff _gpi_jpeg_findff;
+
+  int gpi_jpeg_findactivemarker(
+    ffi.Pointer<ffi.Int8> id,
+    ffi.Pointer<ffi.Int32> location,
+    ffi.Pointer<chunk> picture,
+  ) {
+    _gpi_jpeg_findactivemarker ??= _dylib.lookupFunction<
+        _c_gpi_jpeg_findactivemarker,
+        _dart_gpi_jpeg_findactivemarker>('gpi_jpeg_findactivemarker');
+    return _gpi_jpeg_findactivemarker(
+      id,
+      location,
+      picture,
+    );
+  }
+
+  _dart_gpi_jpeg_findactivemarker _gpi_jpeg_findactivemarker;
+
+  ffi.Pointer<ffi.Int8> gpi_jpeg_markername(
+    int c,
+  ) {
+    _gpi_jpeg_markername ??= _dylib.lookupFunction<_c_gpi_jpeg_markername,
+        _dart_gpi_jpeg_markername>('gpi_jpeg_markername');
+    return _gpi_jpeg_markername(
+      c,
+    );
+  }
+
+  _dart_gpi_jpeg_markername _gpi_jpeg_markername;
+
+  ffi.Pointer<jpeg> gpi_jpeg_new() {
+    _gpi_jpeg_new ??= _dylib
+        .lookupFunction<_c_gpi_jpeg_new, _dart_gpi_jpeg_new>('gpi_jpeg_new');
+    return _gpi_jpeg_new();
+  }
+
+  _dart_gpi_jpeg_new _gpi_jpeg_new;
+
+  void gpi_jpeg_destroy(
+    ffi.Pointer<jpeg> myjpeg,
+  ) {
+    _gpi_jpeg_destroy ??=
+        _dylib.lookupFunction<_c_gpi_jpeg_destroy, _dart_gpi_jpeg_destroy>(
+            'gpi_jpeg_destroy');
+    return _gpi_jpeg_destroy(
+      myjpeg,
+    );
+  }
+
+  _dart_gpi_jpeg_destroy _gpi_jpeg_destroy;
+
+  void gpi_jpeg_add_marker(
+    ffi.Pointer<jpeg> myjpeg,
+    ffi.Pointer<chunk> picture,
+    int start,
+    int end,
+  ) {
+    _gpi_jpeg_add_marker ??= _dylib.lookupFunction<_c_gpi_jpeg_add_marker,
+        _dart_gpi_jpeg_add_marker>('gpi_jpeg_add_marker');
+    return _gpi_jpeg_add_marker(
+      myjpeg,
+      picture,
+      start,
+      end,
+    );
+  }
+
+  _dart_gpi_jpeg_add_marker _gpi_jpeg_add_marker;
+
+  void gpi_jpeg_add_chunk(
+    ffi.Pointer<jpeg> myjpeg,
+    ffi.Pointer<chunk> source,
+  ) {
+    _gpi_jpeg_add_chunk ??=
+        _dylib.lookupFunction<_c_gpi_jpeg_add_chunk, _dart_gpi_jpeg_add_chunk>(
+            'gpi_jpeg_add_chunk');
+    return _gpi_jpeg_add_chunk(
+      myjpeg,
+      source,
+    );
+  }
+
+  _dart_gpi_jpeg_add_chunk _gpi_jpeg_add_chunk;
+
+  void gpi_jpeg_parse(
+    ffi.Pointer<jpeg> myjpeg,
+    ffi.Pointer<chunk> picture,
+  ) {
+    _gpi_jpeg_parse ??=
+        _dylib.lookupFunction<_c_gpi_jpeg_parse, _dart_gpi_jpeg_parse>(
+            'gpi_jpeg_parse');
+    return _gpi_jpeg_parse(
+      myjpeg,
+      picture,
+    );
+  }
+
+  _dart_gpi_jpeg_parse _gpi_jpeg_parse;
+
+  void gpi_jpeg_print(
+    ffi.Pointer<jpeg> myjpeg,
+  ) {
+    _gpi_jpeg_print ??=
+        _dylib.lookupFunction<_c_gpi_jpeg_print, _dart_gpi_jpeg_print>(
+            'gpi_jpeg_print');
+    return _gpi_jpeg_print(
+      myjpeg,
+    );
+  }
+
+  _dart_gpi_jpeg_print _gpi_jpeg_print;
+
+  ffi.Pointer<chunk> gpi_jpeg_make_start() {
+    _gpi_jpeg_make_start ??= _dylib.lookupFunction<_c_gpi_jpeg_make_start,
+        _dart_gpi_jpeg_make_start>('gpi_jpeg_make_start');
+    return _gpi_jpeg_make_start();
+  }
+
+  _dart_gpi_jpeg_make_start _gpi_jpeg_make_start;
+
+  ffi.Pointer<chunk> gpi_jpeg_make_SOFC(
+    int width,
+    int height,
+    int vh1,
+    int vh2,
+    int vh3,
+    int q1,
+    int q2,
+    int q3,
+  ) {
+    _gpi_jpeg_make_SOFC ??=
+        _dylib.lookupFunction<_c_gpi_jpeg_make_SOFC, _dart_gpi_jpeg_make_SOFC>(
+            'gpi_jpeg_make_SOFC');
+    return _gpi_jpeg_make_SOFC(
+      width,
+      height,
+      vh1,
+      vh2,
+      vh3,
+      q1,
+      q2,
+      q3,
+    );
+  }
+
+  _dart_gpi_jpeg_make_SOFC _gpi_jpeg_make_SOFC;
+
+  ffi.Pointer<chunk> gpi_jpeg_makeSsSeAhAl(
+    int huffset1,
+    int huffset2,
+    int huffset3,
+  ) {
+    _gpi_jpeg_makeSsSeAhAl ??= _dylib.lookupFunction<_c_gpi_jpeg_makeSsSeAhAl,
+        _dart_gpi_jpeg_makeSsSeAhAl>('gpi_jpeg_makeSsSeAhAl');
+    return _gpi_jpeg_makeSsSeAhAl(
+      huffset1,
+      huffset2,
+      huffset3,
+    );
+  }
+
+  _dart_gpi_jpeg_makeSsSeAhAl _gpi_jpeg_makeSsSeAhAl;
+
+  void gpi_jpeg_print_quantization_table(
+    ffi.Pointer<ffi.Pointer<ffi.Int8>> table,
+  ) {
+    _gpi_jpeg_print_quantization_table ??= _dylib.lookupFunction<
+            _c_gpi_jpeg_print_quantization_table,
+            _dart_gpi_jpeg_print_quantization_table>(
+        'gpi_jpeg_print_quantization_table');
+    return _gpi_jpeg_print_quantization_table(
+      table,
+    );
+  }
+
+  _dart_gpi_jpeg_print_quantization_table _gpi_jpeg_print_quantization_table;
+
+  ffi.Pointer<chunk> gpi_jpeg_make_quantization(
+    ffi.Pointer<ffi.Pointer<ffi.Int8>> table,
+    int number,
+  ) {
+    _gpi_jpeg_make_quantization ??= _dylib.lookupFunction<
+        _c_gpi_jpeg_make_quantization,
+        _dart_gpi_jpeg_make_quantization>('gpi_jpeg_make_quantization');
+    return _gpi_jpeg_make_quantization(
+      table,
+      number,
+    );
+  }
+
+  _dart_gpi_jpeg_make_quantization _gpi_jpeg_make_quantization;
+
+  ffi.Pointer<ffi.Pointer<ffi.Int8>> gpi_jpeg_quantization2table(
+    ffi.Pointer<chunk> qmarker,
+  ) {
+    _gpi_jpeg_quantization2table ??= _dylib.lookupFunction<
+        _c_gpi_jpeg_quantization2table,
+        _dart_gpi_jpeg_quantization2table>('gpi_jpeg_quantization2table');
+    return _gpi_jpeg_quantization2table(
+      qmarker,
+    );
+  }
+
+  _dart_gpi_jpeg_quantization2table _gpi_jpeg_quantization2table;
+
+  ffi.Pointer<jpeg> gpi_jpeg_header(
+    int width,
+    int height,
+    int vh1,
+    int vh2,
+    int vh3,
+    int q1,
+    int q2,
+    int q3,
+    ffi.Pointer<ffi.Pointer<ffi.Int8>> quant1,
+    ffi.Pointer<ffi.Pointer<ffi.Int8>> quant2,
+    int huffset1,
+    int huffset2,
+    int huffset3,
+    ffi.Pointer<chunk> huff1,
+    ffi.Pointer<chunk> huff2,
+    ffi.Pointer<chunk> huff3,
+    ffi.Pointer<chunk> huff4,
+  ) {
+    _gpi_jpeg_header ??=
+        _dylib.lookupFunction<_c_gpi_jpeg_header, _dart_gpi_jpeg_header>(
+            'gpi_jpeg_header');
+    return _gpi_jpeg_header(
+      width,
+      height,
+      vh1,
+      vh2,
+      vh3,
+      q1,
+      q2,
+      q3,
+      quant1,
+      quant2,
+      huffset1,
+      huffset2,
+      huffset3,
+      huff1,
+      huff2,
+      huff3,
+      huff4,
+    );
+  }
+
+  _dart_gpi_jpeg_header _gpi_jpeg_header;
+
+  int gpi_jpeg_write(
+    ffi.Pointer<ffi.Int32> file,
+    ffi.Pointer<ffi.Int8> name,
+    ffi.Pointer<jpeg> myjpeg,
+  ) {
+    _gpi_jpeg_write ??=
+        _dylib.lookupFunction<_c_gpi_jpeg_write, _dart_gpi_jpeg_write>(
+            'gpi_jpeg_write');
+    return _gpi_jpeg_write(
+      file,
+      name,
+      myjpeg,
+    );
+  }
+
+  _dart_gpi_jpeg_write _gpi_jpeg_write;
+
+  int gp_port_info_new(
+    ffi.Pointer<ffi.Pointer<_GPPortInfo>> info,
+  ) {
+    _gp_port_info_new ??=
+        _dylib.lookupFunction<_c_gp_port_info_new, _dart_gp_port_info_new>(
+            'gp_port_info_new');
+    return _gp_port_info_new(
+      info,
+    );
+  }
+
+  _dart_gp_port_info_new _gp_port_info_new;
+
+  int gp_port_info_get_name(
+    ffi.Pointer<_GPPortInfo> info,
+    ffi.Pointer<ffi.Pointer<ffi.Int8>> name,
+  ) {
+    _gp_port_info_get_name ??= _dylib.lookupFunction<_c_gp_port_info_get_name,
+        _dart_gp_port_info_get_name>('gp_port_info_get_name');
+    return _gp_port_info_get_name(
+      info,
+      name,
+    );
+  }
+
+  _dart_gp_port_info_get_name _gp_port_info_get_name;
+
+  int gp_port_info_set_name(
+    ffi.Pointer<_GPPortInfo> info,
+    ffi.Pointer<ffi.Int8> name,
+  ) {
+    _gp_port_info_set_name ??= _dylib.lookupFunction<_c_gp_port_info_set_name,
+        _dart_gp_port_info_set_name>('gp_port_info_set_name');
+    return _gp_port_info_set_name(
+      info,
+      name,
+    );
+  }
+
+  _dart_gp_port_info_set_name _gp_port_info_set_name;
+
+  int gp_port_info_get_path(
+    ffi.Pointer<_GPPortInfo> info,
+    ffi.Pointer<ffi.Pointer<ffi.Int8>> path,
+  ) {
+    _gp_port_info_get_path ??= _dylib.lookupFunction<_c_gp_port_info_get_path,
+        _dart_gp_port_info_get_path>('gp_port_info_get_path');
+    return _gp_port_info_get_path(
+      info,
+      path,
+    );
+  }
+
+  _dart_gp_port_info_get_path _gp_port_info_get_path;
+
+  int gp_port_info_set_path(
+    ffi.Pointer<_GPPortInfo> info,
+    ffi.Pointer<ffi.Int8> path,
+  ) {
+    _gp_port_info_set_path ??= _dylib.lookupFunction<_c_gp_port_info_set_path,
+        _dart_gp_port_info_set_path>('gp_port_info_set_path');
+    return _gp_port_info_set_path(
+      info,
+      path,
+    );
+  }
+
+  _dart_gp_port_info_set_path _gp_port_info_set_path;
+
+  int gp_port_info_get_type(
+    ffi.Pointer<_GPPortInfo> info,
+    ffi.Pointer<ffi.Int32> type,
+  ) {
+    _gp_port_info_get_type ??= _dylib.lookupFunction<_c_gp_port_info_get_type,
+        _dart_gp_port_info_get_type>('gp_port_info_get_type');
+    return _gp_port_info_get_type(
+      info,
+      type,
+    );
+  }
+
+  _dart_gp_port_info_get_type _gp_port_info_get_type;
+
+  int gp_port_info_set_type(
+    ffi.Pointer<_GPPortInfo> info,
+    int type,
+  ) {
+    _gp_port_info_set_type ??= _dylib.lookupFunction<_c_gp_port_info_set_type,
+        _dart_gp_port_info_set_type>('gp_port_info_set_type');
+    return _gp_port_info_set_type(
+      info,
+      type,
+    );
+  }
+
+  _dart_gp_port_info_set_type _gp_port_info_set_type;
+
+  int gp_port_info_get_library_filename(
+    ffi.Pointer<_GPPortInfo> info,
+    ffi.Pointer<ffi.Pointer<ffi.Int8>> lib,
+  ) {
+    _gp_port_info_get_library_filename ??= _dylib.lookupFunction<
+            _c_gp_port_info_get_library_filename,
+            _dart_gp_port_info_get_library_filename>(
+        'gp_port_info_get_library_filename');
+    return _gp_port_info_get_library_filename(
+      info,
+      lib,
+    );
+  }
+
+  _dart_gp_port_info_get_library_filename _gp_port_info_get_library_filename;
+
+  int gp_port_info_set_library_filename(
+    ffi.Pointer<_GPPortInfo> info,
+    ffi.Pointer<ffi.Int8> lib,
+  ) {
+    _gp_port_info_set_library_filename ??= _dylib.lookupFunction<
+            _c_gp_port_info_set_library_filename,
+            _dart_gp_port_info_set_library_filename>(
+        'gp_port_info_set_library_filename');
+    return _gp_port_info_set_library_filename(
+      info,
+      lib,
+    );
+  }
+
+  _dart_gp_port_info_set_library_filename _gp_port_info_set_library_filename;
+
+  int gp_port_info_list_new(
+    ffi.Pointer<ffi.Pointer<_GPPortInfoList>> list,
+  ) {
+    _gp_port_info_list_new ??= _dylib.lookupFunction<_c_gp_port_info_list_new,
+        _dart_gp_port_info_list_new>('gp_port_info_list_new');
+    return _gp_port_info_list_new(
+      list,
+    );
+  }
+
+  _dart_gp_port_info_list_new _gp_port_info_list_new;
+
+  int gp_port_info_list_free(
+    ffi.Pointer<_GPPortInfoList> list,
+  ) {
+    _gp_port_info_list_free ??= _dylib.lookupFunction<_c_gp_port_info_list_free,
+        _dart_gp_port_info_list_free>('gp_port_info_list_free');
+    return _gp_port_info_list_free(
+      list,
+    );
+  }
+
+  _dart_gp_port_info_list_free _gp_port_info_list_free;
+
+  int gp_port_info_list_append(
+    ffi.Pointer<_GPPortInfoList> list,
+    ffi.Pointer<_GPPortInfo> info,
+  ) {
+    _gp_port_info_list_append ??= _dylib.lookupFunction<
+        _c_gp_port_info_list_append,
+        _dart_gp_port_info_list_append>('gp_port_info_list_append');
+    return _gp_port_info_list_append(
+      list,
+      info,
+    );
+  }
+
+  _dart_gp_port_info_list_append _gp_port_info_list_append;
+
+  int gp_port_info_list_load(
+    ffi.Pointer<_GPPortInfoList> list,
+  ) {
+    _gp_port_info_list_load ??= _dylib.lookupFunction<_c_gp_port_info_list_load,
+        _dart_gp_port_info_list_load>('gp_port_info_list_load');
+    return _gp_port_info_list_load(
+      list,
+    );
+  }
+
+  _dart_gp_port_info_list_load _gp_port_info_list_load;
+
+  int gp_port_info_list_count(
+    ffi.Pointer<_GPPortInfoList> list,
+  ) {
+    _gp_port_info_list_count ??= _dylib.lookupFunction<
+        _c_gp_port_info_list_count,
+        _dart_gp_port_info_list_count>('gp_port_info_list_count');
+    return _gp_port_info_list_count(
+      list,
+    );
+  }
+
+  _dart_gp_port_info_list_count _gp_port_info_list_count;
+
+  int gp_port_info_list_lookup_path(
+    ffi.Pointer<_GPPortInfoList> list,
+    ffi.Pointer<ffi.Int8> path,
+  ) {
+    _gp_port_info_list_lookup_path ??= _dylib.lookupFunction<
+        _c_gp_port_info_list_lookup_path,
+        _dart_gp_port_info_list_lookup_path>('gp_port_info_list_lookup_path');
+    return _gp_port_info_list_lookup_path(
+      list,
+      path,
+    );
+  }
+
+  _dart_gp_port_info_list_lookup_path _gp_port_info_list_lookup_path;
+
+  int gp_port_info_list_lookup_name(
+    ffi.Pointer<_GPPortInfoList> list,
+    ffi.Pointer<ffi.Int8> name,
+  ) {
+    _gp_port_info_list_lookup_name ??= _dylib.lookupFunction<
+        _c_gp_port_info_list_lookup_name,
+        _dart_gp_port_info_list_lookup_name>('gp_port_info_list_lookup_name');
+    return _gp_port_info_list_lookup_name(
+      list,
+      name,
+    );
+  }
+
+  _dart_gp_port_info_list_lookup_name _gp_port_info_list_lookup_name;
+
+  int gp_port_info_list_get_info(
+    ffi.Pointer<_GPPortInfoList> list,
+    int n,
+    ffi.Pointer<ffi.Pointer<_GPPortInfo>> info,
+  ) {
+    _gp_port_info_list_get_info ??= _dylib.lookupFunction<
+        _c_gp_port_info_list_get_info,
+        _dart_gp_port_info_list_get_info>('gp_port_info_list_get_info');
+    return _gp_port_info_list_get_info(
+      list,
+      n,
+      info,
+    );
+  }
+
+  _dart_gp_port_info_list_get_info _gp_port_info_list_get_info;
+
+  ffi.Pointer<ffi.Int8> gp_port_message_codeset(
+    ffi.Pointer<ffi.Int8> arg0,
+  ) {
+    _gp_port_message_codeset ??= _dylib.lookupFunction<
+        _c_gp_port_message_codeset,
+        _dart_gp_port_message_codeset>('gp_port_message_codeset');
+    return _gp_port_message_codeset(
+      arg0,
+    );
+  }
+
+  _dart_gp_port_message_codeset _gp_port_message_codeset;
+
+  int gp_port_library_type() {
+    _gp_port_library_type ??= _dylib.lookupFunction<_c_gp_port_library_type,
+        _dart_gp_port_library_type>('gp_port_library_type');
+    return _gp_port_library_type();
+  }
+
+  _dart_gp_port_library_type _gp_port_library_type;
+
+  int gp_port_library_list(
+    ffi.Pointer<ffi.Int32> list,
+  ) {
+    _gp_port_library_list ??= _dylib.lookupFunction<_c_gp_port_library_list,
+        _dart_gp_port_library_list>('gp_port_library_list');
+    return _gp_port_library_list(
+      list,
+    );
+  }
+
+  _dart_gp_port_library_list _gp_port_library_list;
+
+  ffi.Pointer<GPPortOperations> gp_port_library_operations() {
+    _gp_port_library_operations ??= _dylib.lookupFunction<
+        _c_gp_port_library_operations,
+        _dart_gp_port_library_operations>('gp_port_library_operations');
+    return _gp_port_library_operations();
+  }
+
+  _dart_gp_port_library_operations _gp_port_library_operations;
+
+  int gp_log_add_func(
+    int level,
+    ffi.Pointer<ffi.NativeFunction<GPLogFunc>> func,
+    ffi.Pointer<ffi.Void> data,
+  ) {
+    _gp_log_add_func ??=
+        _dylib.lookupFunction<_c_gp_log_add_func, _dart_gp_log_add_func>(
+            'gp_log_add_func');
+    return _gp_log_add_func(
+      level,
+      func,
+      data,
+    );
+  }
+
+  _dart_gp_log_add_func _gp_log_add_func;
+
+  int gp_log_remove_func(
+    int id,
+  ) {
+    _gp_log_remove_func ??=
+        _dylib.lookupFunction<_c_gp_log_remove_func, _dart_gp_log_remove_func>(
+            'gp_log_remove_func');
+    return _gp_log_remove_func(
+      id,
+    );
+  }
+
+  _dart_gp_log_remove_func _gp_log_remove_func;
+
+  void gp_log(
+    int level,
+    ffi.Pointer<ffi.Int8> domain,
+    ffi.Pointer<ffi.Int8> format,
+  ) {
+    _gp_log ??= _dylib.lookupFunction<_c_gp_log, _dart_gp_log>('gp_log');
+    return _gp_log(
+      level,
+      domain,
+      format,
+    );
+  }
+
+  _dart_gp_log _gp_log;
+
+  void gp_log_with_source_location(
+    int level,
+    ffi.Pointer<ffi.Int8> file,
+    int line,
+    ffi.Pointer<ffi.Int8> func,
+    ffi.Pointer<ffi.Int8> format,
+  ) {
+    _gp_log_with_source_location ??= _dylib.lookupFunction<
+        _c_gp_log_with_source_location,
+        _dart_gp_log_with_source_location>('gp_log_with_source_location');
+    return _gp_log_with_source_location(
+      level,
+      file,
+      line,
+      func,
+      format,
+    );
+  }
+
+  _dart_gp_log_with_source_location _gp_log_with_source_location;
+
+  void gp_logv(
+    int level,
+    ffi.Pointer<ffi.Int8> domain,
+    ffi.Pointer<ffi.Int8> format,
+    ffi.Pointer<ffi.Int8> args,
+  ) {
+    _gp_logv ??= _dylib.lookupFunction<_c_gp_logv, _dart_gp_logv>('gp_logv');
+    return _gp_logv(
+      level,
+      domain,
+      format,
+      args,
+    );
+  }
+
+  _dart_gp_logv _gp_logv;
+
+  void gp_log_data(
+    ffi.Pointer<ffi.Int8> domain,
+    ffi.Pointer<ffi.Int8> data,
+    int size,
+    ffi.Pointer<ffi.Int8> format,
+  ) {
+    _gp_log_data ??=
+        _dylib.lookupFunction<_c_gp_log_data, _dart_gp_log_data>('gp_log_data');
+    return _gp_log_data(
+      domain,
+      data,
+      size,
+      format,
+    );
+  }
+
+  _dart_gp_log_data _gp_log_data;
+
+  ffi.Pointer<ffi.Int8> gp_port_result_as_string(
+    int result,
+  ) {
+    _gp_port_result_as_string ??= _dylib.lookupFunction<
+        _c_gp_port_result_as_string,
+        _dart_gp_port_result_as_string>('gp_port_result_as_string');
+    return _gp_port_result_as_string(
+      result,
+    );
+  }
+
+  _dart_gp_port_result_as_string _gp_port_result_as_string;
+
+  ffi.Pointer<ffi.Pointer<ffi.Int8>> gp_port_library_version(
+    int verbose,
+  ) {
+    _gp_port_library_version ??= _dylib.lookupFunction<
+        _c_gp_port_library_version,
+        _dart_gp_port_library_version>('gp_port_library_version');
+    return _gp_port_library_version(
+      verbose,
+    );
+  }
+
+  _dart_gp_port_library_version _gp_port_library_version;
+
+  int gp_port_new(
+    ffi.Pointer<ffi.Pointer<GPPort>> port,
+  ) {
+    _gp_port_new ??=
+        _dylib.lookupFunction<_c_gp_port_new, _dart_gp_port_new>('gp_port_new');
+    return _gp_port_new(
+      port,
+    );
+  }
+
+  _dart_gp_port_new _gp_port_new;
+
+  int gp_port_free(
+    ffi.Pointer<GPPort> port,
+  ) {
+    _gp_port_free ??= _dylib
+        .lookupFunction<_c_gp_port_free, _dart_gp_port_free>('gp_port_free');
+    return _gp_port_free(
+      port,
+    );
+  }
+
+  _dart_gp_port_free _gp_port_free;
+
+  int gp_port_set_info(
+    ffi.Pointer<GPPort> port,
+    int info,
+  ) {
+    _gp_port_set_info ??=
+        _dylib.lookupFunction<_c_gp_port_set_info, _dart_gp_port_set_info>(
+            'gp_port_set_info');
+    return _gp_port_set_info(
+      port,
+      info,
+    );
+  }
+
+  _dart_gp_port_set_info _gp_port_set_info;
+
+  int gp_port_get_info(
+    ffi.Pointer<GPPort> port,
+    ffi.Pointer<ffi.Int32> info,
+  ) {
+    _gp_port_get_info ??=
+        _dylib.lookupFunction<_c_gp_port_get_info, _dart_gp_port_get_info>(
+            'gp_port_get_info');
+    return _gp_port_get_info(
+      port,
+      info,
+    );
+  }
+
+  _dart_gp_port_get_info _gp_port_get_info;
+
+  int gp_port_open(
+    ffi.Pointer<GPPort> port,
+  ) {
+    _gp_port_open ??= _dylib
+        .lookupFunction<_c_gp_port_open, _dart_gp_port_open>('gp_port_open');
+    return _gp_port_open(
+      port,
+    );
+  }
+
+  _dart_gp_port_open _gp_port_open;
+
+  int gp_port_close(
+    ffi.Pointer<GPPort> port,
+  ) {
+    _gp_port_close ??= _dylib
+        .lookupFunction<_c_gp_port_close, _dart_gp_port_close>('gp_port_close');
+    return _gp_port_close(
+      port,
+    );
+  }
+
+  _dart_gp_port_close _gp_port_close;
+
+  int gp_port_reset(
+    ffi.Pointer<GPPort> port,
+  ) {
+    _gp_port_reset ??= _dylib
+        .lookupFunction<_c_gp_port_reset, _dart_gp_port_reset>('gp_port_reset');
+    return _gp_port_reset(
+      port,
+    );
+  }
+
+  _dart_gp_port_reset _gp_port_reset;
+
+  int gp_port_write(
+    ffi.Pointer<GPPort> port,
+    ffi.Pointer<ffi.Int8> data,
+    int size,
+  ) {
+    _gp_port_write ??= _dylib
+        .lookupFunction<_c_gp_port_write, _dart_gp_port_write>('gp_port_write');
+    return _gp_port_write(
+      port,
+      data,
+      size,
+    );
+  }
+
+  _dart_gp_port_write _gp_port_write;
+
+  int gp_port_read(
+    ffi.Pointer<GPPort> port,
+    ffi.Pointer<ffi.Int8> data,
+    int size,
+  ) {
+    _gp_port_read ??= _dylib
+        .lookupFunction<_c_gp_port_read, _dart_gp_port_read>('gp_port_read');
+    return _gp_port_read(
+      port,
+      data,
+      size,
+    );
+  }
+
+  _dart_gp_port_read _gp_port_read;
+
+  int gp_port_check_int(
+    ffi.Pointer<GPPort> port,
+    ffi.Pointer<ffi.Int8> data,
+    int size,
+  ) {
+    _gp_port_check_int ??=
+        _dylib.lookupFunction<_c_gp_port_check_int, _dart_gp_port_check_int>(
+            'gp_port_check_int');
+    return _gp_port_check_int(
+      port,
+      data,
+      size,
+    );
+  }
+
+  _dart_gp_port_check_int _gp_port_check_int;
+
+  int gp_port_check_int_fast(
+    ffi.Pointer<GPPort> port,
+    ffi.Pointer<ffi.Int8> data,
+    int size,
+  ) {
+    _gp_port_check_int_fast ??= _dylib.lookupFunction<_c_gp_port_check_int_fast,
+        _dart_gp_port_check_int_fast>('gp_port_check_int_fast');
+    return _gp_port_check_int_fast(
+      port,
+      data,
+      size,
+    );
+  }
+
+  _dart_gp_port_check_int_fast _gp_port_check_int_fast;
+
+  int gp_port_get_timeout(
+    ffi.Pointer<GPPort> port,
+    ffi.Pointer<ffi.Int32> timeout,
+  ) {
+    _gp_port_get_timeout ??= _dylib.lookupFunction<_c_gp_port_get_timeout,
+        _dart_gp_port_get_timeout>('gp_port_get_timeout');
+    return _gp_port_get_timeout(
+      port,
+      timeout,
+    );
+  }
+
+  _dart_gp_port_get_timeout _gp_port_get_timeout;
+
+  int gp_port_set_timeout(
+    ffi.Pointer<GPPort> port,
+    int timeout,
+  ) {
+    _gp_port_set_timeout ??= _dylib.lookupFunction<_c_gp_port_set_timeout,
+        _dart_gp_port_set_timeout>('gp_port_set_timeout');
+    return _gp_port_set_timeout(
+      port,
+      timeout,
+    );
+  }
+
+  _dart_gp_port_set_timeout _gp_port_set_timeout;
+
+  int gp_port_get_pin(
+    ffi.Pointer<GPPort> port,
+    int pin,
+    ffi.Pointer<ffi.Int32> level,
+  ) {
+    _gp_port_get_pin ??=
+        _dylib.lookupFunction<_c_gp_port_get_pin, _dart_gp_port_get_pin>(
+            'gp_port_get_pin');
+    return _gp_port_get_pin(
+      port,
+      pin,
+      level,
+    );
+  }
+
+  _dart_gp_port_get_pin _gp_port_get_pin;
+
+  int gp_port_set_pin(
+    ffi.Pointer<GPPort> port,
+    int pin,
+    int level,
+  ) {
+    _gp_port_set_pin ??=
+        _dylib.lookupFunction<_c_gp_port_set_pin, _dart_gp_port_set_pin>(
+            'gp_port_set_pin');
+    return _gp_port_set_pin(
+      port,
+      pin,
+      level,
+    );
+  }
+
+  _dart_gp_port_set_pin _gp_port_set_pin;
+
+  int gp_port_send_break(
+    ffi.Pointer<GPPort> port,
+    int duration,
+  ) {
+    _gp_port_send_break ??=
+        _dylib.lookupFunction<_c_gp_port_send_break, _dart_gp_port_send_break>(
+            'gp_port_send_break');
+    return _gp_port_send_break(
+      port,
+      duration,
+    );
+  }
+
+  _dart_gp_port_send_break _gp_port_send_break;
+
+  int gp_port_flush(
+    ffi.Pointer<GPPort> port,
+    int direction,
+  ) {
+    _gp_port_flush ??= _dylib
+        .lookupFunction<_c_gp_port_flush, _dart_gp_port_flush>('gp_port_flush');
+    return _gp_port_flush(
+      port,
+      direction,
+    );
+  }
+
+  _dart_gp_port_flush _gp_port_flush;
+
+  int gp_port_usb_find_device(
+    ffi.Pointer<GPPort> port,
+    int idvendor,
+    int idproduct,
+  ) {
+    _gp_port_usb_find_device ??= _dylib.lookupFunction<
+        _c_gp_port_usb_find_device,
+        _dart_gp_port_usb_find_device>('gp_port_usb_find_device');
+    return _gp_port_usb_find_device(
+      port,
+      idvendor,
+      idproduct,
+    );
+  }
+
+  _dart_gp_port_usb_find_device _gp_port_usb_find_device;
+
+  int gp_port_usb_find_device_by_class(
+    ffi.Pointer<GPPort> port,
+    int mainclass,
+    int subclass,
+    int protocol,
+  ) {
+    _gp_port_usb_find_device_by_class ??= _dylib.lookupFunction<
+            _c_gp_port_usb_find_device_by_class,
+            _dart_gp_port_usb_find_device_by_class>(
+        'gp_port_usb_find_device_by_class');
+    return _gp_port_usb_find_device_by_class(
+      port,
+      mainclass,
+      subclass,
+      protocol,
+    );
+  }
+
+  _dart_gp_port_usb_find_device_by_class _gp_port_usb_find_device_by_class;
+
+  int gp_port_usb_clear_halt(
+    ffi.Pointer<GPPort> port,
+    int ep,
+  ) {
+    _gp_port_usb_clear_halt ??= _dylib.lookupFunction<_c_gp_port_usb_clear_halt,
+        _dart_gp_port_usb_clear_halt>('gp_port_usb_clear_halt');
+    return _gp_port_usb_clear_halt(
+      port,
+      ep,
+    );
+  }
+
+  _dart_gp_port_usb_clear_halt _gp_port_usb_clear_halt;
+
+  int gp_port_usb_msg_write(
+    ffi.Pointer<GPPort> port,
+    int request,
+    int value,
+    int index,
+    ffi.Pointer<ffi.Int8> bytes,
+    int size,
+  ) {
+    _gp_port_usb_msg_write ??= _dylib.lookupFunction<_c_gp_port_usb_msg_write,
+        _dart_gp_port_usb_msg_write>('gp_port_usb_msg_write');
+    return _gp_port_usb_msg_write(
+      port,
+      request,
+      value,
+      index,
+      bytes,
+      size,
+    );
+  }
+
+  _dart_gp_port_usb_msg_write _gp_port_usb_msg_write;
+
+  int gp_port_usb_msg_read(
+    ffi.Pointer<GPPort> port,
+    int request,
+    int value,
+    int index,
+    ffi.Pointer<ffi.Int8> bytes,
+    int size,
+  ) {
+    _gp_port_usb_msg_read ??= _dylib.lookupFunction<_c_gp_port_usb_msg_read,
+        _dart_gp_port_usb_msg_read>('gp_port_usb_msg_read');
+    return _gp_port_usb_msg_read(
+      port,
+      request,
+      value,
+      index,
+      bytes,
+      size,
+    );
+  }
+
+  _dart_gp_port_usb_msg_read _gp_port_usb_msg_read;
+
+  int gp_port_usb_msg_interface_write(
+    ffi.Pointer<GPPort> port,
+    int request,
+    int value,
+    int index,
+    ffi.Pointer<ffi.Int8> bytes,
+    int size,
+  ) {
+    _gp_port_usb_msg_interface_write ??= _dylib.lookupFunction<
+            _c_gp_port_usb_msg_interface_write,
+            _dart_gp_port_usb_msg_interface_write>(
+        'gp_port_usb_msg_interface_write');
+    return _gp_port_usb_msg_interface_write(
+      port,
+      request,
+      value,
+      index,
+      bytes,
+      size,
+    );
+  }
+
+  _dart_gp_port_usb_msg_interface_write _gp_port_usb_msg_interface_write;
+
+  int gp_port_usb_msg_interface_read(
+    ffi.Pointer<GPPort> port,
+    int request,
+    int value,
+    int index,
+    ffi.Pointer<ffi.Int8> bytes,
+    int size,
+  ) {
+    _gp_port_usb_msg_interface_read ??= _dylib.lookupFunction<
+        _c_gp_port_usb_msg_interface_read,
+        _dart_gp_port_usb_msg_interface_read>('gp_port_usb_msg_interface_read');
+    return _gp_port_usb_msg_interface_read(
+      port,
+      request,
+      value,
+      index,
+      bytes,
+      size,
+    );
+  }
+
+  _dart_gp_port_usb_msg_interface_read _gp_port_usb_msg_interface_read;
+
+  int gp_port_usb_msg_class_write(
+    ffi.Pointer<GPPort> port,
+    int request,
+    int value,
+    int index,
+    ffi.Pointer<ffi.Int8> bytes,
+    int size,
+  ) {
+    _gp_port_usb_msg_class_write ??= _dylib.lookupFunction<
+        _c_gp_port_usb_msg_class_write,
+        _dart_gp_port_usb_msg_class_write>('gp_port_usb_msg_class_write');
+    return _gp_port_usb_msg_class_write(
+      port,
+      request,
+      value,
+      index,
+      bytes,
+      size,
+    );
+  }
+
+  _dart_gp_port_usb_msg_class_write _gp_port_usb_msg_class_write;
+
+  int gp_port_usb_msg_class_read(
+    ffi.Pointer<GPPort> port,
+    int request,
+    int value,
+    int index,
+    ffi.Pointer<ffi.Int8> bytes,
+    int size,
+  ) {
+    _gp_port_usb_msg_class_read ??= _dylib.lookupFunction<
+        _c_gp_port_usb_msg_class_read,
+        _dart_gp_port_usb_msg_class_read>('gp_port_usb_msg_class_read');
+    return _gp_port_usb_msg_class_read(
+      port,
+      request,
+      value,
+      index,
+      bytes,
+      size,
+    );
+  }
+
+  _dart_gp_port_usb_msg_class_read _gp_port_usb_msg_class_read;
+
+  int gp_port_seek(
+    ffi.Pointer<GPPort> port,
+    int offset,
+    int whence,
+  ) {
+    _gp_port_seek ??= _dylib
+        .lookupFunction<_c_gp_port_seek, _dart_gp_port_seek>('gp_port_seek');
+    return _gp_port_seek(
+      port,
+      offset,
+      whence,
+    );
+  }
+
+  _dart_gp_port_seek _gp_port_seek;
+
+  int gp_port_send_scsi_cmd(
+    ffi.Pointer<GPPort> port,
+    int to_dev,
+    ffi.Pointer<ffi.Int8> cmd,
+    int cmd_size,
+    ffi.Pointer<ffi.Int8> sense,
+    int sense_size,
+    ffi.Pointer<ffi.Int8> data,
+    int data_size,
+  ) {
+    _gp_port_send_scsi_cmd ??= _dylib.lookupFunction<_c_gp_port_send_scsi_cmd,
+        _dart_gp_port_send_scsi_cmd>('gp_port_send_scsi_cmd');
+    return _gp_port_send_scsi_cmd(
+      port,
+      to_dev,
+      cmd,
+      cmd_size,
+      sense,
+      sense_size,
+      data,
+      data_size,
+    );
+  }
+
+  _dart_gp_port_send_scsi_cmd _gp_port_send_scsi_cmd;
+
+  int gp_port_set_error(
+    ffi.Pointer<GPPort> port,
+    ffi.Pointer<ffi.Int8> format,
+  ) {
+    _gp_port_set_error ??=
+        _dylib.lookupFunction<_c_gp_port_set_error, _dart_gp_port_set_error>(
+            'gp_port_set_error');
+    return _gp_port_set_error(
+      port,
+      format,
+    );
+  }
+
+  _dart_gp_port_set_error _gp_port_set_error;
+
+  ffi.Pointer<ffi.Int8> gp_port_get_error(
+    ffi.Pointer<GPPort> port,
+  ) {
+    _gp_port_get_error ??=
+        _dylib.lookupFunction<_c_gp_port_get_error, _dart_gp_port_get_error>(
+            'gp_port_get_error');
+    return _gp_port_get_error(
+      port,
+    );
+  }
+
+  _dart_gp_port_get_error _gp_port_get_error;
 }
 
 /// Current implementation status of the camera driver.
@@ -4255,6 +5659,259 @@ abstract class CameraWidgetType {
   static const int GP_WIDGET_DATE = 8;
 }
 
+/// \brief how the bayer CCD array is laid out
+///
+/// This enumeration defines how the CCD bayer array is laid out.
+abstract class BayerTile {
+  /// < \brief raster is RG,GN
+  static const int BAYER_TILE_RGGB = 0;
+
+  /// < \brief raster is GR,BG
+  static const int BAYER_TILE_GRBG = 1;
+
+  /// < \brief raster is BG,GR
+  static const int BAYER_TILE_BGGR = 2;
+
+  /// < \brief raster is RG,GB
+  static const int BAYER_TILE_GBRG = 3;
+
+  /// < \brief scanline order: R1,G1,R2,G2,...,G1,B1,G2,B2,...
+  static const int BAYER_TILE_RGGB_INTERLACED = 4;
+
+  /// < \brief scanline order: G1,R1,R2,G2,...,B1,G1,B2,G2,...
+  static const int BAYER_TILE_GRBG_INTERLACED = 5;
+
+  /// < \brief scanline order: B1,G1,R2,G2,...,G1,R1,G2,R2,...
+  static const int BAYER_TILE_BGGR_INTERLACED = 6;
+
+  /// < \brief scanline order: G1,B1,G2,B2,...,R1,G1,R2,G2,...
+  static const int BAYER_TILE_GBRG_INTERLACED = 7;
+}
+
+abstract class jpegmarker {
+  static const int JPEG_START = 216;
+  static const int JPEG_COMMENT = 254;
+  static const int JPEG_APPO = 224;
+  static const int JPEG_QUANTIZATION = 219;
+  static const int JPEG_HUFFMAN = 196;
+  static const int JPEG_SOFC0 = 192;
+  static const int JPEG_SSSEAHAL = 218;
+  static const int JPEG_EOI = 217;
+}
+
+class chunk extends ffi.Struct {
+  @ffi.Int32()
+  int size;
+
+  ffi.Pointer<ffi.Uint8> data;
+}
+
+class jpeg extends ffi.Struct {}
+
+/// \brief The gphoto port type.
+///
+/// Enumeration specifying the port type.
+/// The enum is providing bitmasks, but most code uses it as
+/// just the one specific values.
+abstract class GPPortType {
+  /// < \brief No specific type associated.
+  static const int GP_PORT_NONE = 0;
+
+  /// < \brief Serial port.
+  static const int GP_PORT_SERIAL = 1;
+
+  /// < \brief USB port.
+  static const int GP_PORT_USB = 4;
+
+  /// < \brief Disk / local mountpoint port.
+  static const int GP_PORT_DISK = 8;
+
+  /// < \brief PTP/IP port.
+  static const int GP_PORT_PTPIP = 16;
+
+  /// < \brief Direct IO to an usb mass storage device.
+  static const int GP_PORT_USB_DISK_DIRECT = 32;
+
+  /// < \brief USB Mass Storage raw SCSI port.
+  static const int GP_PORT_USB_SCSI = 64;
+
+  /// < \brief generic IP address port.
+  static const int GP_PORT_IP = 128;
+}
+
+/// \brief Information about the current port.
+///
+/// Specific information about the current port. Usually taken from the
+/// "--port=XXXX" setting from the frontend.
+///
+/// This is not to be confused with the driver configurable port settings
+/// in \ref GPPortSettings.
+class _GPPortInfo extends ffi.Struct {}
+
+class _GPPortInfoList extends ffi.Struct {}
+
+/// \brief The port operations
+///
+/// These operations are to be implemented and set by the port library,
+/// which drives the lowlevel protocol (serial, usb, etc.).
+///
+/// They are acessed using the accessor functions, like gp_port_open(),
+/// gp_port_read() and gp_port_write().
+class GPPortOperations extends ffi.Struct {
+  ffi.Pointer<ffi.NativeFunction<_typedefC_4>> init;
+
+  ffi.Pointer<ffi.NativeFunction<_typedefC_5>> exit;
+
+  ffi.Pointer<ffi.NativeFunction<_typedefC_6>> open;
+
+  ffi.Pointer<ffi.NativeFunction<_typedefC_7>> close;
+
+  ffi.Pointer<ffi.NativeFunction<_typedefC_8>> read;
+
+  ffi.Pointer<ffi.NativeFunction<_typedefC_9>> check_int;
+
+  ffi.Pointer<ffi.NativeFunction<_typedefC_10>> write;
+
+  ffi.Pointer<ffi.NativeFunction<_typedefC_11>> update;
+
+  ffi.Pointer<ffi.NativeFunction<_typedefC_12>> get_pin;
+
+  ffi.Pointer<ffi.NativeFunction<_typedefC_13>> set_pin;
+
+  ffi.Pointer<ffi.NativeFunction<_typedefC_14>> send_break;
+
+  ffi.Pointer<ffi.NativeFunction<_typedefC_15>> flush;
+
+  ffi.Pointer<ffi.NativeFunction<_typedefC_16>> find_device;
+
+  ffi.Pointer<ffi.NativeFunction<_typedefC_17>> find_device_by_class;
+
+  ffi.Pointer<ffi.NativeFunction<_typedefC_18>> clear_halt;
+
+  ffi.Pointer<ffi.NativeFunction<_typedefC_19>> msg_write;
+
+  ffi.Pointer<ffi.NativeFunction<_typedefC_20>> msg_read;
+
+  ffi.Pointer<ffi.NativeFunction<_typedefC_21>> msg_interface_write;
+
+  ffi.Pointer<ffi.NativeFunction<_typedefC_22>> msg_interface_read;
+
+  ffi.Pointer<ffi.NativeFunction<_typedefC_23>> msg_class_write;
+
+  ffi.Pointer<ffi.NativeFunction<_typedefC_24>> msg_class_read;
+
+  ffi.Pointer<ffi.NativeFunction<_typedefC_25>> seek;
+
+  ffi.Pointer<ffi.NativeFunction<_typedefC_26>> send_scsi_cmd;
+
+  ffi.Pointer<ffi.NativeFunction<_typedefC_27>> reset;
+}
+
+/// \brief Logging level
+/// Specifies the logging severity level.
+abstract class GPLogLevel {
+  /// < \brief Log message is an error information.
+  static const int GP_LOG_ERROR = 0;
+
+  /// < \brief Log message is an verbose debug information.
+  static const int GP_LOG_VERBOSE = 1;
+
+  /// < \brief Log message is an debug information.
+  static const int GP_LOG_DEBUG = 2;
+
+  /// < \brief Log message is a data hex dump.
+  static const int GP_LOG_DATA = 3;
+}
+
+abstract class GPVersionVerbosity {
+  static const int GP_VERSION_SHORT = 0;
+  static const int GP_VERSION_VERBOSE = 1;
+}
+
+/// \brief Serial parity
+///
+/// Parity of the serial port.
+abstract class GPPortSerialParity {
+  /// < \brief Parity is off (disabled)
+  static const int GP_PORT_SERIAL_PARITY_OFF = 0;
+
+  /// < \brief Parity is even.
+  static const int GP_PORT_SERIAL_PARITY_EVEN = 1;
+
+  /// < \brief Parity is odd.
+  static const int GP_PORT_SERIAL_PARITY_ODD = 2;
+}
+
+/// \brief Port settings for serial ports.
+class GPPortSettingsSerial extends ffi.Struct {}
+
+/// \brief Port settings for USB ports.
+class GPPortSettingsUSB extends ffi.Struct {}
+
+/// \brief Port settings for USB mass storage direct IO ports.
+class GPPortSettingsUsbDiskDirect extends ffi.Struct {}
+
+/// \brief Port settings for USB Mass Storage raw SCSI ports.
+class GPPortSettingsUsbScsi extends ffi.Struct {}
+
+class _GPPortPrivateLibrary extends ffi.Struct {}
+
+class _GPPortPrivateCore extends ffi.Struct {}
+
+/// \brief The GPhoto port structure.
+///
+/// This structure tracks the physical connection of the device.
+/// It can correspond the various methods of lowlevel access, serial
+/// usb and others and abstracts them as much as possible.
+///
+/// Frontends should consider this structure opaque and only use accessor
+/// functions.
+///
+/// Camera drivers should only access the type and pl members directly,
+/// and use accessor functions for the rest.
+class GPPort extends ffi.Struct {}
+
+/// \brief Serial pins.
+///
+/// A number of serial pins to trigger and pull. This is necessary
+/// for some devices that have more than just the regular 3 or 4 wires.
+abstract class GPPin {
+  /// < \brief RTS line
+  static const int GP_PIN_RTS = 0;
+
+  /// < \brief DTR line
+  static const int GP_PIN_DTR = 1;
+
+  /// < \brief CTS line
+  static const int GP_PIN_CTS = 2;
+
+  /// < \brief DSR line
+  static const int GP_PIN_DSR = 3;
+
+  /// < \brief Carrier Detect line
+  static const int GP_PIN_CD = 4;
+
+  /// < \brief RING (Modem) line
+  static const int GP_PIN_RING = 5;
+}
+
+/// \brief Level to pull specific lines.
+///
+/// The level on which to pull some of the serial lines.
+abstract class GPLevel {
+  /// < \brief Pull to low (0V)
+  static const int GP_LEVEL_LOW = 0;
+
+  /// < \brief Pull to high (nV)
+  static const int GP_LEVEL_HIGH = 1;
+}
+
+const int GP_PORT_USB_ENDPOINT_IN = 0;
+
+const int GP_PORT_USB_ENDPOINT_OUT = 1;
+
+const int GP_PORT_USB_ENDPOINT_INT = 2;
+
 const int _VCRT_COMPILER_PREPROCESSOR = 1;
 
 const int _SAL_VERSION = 20;
@@ -4500,6 +6157,60 @@ const int GP_ERROR_CAMERA_ERROR = -113;
 const int GP_ERROR_OS_FAILURE = -114;
 
 const int GP_ERROR_NO_SPACE = -115;
+
+const int GP_LOG_ALL = 3;
+
+const int GP_OK = 0;
+
+const int GP_ERROR = -1;
+
+const int GP_ERROR_BAD_PARAMETERS = -2;
+
+const int GP_ERROR_NO_MEMORY = -3;
+
+const int GP_ERROR_LIBRARY = -4;
+
+const int GP_ERROR_UNKNOWN_PORT = -5;
+
+const int GP_ERROR_NOT_SUPPORTED = -6;
+
+const int GP_ERROR_IO = -7;
+
+const int GP_ERROR_FIXED_LIMIT_EXCEEDED = -8;
+
+const int GP_ERROR_TIMEOUT = -10;
+
+const int GP_ERROR_IO_SUPPORTED_SERIAL = -20;
+
+const int GP_ERROR_IO_SUPPORTED_USB = -21;
+
+const int GP_ERROR_IO_INIT = -31;
+
+const int GP_ERROR_IO_READ = -34;
+
+const int GP_ERROR_IO_WRITE = -35;
+
+const int GP_ERROR_IO_UPDATE = -37;
+
+const int GP_ERROR_IO_SERIAL_SPEED = -41;
+
+const int GP_ERROR_IO_USB_CLEAR_HALT = -51;
+
+const int GP_ERROR_IO_USB_FIND = -52;
+
+const int GP_ERROR_IO_USB_CLAIM = -53;
+
+const int GP_ERROR_IO_LOCK = -60;
+
+const int GP_ERROR_HAL = -70;
+
+const int TRUE = 1;
+
+const int FALSE = 0;
+
+const int GP_PORT_MAX_BUF_LEN = 4096;
+
+const int PIN_CTS = 2;
 
 typedef _c_gp_abilities_list_new = ffi.Int32 Function(
   ffi.Pointer<ffi.Pointer<_CameraAbilitiesList>> list,
@@ -7103,6 +8814,1015 @@ typedef _dart_gp_widget_get_readonly = int Function(
   ffi.Pointer<ffi.Int32> readonly,
 );
 
+typedef _c_gp_bayer_expand = ffi.Int32 Function(
+  ffi.Pointer<ffi.Uint8> input,
+  ffi.Int32 w,
+  ffi.Int32 h,
+  ffi.Pointer<ffi.Uint8> output,
+  ffi.Int32 tile,
+);
+
+typedef _dart_gp_bayer_expand = int Function(
+  ffi.Pointer<ffi.Uint8> input,
+  int w,
+  int h,
+  ffi.Pointer<ffi.Uint8> output,
+  int tile,
+);
+
+typedef _c_gp_bayer_decode = ffi.Int32 Function(
+  ffi.Pointer<ffi.Uint8> input,
+  ffi.Int32 w,
+  ffi.Int32 h,
+  ffi.Pointer<ffi.Uint8> output,
+  ffi.Int32 tile,
+);
+
+typedef _dart_gp_bayer_decode = int Function(
+  ffi.Pointer<ffi.Uint8> input,
+  int w,
+  int h,
+  ffi.Pointer<ffi.Uint8> output,
+  int tile,
+);
+
+typedef _c_gp_bayer_interpolate = ffi.Int32 Function(
+  ffi.Pointer<ffi.Uint8> image,
+  ffi.Int32 w,
+  ffi.Int32 h,
+  ffi.Int32 tile,
+);
+
+typedef _dart_gp_bayer_interpolate = int Function(
+  ffi.Pointer<ffi.Uint8> image,
+  int w,
+  int h,
+  int tile,
+);
+
+typedef _c_gp_ahd_decode = ffi.Int32 Function(
+  ffi.Pointer<ffi.Uint8> input,
+  ffi.Int32 w,
+  ffi.Int32 h,
+  ffi.Pointer<ffi.Uint8> output,
+  ffi.Int32 tile,
+);
+
+typedef _dart_gp_ahd_decode = int Function(
+  ffi.Pointer<ffi.Uint8> input,
+  int w,
+  int h,
+  ffi.Pointer<ffi.Uint8> output,
+  int tile,
+);
+
+typedef _c_gp_ahd_interpolate = ffi.Int32 Function(
+  ffi.Pointer<ffi.Uint8> image,
+  ffi.Int32 w,
+  ffi.Int32 h,
+  ffi.Int32 tile,
+);
+
+typedef _dart_gp_ahd_interpolate = int Function(
+  ffi.Pointer<ffi.Uint8> image,
+  int w,
+  int h,
+  int tile,
+);
+
+typedef _c_gpi_exif_get_thumbnail_and_size = ffi.Pointer<ffi.Uint8> Function(
+  ffi.Pointer<ffi.Void> exifdat,
+  ffi.Pointer<ffi.Int64> size,
+);
+
+typedef _dart_gpi_exif_get_thumbnail_and_size = ffi.Pointer<ffi.Uint8> Function(
+  ffi.Pointer<ffi.Void> exifdat,
+  ffi.Pointer<ffi.Int64> size,
+);
+
+typedef _c_gpi_exif_stat = ffi.Int32 Function(
+  ffi.Pointer<ffi.Void> exifdata,
+);
+
+typedef _dart_gpi_exif_stat = int Function(
+  ffi.Pointer<ffi.Void> exifdata,
+);
+
+typedef _c_gp_gamma_fill_table = ffi.Int32 Function(
+  ffi.Pointer<ffi.Uint8> table,
+  ffi.Double g,
+);
+
+typedef _dart_gp_gamma_fill_table = int Function(
+  ffi.Pointer<ffi.Uint8> table,
+  double g,
+);
+
+typedef _c_gp_gamma_correct_single = ffi.Int32 Function(
+  ffi.Pointer<ffi.Uint8> table,
+  ffi.Pointer<ffi.Uint8> data,
+  ffi.Uint32 data_size,
+);
+
+typedef _dart_gp_gamma_correct_single = int Function(
+  ffi.Pointer<ffi.Uint8> table,
+  ffi.Pointer<ffi.Uint8> data,
+  int data_size,
+);
+
+typedef _c_gpi_jpeg_chunk_new = ffi.Pointer<chunk> Function(
+  ffi.Int32 length,
+);
+
+typedef _dart_gpi_jpeg_chunk_new = ffi.Pointer<chunk> Function(
+  int length,
+);
+
+typedef _c_gpi_jpeg_chunk_new_filled = ffi.Pointer<chunk> Function(
+  ffi.Int32 length,
+  ffi.Pointer<ffi.Int8> data,
+);
+
+typedef _dart_gpi_jpeg_chunk_new_filled = ffi.Pointer<chunk> Function(
+  int length,
+  ffi.Pointer<ffi.Int8> data,
+);
+
+typedef _c_gpi_jpeg_chunk_destroy = ffi.Void Function(
+  ffi.Pointer<chunk> mychunk,
+);
+
+typedef _dart_gpi_jpeg_chunk_destroy = void Function(
+  ffi.Pointer<chunk> mychunk,
+);
+
+typedef _c_gpi_jpeg_chunk_print = ffi.Void Function(
+  ffi.Pointer<chunk> mychunk,
+);
+
+typedef _dart_gpi_jpeg_chunk_print = void Function(
+  ffi.Pointer<chunk> mychunk,
+);
+
+typedef _c_gpi_jpeg_findff = ffi.Int8 Function(
+  ffi.Pointer<ffi.Int32> location,
+  ffi.Pointer<chunk> picture,
+);
+
+typedef _dart_gpi_jpeg_findff = int Function(
+  ffi.Pointer<ffi.Int32> location,
+  ffi.Pointer<chunk> picture,
+);
+
+typedef _c_gpi_jpeg_findactivemarker = ffi.Int8 Function(
+  ffi.Pointer<ffi.Int8> id,
+  ffi.Pointer<ffi.Int32> location,
+  ffi.Pointer<chunk> picture,
+);
+
+typedef _dart_gpi_jpeg_findactivemarker = int Function(
+  ffi.Pointer<ffi.Int8> id,
+  ffi.Pointer<ffi.Int32> location,
+  ffi.Pointer<chunk> picture,
+);
+
+typedef _c_gpi_jpeg_markername = ffi.Pointer<ffi.Int8> Function(
+  ffi.Uint32 c,
+);
+
+typedef _dart_gpi_jpeg_markername = ffi.Pointer<ffi.Int8> Function(
+  int c,
+);
+
+typedef _c_gpi_jpeg_new = ffi.Pointer<jpeg> Function();
+
+typedef _dart_gpi_jpeg_new = ffi.Pointer<jpeg> Function();
+
+typedef _c_gpi_jpeg_destroy = ffi.Void Function(
+  ffi.Pointer<jpeg> myjpeg,
+);
+
+typedef _dart_gpi_jpeg_destroy = void Function(
+  ffi.Pointer<jpeg> myjpeg,
+);
+
+typedef _c_gpi_jpeg_add_marker = ffi.Void Function(
+  ffi.Pointer<jpeg> myjpeg,
+  ffi.Pointer<chunk> picture,
+  ffi.Int32 start,
+  ffi.Int32 end,
+);
+
+typedef _dart_gpi_jpeg_add_marker = void Function(
+  ffi.Pointer<jpeg> myjpeg,
+  ffi.Pointer<chunk> picture,
+  int start,
+  int end,
+);
+
+typedef _c_gpi_jpeg_add_chunk = ffi.Void Function(
+  ffi.Pointer<jpeg> myjpeg,
+  ffi.Pointer<chunk> source,
+);
+
+typedef _dart_gpi_jpeg_add_chunk = void Function(
+  ffi.Pointer<jpeg> myjpeg,
+  ffi.Pointer<chunk> source,
+);
+
+typedef _c_gpi_jpeg_parse = ffi.Void Function(
+  ffi.Pointer<jpeg> myjpeg,
+  ffi.Pointer<chunk> picture,
+);
+
+typedef _dart_gpi_jpeg_parse = void Function(
+  ffi.Pointer<jpeg> myjpeg,
+  ffi.Pointer<chunk> picture,
+);
+
+typedef _c_gpi_jpeg_print = ffi.Void Function(
+  ffi.Pointer<jpeg> myjpeg,
+);
+
+typedef _dart_gpi_jpeg_print = void Function(
+  ffi.Pointer<jpeg> myjpeg,
+);
+
+typedef _c_gpi_jpeg_make_start = ffi.Pointer<chunk> Function();
+
+typedef _dart_gpi_jpeg_make_start = ffi.Pointer<chunk> Function();
+
+typedef _c_gpi_jpeg_make_SOFC = ffi.Pointer<chunk> Function(
+  ffi.Int32 width,
+  ffi.Int32 height,
+  ffi.Int8 vh1,
+  ffi.Int8 vh2,
+  ffi.Int8 vh3,
+  ffi.Int8 q1,
+  ffi.Int8 q2,
+  ffi.Int8 q3,
+);
+
+typedef _dart_gpi_jpeg_make_SOFC = ffi.Pointer<chunk> Function(
+  int width,
+  int height,
+  int vh1,
+  int vh2,
+  int vh3,
+  int q1,
+  int q2,
+  int q3,
+);
+
+typedef _c_gpi_jpeg_makeSsSeAhAl = ffi.Pointer<chunk> Function(
+  ffi.Int32 huffset1,
+  ffi.Int32 huffset2,
+  ffi.Int32 huffset3,
+);
+
+typedef _dart_gpi_jpeg_makeSsSeAhAl = ffi.Pointer<chunk> Function(
+  int huffset1,
+  int huffset2,
+  int huffset3,
+);
+
+typedef _c_gpi_jpeg_print_quantization_table = ffi.Void Function(
+  ffi.Pointer<ffi.Pointer<ffi.Int8>> table,
+);
+
+typedef _dart_gpi_jpeg_print_quantization_table = void Function(
+  ffi.Pointer<ffi.Pointer<ffi.Int8>> table,
+);
+
+typedef _c_gpi_jpeg_make_quantization = ffi.Pointer<chunk> Function(
+  ffi.Pointer<ffi.Pointer<ffi.Int8>> table,
+  ffi.Int8 number,
+);
+
+typedef _dart_gpi_jpeg_make_quantization = ffi.Pointer<chunk> Function(
+  ffi.Pointer<ffi.Pointer<ffi.Int8>> table,
+  int number,
+);
+
+typedef _c_gpi_jpeg_quantization2table = ffi.Pointer<ffi.Pointer<ffi.Int8>>
+    Function(
+  ffi.Pointer<chunk> qmarker,
+);
+
+typedef _dart_gpi_jpeg_quantization2table = ffi.Pointer<ffi.Pointer<ffi.Int8>>
+    Function(
+  ffi.Pointer<chunk> qmarker,
+);
+
+typedef _c_gpi_jpeg_header = ffi.Pointer<jpeg> Function(
+  ffi.Int32 width,
+  ffi.Int32 height,
+  ffi.Int8 vh1,
+  ffi.Int8 vh2,
+  ffi.Int8 vh3,
+  ffi.Int8 q1,
+  ffi.Int8 q2,
+  ffi.Int8 q3,
+  ffi.Pointer<ffi.Pointer<ffi.Int8>> quant1,
+  ffi.Pointer<ffi.Pointer<ffi.Int8>> quant2,
+  ffi.Int8 huffset1,
+  ffi.Int8 huffset2,
+  ffi.Int8 huffset3,
+  ffi.Pointer<chunk> huff1,
+  ffi.Pointer<chunk> huff2,
+  ffi.Pointer<chunk> huff3,
+  ffi.Pointer<chunk> huff4,
+);
+
+typedef _dart_gpi_jpeg_header = ffi.Pointer<jpeg> Function(
+  int width,
+  int height,
+  int vh1,
+  int vh2,
+  int vh3,
+  int q1,
+  int q2,
+  int q3,
+  ffi.Pointer<ffi.Pointer<ffi.Int8>> quant1,
+  ffi.Pointer<ffi.Pointer<ffi.Int8>> quant2,
+  int huffset1,
+  int huffset2,
+  int huffset3,
+  ffi.Pointer<chunk> huff1,
+  ffi.Pointer<chunk> huff2,
+  ffi.Pointer<chunk> huff3,
+  ffi.Pointer<chunk> huff4,
+);
+
+typedef _c_gpi_jpeg_write = ffi.Int8 Function(
+  ffi.Pointer<ffi.Int32> file,
+  ffi.Pointer<ffi.Int8> name,
+  ffi.Pointer<jpeg> myjpeg,
+);
+
+typedef _dart_gpi_jpeg_write = int Function(
+  ffi.Pointer<ffi.Int32> file,
+  ffi.Pointer<ffi.Int8> name,
+  ffi.Pointer<jpeg> myjpeg,
+);
+
+typedef _c_gp_port_info_new = ffi.Int32 Function(
+  ffi.Pointer<ffi.Pointer<_GPPortInfo>> info,
+);
+
+typedef _dart_gp_port_info_new = int Function(
+  ffi.Pointer<ffi.Pointer<_GPPortInfo>> info,
+);
+
+typedef _c_gp_port_info_get_name = ffi.Int32 Function(
+  ffi.Pointer<_GPPortInfo> info,
+  ffi.Pointer<ffi.Pointer<ffi.Int8>> name,
+);
+
+typedef _dart_gp_port_info_get_name = int Function(
+  ffi.Pointer<_GPPortInfo> info,
+  ffi.Pointer<ffi.Pointer<ffi.Int8>> name,
+);
+
+typedef _c_gp_port_info_set_name = ffi.Int32 Function(
+  ffi.Pointer<_GPPortInfo> info,
+  ffi.Pointer<ffi.Int8> name,
+);
+
+typedef _dart_gp_port_info_set_name = int Function(
+  ffi.Pointer<_GPPortInfo> info,
+  ffi.Pointer<ffi.Int8> name,
+);
+
+typedef _c_gp_port_info_get_path = ffi.Int32 Function(
+  ffi.Pointer<_GPPortInfo> info,
+  ffi.Pointer<ffi.Pointer<ffi.Int8>> path,
+);
+
+typedef _dart_gp_port_info_get_path = int Function(
+  ffi.Pointer<_GPPortInfo> info,
+  ffi.Pointer<ffi.Pointer<ffi.Int8>> path,
+);
+
+typedef _c_gp_port_info_set_path = ffi.Int32 Function(
+  ffi.Pointer<_GPPortInfo> info,
+  ffi.Pointer<ffi.Int8> path,
+);
+
+typedef _dart_gp_port_info_set_path = int Function(
+  ffi.Pointer<_GPPortInfo> info,
+  ffi.Pointer<ffi.Int8> path,
+);
+
+typedef _c_gp_port_info_get_type = ffi.Int32 Function(
+  ffi.Pointer<_GPPortInfo> info,
+  ffi.Pointer<ffi.Int32> type,
+);
+
+typedef _dart_gp_port_info_get_type = int Function(
+  ffi.Pointer<_GPPortInfo> info,
+  ffi.Pointer<ffi.Int32> type,
+);
+
+typedef _c_gp_port_info_set_type = ffi.Int32 Function(
+  ffi.Pointer<_GPPortInfo> info,
+  ffi.Int32 type,
+);
+
+typedef _dart_gp_port_info_set_type = int Function(
+  ffi.Pointer<_GPPortInfo> info,
+  int type,
+);
+
+typedef _c_gp_port_info_get_library_filename = ffi.Int32 Function(
+  ffi.Pointer<_GPPortInfo> info,
+  ffi.Pointer<ffi.Pointer<ffi.Int8>> lib,
+);
+
+typedef _dart_gp_port_info_get_library_filename = int Function(
+  ffi.Pointer<_GPPortInfo> info,
+  ffi.Pointer<ffi.Pointer<ffi.Int8>> lib,
+);
+
+typedef _c_gp_port_info_set_library_filename = ffi.Int32 Function(
+  ffi.Pointer<_GPPortInfo> info,
+  ffi.Pointer<ffi.Int8> lib,
+);
+
+typedef _dart_gp_port_info_set_library_filename = int Function(
+  ffi.Pointer<_GPPortInfo> info,
+  ffi.Pointer<ffi.Int8> lib,
+);
+
+typedef _c_gp_port_info_list_new = ffi.Int32 Function(
+  ffi.Pointer<ffi.Pointer<_GPPortInfoList>> list,
+);
+
+typedef _dart_gp_port_info_list_new = int Function(
+  ffi.Pointer<ffi.Pointer<_GPPortInfoList>> list,
+);
+
+typedef _c_gp_port_info_list_free = ffi.Int32 Function(
+  ffi.Pointer<_GPPortInfoList> list,
+);
+
+typedef _dart_gp_port_info_list_free = int Function(
+  ffi.Pointer<_GPPortInfoList> list,
+);
+
+typedef _c_gp_port_info_list_append = ffi.Int32 Function(
+  ffi.Pointer<_GPPortInfoList> list,
+  ffi.Pointer<_GPPortInfo> info,
+);
+
+typedef _dart_gp_port_info_list_append = int Function(
+  ffi.Pointer<_GPPortInfoList> list,
+  ffi.Pointer<_GPPortInfo> info,
+);
+
+typedef _c_gp_port_info_list_load = ffi.Int32 Function(
+  ffi.Pointer<_GPPortInfoList> list,
+);
+
+typedef _dart_gp_port_info_list_load = int Function(
+  ffi.Pointer<_GPPortInfoList> list,
+);
+
+typedef _c_gp_port_info_list_count = ffi.Int32 Function(
+  ffi.Pointer<_GPPortInfoList> list,
+);
+
+typedef _dart_gp_port_info_list_count = int Function(
+  ffi.Pointer<_GPPortInfoList> list,
+);
+
+typedef _c_gp_port_info_list_lookup_path = ffi.Int32 Function(
+  ffi.Pointer<_GPPortInfoList> list,
+  ffi.Pointer<ffi.Int8> path,
+);
+
+typedef _dart_gp_port_info_list_lookup_path = int Function(
+  ffi.Pointer<_GPPortInfoList> list,
+  ffi.Pointer<ffi.Int8> path,
+);
+
+typedef _c_gp_port_info_list_lookup_name = ffi.Int32 Function(
+  ffi.Pointer<_GPPortInfoList> list,
+  ffi.Pointer<ffi.Int8> name,
+);
+
+typedef _dart_gp_port_info_list_lookup_name = int Function(
+  ffi.Pointer<_GPPortInfoList> list,
+  ffi.Pointer<ffi.Int8> name,
+);
+
+typedef _c_gp_port_info_list_get_info = ffi.Int32 Function(
+  ffi.Pointer<_GPPortInfoList> list,
+  ffi.Int32 n,
+  ffi.Pointer<ffi.Pointer<_GPPortInfo>> info,
+);
+
+typedef _dart_gp_port_info_list_get_info = int Function(
+  ffi.Pointer<_GPPortInfoList> list,
+  int n,
+  ffi.Pointer<ffi.Pointer<_GPPortInfo>> info,
+);
+
+typedef _c_gp_port_message_codeset = ffi.Pointer<ffi.Int8> Function(
+  ffi.Pointer<ffi.Int8> arg0,
+);
+
+typedef _dart_gp_port_message_codeset = ffi.Pointer<ffi.Int8> Function(
+  ffi.Pointer<ffi.Int8> arg0,
+);
+
+typedef _c_gp_port_library_type = ffi.Int32 Function();
+
+typedef _dart_gp_port_library_type = int Function();
+
+typedef _c_gp_port_library_list = ffi.Int32 Function(
+  ffi.Pointer<ffi.Int32> list,
+);
+
+typedef _dart_gp_port_library_list = int Function(
+  ffi.Pointer<ffi.Int32> list,
+);
+
+typedef _c_gp_port_library_operations = ffi.Pointer<GPPortOperations>
+    Function();
+
+typedef _dart_gp_port_library_operations = ffi.Pointer<GPPortOperations>
+    Function();
+
+typedef GPLogFunc = ffi.Void Function(
+  ffi.Int32,
+  ffi.Pointer<ffi.Int8>,
+  ffi.Pointer<ffi.Int8>,
+  ffi.Pointer<ffi.Void>,
+);
+
+typedef _c_gp_log_add_func = ffi.Int32 Function(
+  ffi.Int32 level,
+  ffi.Pointer<ffi.NativeFunction<GPLogFunc>> func,
+  ffi.Pointer<ffi.Void> data,
+);
+
+typedef _dart_gp_log_add_func = int Function(
+  int level,
+  ffi.Pointer<ffi.NativeFunction<GPLogFunc>> func,
+  ffi.Pointer<ffi.Void> data,
+);
+
+typedef _c_gp_log_remove_func = ffi.Int32 Function(
+  ffi.Int32 id,
+);
+
+typedef _dart_gp_log_remove_func = int Function(
+  int id,
+);
+
+typedef _c_gp_log = ffi.Void Function(
+  ffi.Int32 level,
+  ffi.Pointer<ffi.Int8> domain,
+  ffi.Pointer<ffi.Int8> format,
+);
+
+typedef _dart_gp_log = void Function(
+  int level,
+  ffi.Pointer<ffi.Int8> domain,
+  ffi.Pointer<ffi.Int8> format,
+);
+
+typedef _c_gp_log_with_source_location = ffi.Void Function(
+  ffi.Int32 level,
+  ffi.Pointer<ffi.Int8> file,
+  ffi.Int32 line,
+  ffi.Pointer<ffi.Int8> func,
+  ffi.Pointer<ffi.Int8> format,
+);
+
+typedef _dart_gp_log_with_source_location = void Function(
+  int level,
+  ffi.Pointer<ffi.Int8> file,
+  int line,
+  ffi.Pointer<ffi.Int8> func,
+  ffi.Pointer<ffi.Int8> format,
+);
+
+typedef _c_gp_logv = ffi.Void Function(
+  ffi.Int32 level,
+  ffi.Pointer<ffi.Int8> domain,
+  ffi.Pointer<ffi.Int8> format,
+  ffi.Pointer<ffi.Int8> args,
+);
+
+typedef _dart_gp_logv = void Function(
+  int level,
+  ffi.Pointer<ffi.Int8> domain,
+  ffi.Pointer<ffi.Int8> format,
+  ffi.Pointer<ffi.Int8> args,
+);
+
+typedef _c_gp_log_data = ffi.Void Function(
+  ffi.Pointer<ffi.Int8> domain,
+  ffi.Pointer<ffi.Int8> data,
+  ffi.Uint32 size,
+  ffi.Pointer<ffi.Int8> format,
+);
+
+typedef _dart_gp_log_data = void Function(
+  ffi.Pointer<ffi.Int8> domain,
+  ffi.Pointer<ffi.Int8> data,
+  int size,
+  ffi.Pointer<ffi.Int8> format,
+);
+
+typedef _c_gp_port_result_as_string = ffi.Pointer<ffi.Int8> Function(
+  ffi.Int32 result,
+);
+
+typedef _dart_gp_port_result_as_string = ffi.Pointer<ffi.Int8> Function(
+  int result,
+);
+
+typedef _c_gp_port_library_version = ffi.Pointer<ffi.Pointer<ffi.Int8>>
+    Function(
+  ffi.Int32 verbose,
+);
+
+typedef _dart_gp_port_library_version = ffi.Pointer<ffi.Pointer<ffi.Int8>>
+    Function(
+  int verbose,
+);
+
+typedef _c_gp_port_new = ffi.Int32 Function(
+  ffi.Pointer<ffi.Pointer<GPPort>> port,
+);
+
+typedef _dart_gp_port_new = int Function(
+  ffi.Pointer<ffi.Pointer<GPPort>> port,
+);
+
+typedef _c_gp_port_free = ffi.Int32 Function(
+  ffi.Pointer<GPPort> port,
+);
+
+typedef _dart_gp_port_free = int Function(
+  ffi.Pointer<GPPort> port,
+);
+
+typedef _c_gp_port_set_info = ffi.Int32 Function(
+  ffi.Pointer<GPPort> port,
+  ffi.Int32 info,
+);
+
+typedef _dart_gp_port_set_info = int Function(
+  ffi.Pointer<GPPort> port,
+  int info,
+);
+
+typedef _c_gp_port_get_info = ffi.Int32 Function(
+  ffi.Pointer<GPPort> port,
+  ffi.Pointer<ffi.Int32> info,
+);
+
+typedef _dart_gp_port_get_info = int Function(
+  ffi.Pointer<GPPort> port,
+  ffi.Pointer<ffi.Int32> info,
+);
+
+typedef _c_gp_port_open = ffi.Int32 Function(
+  ffi.Pointer<GPPort> port,
+);
+
+typedef _dart_gp_port_open = int Function(
+  ffi.Pointer<GPPort> port,
+);
+
+typedef _c_gp_port_close = ffi.Int32 Function(
+  ffi.Pointer<GPPort> port,
+);
+
+typedef _dart_gp_port_close = int Function(
+  ffi.Pointer<GPPort> port,
+);
+
+typedef _c_gp_port_reset = ffi.Int32 Function(
+  ffi.Pointer<GPPort> port,
+);
+
+typedef _dart_gp_port_reset = int Function(
+  ffi.Pointer<GPPort> port,
+);
+
+typedef _c_gp_port_write = ffi.Int32 Function(
+  ffi.Pointer<GPPort> port,
+  ffi.Pointer<ffi.Int8> data,
+  ffi.Int32 size,
+);
+
+typedef _dart_gp_port_write = int Function(
+  ffi.Pointer<GPPort> port,
+  ffi.Pointer<ffi.Int8> data,
+  int size,
+);
+
+typedef _c_gp_port_read = ffi.Int32 Function(
+  ffi.Pointer<GPPort> port,
+  ffi.Pointer<ffi.Int8> data,
+  ffi.Int32 size,
+);
+
+typedef _dart_gp_port_read = int Function(
+  ffi.Pointer<GPPort> port,
+  ffi.Pointer<ffi.Int8> data,
+  int size,
+);
+
+typedef _c_gp_port_check_int = ffi.Int32 Function(
+  ffi.Pointer<GPPort> port,
+  ffi.Pointer<ffi.Int8> data,
+  ffi.Int32 size,
+);
+
+typedef _dart_gp_port_check_int = int Function(
+  ffi.Pointer<GPPort> port,
+  ffi.Pointer<ffi.Int8> data,
+  int size,
+);
+
+typedef _c_gp_port_check_int_fast = ffi.Int32 Function(
+  ffi.Pointer<GPPort> port,
+  ffi.Pointer<ffi.Int8> data,
+  ffi.Int32 size,
+);
+
+typedef _dart_gp_port_check_int_fast = int Function(
+  ffi.Pointer<GPPort> port,
+  ffi.Pointer<ffi.Int8> data,
+  int size,
+);
+
+typedef _c_gp_port_get_timeout = ffi.Int32 Function(
+  ffi.Pointer<GPPort> port,
+  ffi.Pointer<ffi.Int32> timeout,
+);
+
+typedef _dart_gp_port_get_timeout = int Function(
+  ffi.Pointer<GPPort> port,
+  ffi.Pointer<ffi.Int32> timeout,
+);
+
+typedef _c_gp_port_set_timeout = ffi.Int32 Function(
+  ffi.Pointer<GPPort> port,
+  ffi.Int32 timeout,
+);
+
+typedef _dart_gp_port_set_timeout = int Function(
+  ffi.Pointer<GPPort> port,
+  int timeout,
+);
+
+typedef _c_gp_port_get_pin = ffi.Int32 Function(
+  ffi.Pointer<GPPort> port,
+  ffi.Int32 pin,
+  ffi.Pointer<ffi.Int32> level,
+);
+
+typedef _dart_gp_port_get_pin = int Function(
+  ffi.Pointer<GPPort> port,
+  int pin,
+  ffi.Pointer<ffi.Int32> level,
+);
+
+typedef _c_gp_port_set_pin = ffi.Int32 Function(
+  ffi.Pointer<GPPort> port,
+  ffi.Int32 pin,
+  ffi.Int32 level,
+);
+
+typedef _dart_gp_port_set_pin = int Function(
+  ffi.Pointer<GPPort> port,
+  int pin,
+  int level,
+);
+
+typedef _c_gp_port_send_break = ffi.Int32 Function(
+  ffi.Pointer<GPPort> port,
+  ffi.Int32 duration,
+);
+
+typedef _dart_gp_port_send_break = int Function(
+  ffi.Pointer<GPPort> port,
+  int duration,
+);
+
+typedef _c_gp_port_flush = ffi.Int32 Function(
+  ffi.Pointer<GPPort> port,
+  ffi.Int32 direction,
+);
+
+typedef _dart_gp_port_flush = int Function(
+  ffi.Pointer<GPPort> port,
+  int direction,
+);
+
+typedef _c_gp_port_usb_find_device = ffi.Int32 Function(
+  ffi.Pointer<GPPort> port,
+  ffi.Int32 idvendor,
+  ffi.Int32 idproduct,
+);
+
+typedef _dart_gp_port_usb_find_device = int Function(
+  ffi.Pointer<GPPort> port,
+  int idvendor,
+  int idproduct,
+);
+
+typedef _c_gp_port_usb_find_device_by_class = ffi.Int32 Function(
+  ffi.Pointer<GPPort> port,
+  ffi.Int32 mainclass,
+  ffi.Int32 subclass,
+  ffi.Int32 protocol,
+);
+
+typedef _dart_gp_port_usb_find_device_by_class = int Function(
+  ffi.Pointer<GPPort> port,
+  int mainclass,
+  int subclass,
+  int protocol,
+);
+
+typedef _c_gp_port_usb_clear_halt = ffi.Int32 Function(
+  ffi.Pointer<GPPort> port,
+  ffi.Int32 ep,
+);
+
+typedef _dart_gp_port_usb_clear_halt = int Function(
+  ffi.Pointer<GPPort> port,
+  int ep,
+);
+
+typedef _c_gp_port_usb_msg_write = ffi.Int32 Function(
+  ffi.Pointer<GPPort> port,
+  ffi.Int32 request,
+  ffi.Int32 value,
+  ffi.Int32 index,
+  ffi.Pointer<ffi.Int8> bytes,
+  ffi.Int32 size,
+);
+
+typedef _dart_gp_port_usb_msg_write = int Function(
+  ffi.Pointer<GPPort> port,
+  int request,
+  int value,
+  int index,
+  ffi.Pointer<ffi.Int8> bytes,
+  int size,
+);
+
+typedef _c_gp_port_usb_msg_read = ffi.Int32 Function(
+  ffi.Pointer<GPPort> port,
+  ffi.Int32 request,
+  ffi.Int32 value,
+  ffi.Int32 index,
+  ffi.Pointer<ffi.Int8> bytes,
+  ffi.Int32 size,
+);
+
+typedef _dart_gp_port_usb_msg_read = int Function(
+  ffi.Pointer<GPPort> port,
+  int request,
+  int value,
+  int index,
+  ffi.Pointer<ffi.Int8> bytes,
+  int size,
+);
+
+typedef _c_gp_port_usb_msg_interface_write = ffi.Int32 Function(
+  ffi.Pointer<GPPort> port,
+  ffi.Int32 request,
+  ffi.Int32 value,
+  ffi.Int32 index,
+  ffi.Pointer<ffi.Int8> bytes,
+  ffi.Int32 size,
+);
+
+typedef _dart_gp_port_usb_msg_interface_write = int Function(
+  ffi.Pointer<GPPort> port,
+  int request,
+  int value,
+  int index,
+  ffi.Pointer<ffi.Int8> bytes,
+  int size,
+);
+
+typedef _c_gp_port_usb_msg_interface_read = ffi.Int32 Function(
+  ffi.Pointer<GPPort> port,
+  ffi.Int32 request,
+  ffi.Int32 value,
+  ffi.Int32 index,
+  ffi.Pointer<ffi.Int8> bytes,
+  ffi.Int32 size,
+);
+
+typedef _dart_gp_port_usb_msg_interface_read = int Function(
+  ffi.Pointer<GPPort> port,
+  int request,
+  int value,
+  int index,
+  ffi.Pointer<ffi.Int8> bytes,
+  int size,
+);
+
+typedef _c_gp_port_usb_msg_class_write = ffi.Int32 Function(
+  ffi.Pointer<GPPort> port,
+  ffi.Int32 request,
+  ffi.Int32 value,
+  ffi.Int32 index,
+  ffi.Pointer<ffi.Int8> bytes,
+  ffi.Int32 size,
+);
+
+typedef _dart_gp_port_usb_msg_class_write = int Function(
+  ffi.Pointer<GPPort> port,
+  int request,
+  int value,
+  int index,
+  ffi.Pointer<ffi.Int8> bytes,
+  int size,
+);
+
+typedef _c_gp_port_usb_msg_class_read = ffi.Int32 Function(
+  ffi.Pointer<GPPort> port,
+  ffi.Int32 request,
+  ffi.Int32 value,
+  ffi.Int32 index,
+  ffi.Pointer<ffi.Int8> bytes,
+  ffi.Int32 size,
+);
+
+typedef _dart_gp_port_usb_msg_class_read = int Function(
+  ffi.Pointer<GPPort> port,
+  int request,
+  int value,
+  int index,
+  ffi.Pointer<ffi.Int8> bytes,
+  int size,
+);
+
+typedef _c_gp_port_seek = ffi.Int32 Function(
+  ffi.Pointer<GPPort> port,
+  ffi.Int32 offset,
+  ffi.Int32 whence,
+);
+
+typedef _dart_gp_port_seek = int Function(
+  ffi.Pointer<GPPort> port,
+  int offset,
+  int whence,
+);
+
+typedef _c_gp_port_send_scsi_cmd = ffi.Int32 Function(
+  ffi.Pointer<GPPort> port,
+  ffi.Int32 to_dev,
+  ffi.Pointer<ffi.Int8> cmd,
+  ffi.Int32 cmd_size,
+  ffi.Pointer<ffi.Int8> sense,
+  ffi.Int32 sense_size,
+  ffi.Pointer<ffi.Int8> data,
+  ffi.Int32 data_size,
+);
+
+typedef _dart_gp_port_send_scsi_cmd = int Function(
+  ffi.Pointer<GPPort> port,
+  int to_dev,
+  ffi.Pointer<ffi.Int8> cmd,
+  int cmd_size,
+  ffi.Pointer<ffi.Int8> sense,
+  int sense_size,
+  ffi.Pointer<ffi.Int8> data,
+  int data_size,
+);
+
+typedef _c_gp_port_set_error = ffi.Int32 Function(
+  ffi.Pointer<GPPort> port,
+  ffi.Pointer<ffi.Int8> format,
+);
+
+typedef _dart_gp_port_set_error = int Function(
+  ffi.Pointer<GPPort> port,
+  ffi.Pointer<ffi.Int8> format,
+);
+
+typedef _c_gp_port_get_error = ffi.Pointer<ffi.Int8> Function(
+  ffi.Pointer<GPPort> port,
+);
+
+typedef _dart_gp_port_get_error = ffi.Pointer<ffi.Int8> Function(
+  ffi.Pointer<GPPort> port,
+);
+
 typedef CameraPrePostFunc = ffi.Int32 Function(
   ffi.Pointer<_Camera>,
   ffi.Pointer<ffi.Int32>,
@@ -7204,4 +9924,158 @@ typedef _typedefC_3 = ffi.Int32 Function(
   ffi.Pointer<ffi.Void>,
   ffi.Pointer<ffi.Uint8>,
   ffi.Pointer<ffi.Uint64>,
+);
+
+typedef _typedefC_4 = ffi.Int32 Function(
+  ffi.Pointer<ffi.Int32>,
+);
+
+typedef _typedefC_5 = ffi.Int32 Function(
+  ffi.Pointer<ffi.Int32>,
+);
+
+typedef _typedefC_6 = ffi.Int32 Function(
+  ffi.Pointer<ffi.Int32>,
+);
+
+typedef _typedefC_7 = ffi.Int32 Function(
+  ffi.Pointer<ffi.Int32>,
+);
+
+typedef _typedefC_8 = ffi.Int32 Function(
+  ffi.Pointer<ffi.Int32>,
+  ffi.Pointer<ffi.Int8>,
+  ffi.Int32,
+);
+
+typedef _typedefC_9 = ffi.Int32 Function(
+  ffi.Pointer<ffi.Int32>,
+  ffi.Pointer<ffi.Int8>,
+  ffi.Int32,
+  ffi.Int32,
+);
+
+typedef _typedefC_10 = ffi.Int32 Function(
+  ffi.Pointer<ffi.Int32>,
+  ffi.Pointer<ffi.Int8>,
+  ffi.Int32,
+);
+
+typedef _typedefC_11 = ffi.Int32 Function(
+  ffi.Pointer<ffi.Int32>,
+);
+
+typedef _typedefC_12 = ffi.Int32 Function(
+  ffi.Pointer<ffi.Int32>,
+  ffi.Int32,
+  ffi.Pointer<ffi.Int32>,
+);
+
+typedef _typedefC_13 = ffi.Int32 Function(
+  ffi.Pointer<ffi.Int32>,
+  ffi.Int32,
+  ffi.Int32,
+);
+
+typedef _typedefC_14 = ffi.Int32 Function(
+  ffi.Pointer<ffi.Int32>,
+  ffi.Int32,
+);
+
+typedef _typedefC_15 = ffi.Int32 Function(
+  ffi.Pointer<ffi.Int32>,
+  ffi.Int32,
+);
+
+typedef _typedefC_16 = ffi.Int32 Function(
+  ffi.Pointer<ffi.Int32>,
+  ffi.Int32,
+  ffi.Int32,
+);
+
+typedef _typedefC_17 = ffi.Int32 Function(
+  ffi.Pointer<ffi.Int32>,
+  ffi.Int32,
+  ffi.Int32,
+  ffi.Int32,
+);
+
+typedef _typedefC_18 = ffi.Int32 Function(
+  ffi.Pointer<ffi.Int32>,
+  ffi.Int32,
+);
+
+typedef _typedefC_19 = ffi.Int32 Function(
+  ffi.Pointer<ffi.Int32>,
+  ffi.Int32,
+  ffi.Int32,
+  ffi.Int32,
+  ffi.Pointer<ffi.Int8>,
+  ffi.Int32,
+);
+
+typedef _typedefC_20 = ffi.Int32 Function(
+  ffi.Pointer<ffi.Int32>,
+  ffi.Int32,
+  ffi.Int32,
+  ffi.Int32,
+  ffi.Pointer<ffi.Int8>,
+  ffi.Int32,
+);
+
+typedef _typedefC_21 = ffi.Int32 Function(
+  ffi.Pointer<ffi.Int32>,
+  ffi.Int32,
+  ffi.Int32,
+  ffi.Int32,
+  ffi.Pointer<ffi.Int8>,
+  ffi.Int32,
+);
+
+typedef _typedefC_22 = ffi.Int32 Function(
+  ffi.Pointer<ffi.Int32>,
+  ffi.Int32,
+  ffi.Int32,
+  ffi.Int32,
+  ffi.Pointer<ffi.Int8>,
+  ffi.Int32,
+);
+
+typedef _typedefC_23 = ffi.Int32 Function(
+  ffi.Pointer<ffi.Int32>,
+  ffi.Int32,
+  ffi.Int32,
+  ffi.Int32,
+  ffi.Pointer<ffi.Int8>,
+  ffi.Int32,
+);
+
+typedef _typedefC_24 = ffi.Int32 Function(
+  ffi.Pointer<ffi.Int32>,
+  ffi.Int32,
+  ffi.Int32,
+  ffi.Int32,
+  ffi.Pointer<ffi.Int8>,
+  ffi.Int32,
+);
+
+typedef _typedefC_25 = ffi.Int32 Function(
+  ffi.Pointer<ffi.Int32>,
+  ffi.Int32,
+  ffi.Int32,
+);
+
+typedef _typedefC_26 = ffi.Int32 Function(
+  ffi.Pointer<ffi.Int32>,
+  ffi.Int32,
+  ffi.Pointer<ffi.Int8>,
+  ffi.Int32,
+  ffi.Pointer<ffi.Int8>,
+  ffi.Int32,
+  ffi.Pointer<ffi.Int8>,
+  ffi.Int32,
+);
+
+typedef _typedefC_27 = ffi.Int32 Function(
+  ffi.Pointer<ffi.Int32>,
 );

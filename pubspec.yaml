@@ -64,4 +64,5 @@ ffigen:
   headers:
     entry-points:
       - "third_party/libgphoto2/gphoto2/**.h"
-      # - "./third_party/libgphoto2/libgphoto2/**.h"
+      - "third_party/libgphoto2/libgphoto2/**.h"
+      - "third_party/libgphoto2/libgphoto2_port/gphoto2/**.h"
