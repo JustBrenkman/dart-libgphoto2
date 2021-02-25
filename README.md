@@ -4,6 +4,8 @@ dart-libgphoto2 is a library that adds bindings for the libgphoto2 library. This
 
 This is an ongoing project and contributions are welcome.
 
+This library will hopefully not just include the bindings to the c library but also include helper functions to make interfacing and using the library much easier.
+
 ## Getting Started
 
 The final binary must include the libgphoto2 library next to it.
