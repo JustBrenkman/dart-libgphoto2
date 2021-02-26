@@ -24,3 +24,5 @@
 /// SOFTWARE.
 
 library libgphoto2;
+
+export './src/generated_bindings.dart';
