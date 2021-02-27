@@ -34,7 +34,7 @@ class libgphoto2 {
   libgphoto2(ffi.DynamicLibrary dynamicLibrary) : _dylib = dynamicLibrary;
 
   int gp_abilities_list_new(
-    ffi.Pointer<ffi.Pointer<_CameraAbilitiesList>> list,
+    ffi.Pointer<ffi.Pointer<CameraAbilitiesList>> list,
   ) {
     _gp_abilities_list_new ??= _dylib.lookupFunction<_c_gp_abilities_list_new,
         _dart_gp_abilities_list_new>('gp_abilities_list_new');
@@ -46,7 +46,7 @@ class libgphoto2 {
   _dart_gp_abilities_list_new _gp_abilities_list_new;
 
   int gp_abilities_list_free(
-    ffi.Pointer<_CameraAbilitiesList> list,
+    ffi.Pointer<CameraAbilitiesList> list,
   ) {
     _gp_abilities_list_free ??= _dylib.lookupFunction<_c_gp_abilities_list_free,
         _dart_gp_abilities_list_free>('gp_abilities_list_free');
@@ -58,7 +58,7 @@ class libgphoto2 {
   _dart_gp_abilities_list_free _gp_abilities_list_free;
 
   int gp_abilities_list_load(
-    ffi.Pointer<_CameraAbilitiesList> list,
+    ffi.Pointer<CameraAbilitiesList> list,
     ffi.Pointer<ffi.Int32> context,
   ) {
     _gp_abilities_list_load ??= _dylib.lookupFunction<_c_gp_abilities_list_load,
@@ -72,7 +72,7 @@ class libgphoto2 {
   _dart_gp_abilities_list_load _gp_abilities_list_load;
 
   int gp_abilities_list_load_dir(
-    ffi.Pointer<_CameraAbilitiesList> list,
+    ffi.Pointer<CameraAbilitiesList> list,
     ffi.Pointer<ffi.Int8> dir,
     ffi.Pointer<ffi.Int32> context,
   ) {
@@ -89,7 +89,7 @@ class libgphoto2 {
   _dart_gp_abilities_list_load_dir _gp_abilities_list_load_dir;
 
   int gp_abilities_list_reset(
-    ffi.Pointer<_CameraAbilitiesList> list,
+    ffi.Pointer<CameraAbilitiesList> list,
   ) {
     _gp_abilities_list_reset ??= _dylib.lookupFunction<
         _c_gp_abilities_list_reset,
@@ -102,7 +102,7 @@ class libgphoto2 {
   _dart_gp_abilities_list_reset _gp_abilities_list_reset;
 
   int gp_abilities_list_detect(
-    ffi.Pointer<_CameraAbilitiesList> list,
+    ffi.Pointer<CameraAbilitiesList> list,
     ffi.Pointer<ffi.Int32> info_list,
     ffi.Pointer<ffi.Int32> l,
     ffi.Pointer<ffi.Int32> context,
@@ -121,7 +121,7 @@ class libgphoto2 {
   _dart_gp_abilities_list_detect _gp_abilities_list_detect;
 
   int gp_abilities_list_count(
-    ffi.Pointer<_CameraAbilitiesList> list,
+    ffi.Pointer<CameraAbilitiesList> list,
   ) {
     _gp_abilities_list_count ??= _dylib.lookupFunction<
         _c_gp_abilities_list_count,
@@ -134,7 +134,7 @@ class libgphoto2 {
   _dart_gp_abilities_list_count _gp_abilities_list_count;
 
   int gp_abilities_list_lookup_model(
-    ffi.Pointer<_CameraAbilitiesList> list,
+    ffi.Pointer<CameraAbilitiesList> list,
     ffi.Pointer<ffi.Int8> model,
   ) {
     _gp_abilities_list_lookup_model ??= _dylib.lookupFunction<
@@ -149,7 +149,7 @@ class libgphoto2 {
   _dart_gp_abilities_list_lookup_model _gp_abilities_list_lookup_model;
 
   int gp_abilities_list_get_abilities(
-    ffi.Pointer<_CameraAbilitiesList> list,
+    ffi.Pointer<CameraAbilitiesList> list,
     int index,
     ffi.Pointer<CameraAbilities> abilities,
   ) {
@@ -181,7 +181,7 @@ class libgphoto2 {
 
   /// Create a new camera device.
   int gp_camera_new(
-    ffi.Pointer<ffi.Pointer<_Camera>> camera,
+    ffi.Pointer<ffi.Pointer<Camera>> camera,
   ) {
     _gp_camera_new ??= _dylib
         .lookupFunction<_c_gp_camera_new, _dart_gp_camera_new>('gp_camera_new');
@@ -195,7 +195,7 @@ class libgphoto2 {
   /// \name Preparing initialization
   /// @{
   int gp_camera_set_abilities(
-    ffi.Pointer<_Camera> camera,
+    ffi.Pointer<Camera> camera,
     int abilities,
   ) {
     _gp_camera_set_abilities ??= _dylib.lookupFunction<
@@ -210,7 +210,7 @@ class libgphoto2 {
   _dart_gp_camera_set_abilities _gp_camera_set_abilities;
 
   int gp_camera_get_abilities(
-    ffi.Pointer<_Camera> camera,
+    ffi.Pointer<Camera> camera,
     ffi.Pointer<ffi.Int32> abilities,
   ) {
     _gp_camera_get_abilities ??= _dylib.lookupFunction<
@@ -225,7 +225,7 @@ class libgphoto2 {
   _dart_gp_camera_get_abilities _gp_camera_get_abilities;
 
   int gp_camera_set_port_info(
-    ffi.Pointer<_Camera> camera,
+    ffi.Pointer<Camera> camera,
     int info,
   ) {
     _gp_camera_set_port_info ??= _dylib.lookupFunction<
@@ -240,7 +240,7 @@ class libgphoto2 {
   _dart_gp_camera_set_port_info _gp_camera_set_port_info;
 
   int gp_camera_get_port_info(
-    ffi.Pointer<_Camera> camera,
+    ffi.Pointer<Camera> camera,
     ffi.Pointer<ffi.Int32> info,
   ) {
     _gp_camera_get_port_info ??= _dylib.lookupFunction<
@@ -261,7 +261,7 @@ class libgphoto2 {
   ///
   /// @{
   int gp_camera_set_port_speed(
-    ffi.Pointer<_Camera> camera,
+    ffi.Pointer<Camera> camera,
     int speed,
   ) {
     _gp_camera_set_port_speed ??= _dylib.lookupFunction<
@@ -276,7 +276,7 @@ class libgphoto2 {
   _dart_gp_camera_set_port_speed _gp_camera_set_port_speed;
 
   int gp_camera_get_port_speed(
-    ffi.Pointer<_Camera> camera,
+    ffi.Pointer<Camera> camera,
   ) {
     _gp_camera_get_port_speed ??= _dylib.lookupFunction<
         _c_gp_camera_get_port_speed,
@@ -305,7 +305,7 @@ class libgphoto2 {
   _dart_gp_camera_autodetect _gp_camera_autodetect;
 
   int gp_camera_init(
-    ffi.Pointer<_Camera> camera,
+    ffi.Pointer<Camera> camera,
     ffi.Pointer<ffi.Int32> context,
   ) {
     _gp_camera_init ??=
@@ -320,7 +320,7 @@ class libgphoto2 {
   _dart_gp_camera_init _gp_camera_init;
 
   int gp_camera_exit(
-    ffi.Pointer<_Camera> camera,
+    ffi.Pointer<Camera> camera,
     ffi.Pointer<ffi.Int32> context,
   ) {
     _gp_camera_exit ??=
@@ -337,7 +337,7 @@ class libgphoto2 {
   /// \name Operations on cameras
   /// @{
   int gp_camera_ref(
-    ffi.Pointer<_Camera> camera,
+    ffi.Pointer<Camera> camera,
   ) {
     _gp_camera_ref ??= _dylib
         .lookupFunction<_c_gp_camera_ref, _dart_gp_camera_ref>('gp_camera_ref');
@@ -349,7 +349,7 @@ class libgphoto2 {
   _dart_gp_camera_ref _gp_camera_ref;
 
   int gp_camera_unref(
-    ffi.Pointer<_Camera> camera,
+    ffi.Pointer<Camera> camera,
   ) {
     _gp_camera_unref ??=
         _dylib.lookupFunction<_c_gp_camera_unref, _dart_gp_camera_unref>(
@@ -362,7 +362,7 @@ class libgphoto2 {
   _dart_gp_camera_unref _gp_camera_unref;
 
   int gp_camera_free(
-    ffi.Pointer<_Camera> camera,
+    ffi.Pointer<Camera> camera,
   ) {
     _gp_camera_free ??=
         _dylib.lookupFunction<_c_gp_camera_free, _dart_gp_camera_free>(
@@ -375,7 +375,7 @@ class libgphoto2 {
   _dart_gp_camera_free _gp_camera_free;
 
   int gp_camera_get_config(
-    ffi.Pointer<_Camera> camera,
+    ffi.Pointer<Camera> camera,
     ffi.Pointer<ffi.Pointer<ffi.Int32>> window,
     ffi.Pointer<ffi.Int32> context,
   ) {
@@ -391,7 +391,7 @@ class libgphoto2 {
   _dart_gp_camera_get_config _gp_camera_get_config;
 
   int gp_camera_list_config(
-    ffi.Pointer<_Camera> camera,
+    ffi.Pointer<Camera> camera,
     ffi.Pointer<ffi.Int32> list,
     ffi.Pointer<ffi.Int32> context,
   ) {
@@ -407,7 +407,7 @@ class libgphoto2 {
   _dart_gp_camera_list_config _gp_camera_list_config;
 
   int gp_camera_get_single_config(
-    ffi.Pointer<_Camera> camera,
+    ffi.Pointer<Camera> camera,
     ffi.Pointer<ffi.Int8> name,
     ffi.Pointer<ffi.Pointer<ffi.Int32>> widget,
     ffi.Pointer<ffi.Int32> context,
@@ -426,7 +426,7 @@ class libgphoto2 {
   _dart_gp_camera_get_single_config _gp_camera_get_single_config;
 
   int gp_camera_set_config(
-    ffi.Pointer<_Camera> camera,
+    ffi.Pointer<Camera> camera,
     ffi.Pointer<ffi.Int32> window,
     ffi.Pointer<ffi.Int32> context,
   ) {
@@ -442,7 +442,7 @@ class libgphoto2 {
   _dart_gp_camera_set_config _gp_camera_set_config;
 
   int gp_camera_set_single_config(
-    ffi.Pointer<_Camera> camera,
+    ffi.Pointer<Camera> camera,
     ffi.Pointer<ffi.Int8> name,
     ffi.Pointer<ffi.Int32> widget,
     ffi.Pointer<ffi.Int32> context,
@@ -461,7 +461,7 @@ class libgphoto2 {
   _dart_gp_camera_set_single_config _gp_camera_set_single_config;
 
   int gp_camera_get_summary(
-    ffi.Pointer<_Camera> camera,
+    ffi.Pointer<Camera> camera,
     ffi.Pointer<CameraText> summary,
     ffi.Pointer<ffi.Int32> context,
   ) {
@@ -477,7 +477,7 @@ class libgphoto2 {
   _dart_gp_camera_get_summary _gp_camera_get_summary;
 
   int gp_camera_get_manual(
-    ffi.Pointer<_Camera> camera,
+    ffi.Pointer<Camera> camera,
     ffi.Pointer<CameraText> manual,
     ffi.Pointer<ffi.Int32> context,
   ) {
@@ -493,7 +493,7 @@ class libgphoto2 {
   _dart_gp_camera_get_manual _gp_camera_get_manual;
 
   int gp_camera_get_about(
-    ffi.Pointer<_Camera> camera,
+    ffi.Pointer<Camera> camera,
     ffi.Pointer<CameraText> about,
     ffi.Pointer<ffi.Int32> context,
   ) {
@@ -509,7 +509,7 @@ class libgphoto2 {
   _dart_gp_camera_get_about _gp_camera_get_about;
 
   int gp_camera_capture(
-    ffi.Pointer<_Camera> camera,
+    ffi.Pointer<Camera> camera,
     int type,
     ffi.Pointer<CameraFilePath> path,
     ffi.Pointer<ffi.Int32> context,
@@ -528,7 +528,7 @@ class libgphoto2 {
   _dart_gp_camera_capture _gp_camera_capture;
 
   int gp_camera_trigger_capture(
-    ffi.Pointer<_Camera> camera,
+    ffi.Pointer<Camera> camera,
     ffi.Pointer<ffi.Int32> context,
   ) {
     _gp_camera_trigger_capture ??= _dylib.lookupFunction<
@@ -543,7 +543,7 @@ class libgphoto2 {
   _dart_gp_camera_trigger_capture _gp_camera_trigger_capture;
 
   int gp_camera_capture_preview(
-    ffi.Pointer<_Camera> camera,
+    ffi.Pointer<Camera> camera,
     ffi.Pointer<ffi.Int32> file,
     ffi.Pointer<ffi.Int32> context,
   ) {
@@ -560,7 +560,7 @@ class libgphoto2 {
   _dart_gp_camera_capture_preview _gp_camera_capture_preview;
 
   int gp_camera_wait_for_event(
-    ffi.Pointer<_Camera> camera,
+    ffi.Pointer<Camera> camera,
     int timeout,
     ffi.Pointer<ffi.Int32> eventtype,
     ffi.Pointer<ffi.Pointer<ffi.Void>> eventdata,
@@ -581,7 +581,7 @@ class libgphoto2 {
   _dart_gp_camera_wait_for_event _gp_camera_wait_for_event;
 
   int gp_camera_get_storageinfo(
-    ffi.Pointer<_Camera> camera,
+    ffi.Pointer<Camera> camera,
     ffi.Pointer<ffi.Pointer<ffi.Int32>> arg1,
     ffi.Pointer<ffi.Int32> arg2,
     ffi.Pointer<ffi.Int32> context,
@@ -602,7 +602,7 @@ class libgphoto2 {
   /// \name Operations on folders
   /// @{
   int gp_camera_folder_list_files(
-    ffi.Pointer<_Camera> camera,
+    ffi.Pointer<Camera> camera,
     ffi.Pointer<ffi.Int8> folder,
     ffi.Pointer<ffi.Int32> list,
     ffi.Pointer<ffi.Int32> context,
@@ -621,7 +621,7 @@ class libgphoto2 {
   _dart_gp_camera_folder_list_files _gp_camera_folder_list_files;
 
   int gp_camera_folder_list_folders(
-    ffi.Pointer<_Camera> camera,
+    ffi.Pointer<Camera> camera,
     ffi.Pointer<ffi.Int8> folder,
     ffi.Pointer<ffi.Int32> list,
     ffi.Pointer<ffi.Int32> context,
@@ -640,7 +640,7 @@ class libgphoto2 {
   _dart_gp_camera_folder_list_folders _gp_camera_folder_list_folders;
 
   int gp_camera_folder_delete_all(
-    ffi.Pointer<_Camera> camera,
+    ffi.Pointer<Camera> camera,
     ffi.Pointer<ffi.Int8> folder,
     ffi.Pointer<ffi.Int32> context,
   ) {
@@ -657,7 +657,7 @@ class libgphoto2 {
   _dart_gp_camera_folder_delete_all _gp_camera_folder_delete_all;
 
   int gp_camera_folder_put_file(
-    ffi.Pointer<_Camera> camera,
+    ffi.Pointer<Camera> camera,
     ffi.Pointer<ffi.Int8> folder,
     ffi.Pointer<ffi.Int8> filename,
     int type,
@@ -680,7 +680,7 @@ class libgphoto2 {
   _dart_gp_camera_folder_put_file _gp_camera_folder_put_file;
 
   int gp_camera_folder_make_dir(
-    ffi.Pointer<_Camera> camera,
+    ffi.Pointer<Camera> camera,
     ffi.Pointer<ffi.Int8> folder,
     ffi.Pointer<ffi.Int8> name,
     ffi.Pointer<ffi.Int32> context,
@@ -699,7 +699,7 @@ class libgphoto2 {
   _dart_gp_camera_folder_make_dir _gp_camera_folder_make_dir;
 
   int gp_camera_folder_remove_dir(
-    ffi.Pointer<_Camera> camera,
+    ffi.Pointer<Camera> camera,
     ffi.Pointer<ffi.Int8> folder,
     ffi.Pointer<ffi.Int8> name,
     ffi.Pointer<ffi.Int32> context,
@@ -720,7 +720,7 @@ class libgphoto2 {
   /// \name Operations on files
   /// @{
   int gp_camera_file_get_info(
-    ffi.Pointer<_Camera> camera,
+    ffi.Pointer<Camera> camera,
     ffi.Pointer<ffi.Int8> folder,
     ffi.Pointer<ffi.Int8> file,
     ffi.Pointer<ffi.Int32> info,
@@ -741,7 +741,7 @@ class libgphoto2 {
   _dart_gp_camera_file_get_info _gp_camera_file_get_info;
 
   int gp_camera_file_set_info(
-    ffi.Pointer<_Camera> camera,
+    ffi.Pointer<Camera> camera,
     ffi.Pointer<ffi.Int8> folder,
     ffi.Pointer<ffi.Int8> file,
     int info,
@@ -762,7 +762,7 @@ class libgphoto2 {
   _dart_gp_camera_file_set_info _gp_camera_file_set_info;
 
   int gp_camera_file_get(
-    ffi.Pointer<_Camera> camera,
+    ffi.Pointer<Camera> camera,
     ffi.Pointer<ffi.Int8> folder,
     ffi.Pointer<ffi.Int8> file,
     int type,
@@ -785,7 +785,7 @@ class libgphoto2 {
   _dart_gp_camera_file_get _gp_camera_file_get;
 
   int gp_camera_file_read(
-    ffi.Pointer<_Camera> camera,
+    ffi.Pointer<Camera> camera,
     ffi.Pointer<ffi.Int8> folder,
     ffi.Pointer<ffi.Int8> file,
     int type,
@@ -811,7 +811,7 @@ class libgphoto2 {
   _dart_gp_camera_file_read _gp_camera_file_read;
 
   int gp_camera_file_delete(
-    ffi.Pointer<_Camera> camera,
+    ffi.Pointer<Camera> camera,
     ffi.Pointer<ffi.Int8> folder,
     ffi.Pointer<ffi.Int8> file,
     ffi.Pointer<ffi.Int32> context,
@@ -829,7 +829,7 @@ class libgphoto2 {
   _dart_gp_camera_file_delete _gp_camera_file_delete;
 
   void gp_camera_set_timeout_funcs(
-    ffi.Pointer<_Camera> camera,
+    ffi.Pointer<Camera> camera,
     ffi.Pointer<ffi.NativeFunction<CameraTimeoutStartFunc>> start_func,
     ffi.Pointer<ffi.NativeFunction<CameraTimeoutStopFunc>> stop_func,
     ffi.Pointer<ffi.Void> data,
@@ -848,7 +848,7 @@ class libgphoto2 {
   _dart_gp_camera_set_timeout_funcs _gp_camera_set_timeout_funcs;
 
   int gp_camera_start_timeout(
-    ffi.Pointer<_Camera> camera,
+    ffi.Pointer<Camera> camera,
     int timeout,
     ffi.Pointer<ffi.NativeFunction<CameraTimeoutFunc>> func,
   ) {
@@ -865,7 +865,7 @@ class libgphoto2 {
   _dart_gp_camera_start_timeout _gp_camera_start_timeout;
 
   void gp_camera_stop_timeout(
-    ffi.Pointer<_Camera> camera,
+    ffi.Pointer<Camera> camera,
     int id,
   ) {
     _gp_camera_stop_timeout ??= _dylib.lookupFunction<_c_gp_camera_stop_timeout,
@@ -2473,7 +2473,7 @@ class libgphoto2 {
   _dart_gp_file_slurp _gp_file_slurp;
 
   int gp_filesystem_new(
-    ffi.Pointer<ffi.Pointer<_CameraFilesystem>> fs,
+    ffi.Pointer<ffi.Pointer<CameraFilesystem>> fs,
   ) {
     _gp_filesystem_new ??=
         _dylib.lookupFunction<_c_gp_filesystem_new, _dart_gp_filesystem_new>(
@@ -2486,7 +2486,7 @@ class libgphoto2 {
   _dart_gp_filesystem_new _gp_filesystem_new;
 
   int gp_filesystem_free(
-    ffi.Pointer<_CameraFilesystem> fs,
+    ffi.Pointer<CameraFilesystem> fs,
   ) {
     _gp_filesystem_free ??=
         _dylib.lookupFunction<_c_gp_filesystem_free, _dart_gp_filesystem_free>(
@@ -2499,7 +2499,7 @@ class libgphoto2 {
   _dart_gp_filesystem_free _gp_filesystem_free;
 
   int gp_filesystem_append(
-    ffi.Pointer<_CameraFilesystem> fs,
+    ffi.Pointer<CameraFilesystem> fs,
     ffi.Pointer<ffi.Int8> folder,
     ffi.Pointer<ffi.Int8> filename,
     ffi.Pointer<ffi.Int32> context,
@@ -2517,7 +2517,7 @@ class libgphoto2 {
   _dart_gp_filesystem_append _gp_filesystem_append;
 
   int gp_filesystem_set_file_noop(
-    ffi.Pointer<_CameraFilesystem> fs,
+    ffi.Pointer<CameraFilesystem> fs,
     ffi.Pointer<ffi.Int8> folder,
     ffi.Pointer<ffi.Int8> filename,
     int type,
@@ -2540,7 +2540,7 @@ class libgphoto2 {
   _dart_gp_filesystem_set_file_noop _gp_filesystem_set_file_noop;
 
   int gp_filesystem_delete_file_noop(
-    ffi.Pointer<_CameraFilesystem> fs,
+    ffi.Pointer<CameraFilesystem> fs,
     ffi.Pointer<ffi.Int8> folder,
     ffi.Pointer<ffi.Int8> filename,
     ffi.Pointer<ffi.Int32> context,
@@ -2559,7 +2559,7 @@ class libgphoto2 {
   _dart_gp_filesystem_delete_file_noop _gp_filesystem_delete_file_noop;
 
   int gp_filesystem_reset(
-    ffi.Pointer<_CameraFilesystem> fs,
+    ffi.Pointer<CameraFilesystem> fs,
   ) {
     _gp_filesystem_reset ??= _dylib.lookupFunction<_c_gp_filesystem_reset,
         _dart_gp_filesystem_reset>('gp_filesystem_reset');
@@ -2571,7 +2571,7 @@ class libgphoto2 {
   _dart_gp_filesystem_reset _gp_filesystem_reset;
 
   int gp_filesystem_count(
-    ffi.Pointer<_CameraFilesystem> fs,
+    ffi.Pointer<CameraFilesystem> fs,
     ffi.Pointer<ffi.Int8> folder,
     ffi.Pointer<ffi.Int32> context,
   ) {
@@ -2587,7 +2587,7 @@ class libgphoto2 {
   _dart_gp_filesystem_count _gp_filesystem_count;
 
   int gp_filesystem_name(
-    ffi.Pointer<_CameraFilesystem> fs,
+    ffi.Pointer<CameraFilesystem> fs,
     ffi.Pointer<ffi.Int8> folder,
     int filenumber,
     ffi.Pointer<ffi.Pointer<ffi.Int8>> filename,
@@ -2608,7 +2608,7 @@ class libgphoto2 {
   _dart_gp_filesystem_name _gp_filesystem_name;
 
   int gp_filesystem_get_folder(
-    ffi.Pointer<_CameraFilesystem> fs,
+    ffi.Pointer<CameraFilesystem> fs,
     ffi.Pointer<ffi.Int8> filename,
     ffi.Pointer<ffi.Pointer<ffi.Int8>> folder,
     ffi.Pointer<ffi.Int32> context,
@@ -2627,7 +2627,7 @@ class libgphoto2 {
   _dart_gp_filesystem_get_folder _gp_filesystem_get_folder;
 
   int gp_filesystem_number(
-    ffi.Pointer<_CameraFilesystem> fs,
+    ffi.Pointer<CameraFilesystem> fs,
     ffi.Pointer<ffi.Int8> folder,
     ffi.Pointer<ffi.Int8> filename,
     ffi.Pointer<ffi.Int32> context,
@@ -2645,7 +2645,7 @@ class libgphoto2 {
   _dart_gp_filesystem_number _gp_filesystem_number;
 
   int gp_filesystem_list_files(
-    ffi.Pointer<_CameraFilesystem> fs,
+    ffi.Pointer<CameraFilesystem> fs,
     ffi.Pointer<ffi.Int8> folder,
     ffi.Pointer<ffi.Int32> list,
     ffi.Pointer<ffi.Int32> context,
@@ -2664,7 +2664,7 @@ class libgphoto2 {
   _dart_gp_filesystem_list_files _gp_filesystem_list_files;
 
   int gp_filesystem_list_folders(
-    ffi.Pointer<_CameraFilesystem> fs,
+    ffi.Pointer<CameraFilesystem> fs,
     ffi.Pointer<ffi.Int8> folder,
     ffi.Pointer<ffi.Int32> list,
     ffi.Pointer<ffi.Int32> context,
@@ -2683,7 +2683,7 @@ class libgphoto2 {
   _dart_gp_filesystem_list_folders _gp_filesystem_list_folders;
 
   int gp_filesystem_get_info(
-    ffi.Pointer<_CameraFilesystem> fs,
+    ffi.Pointer<CameraFilesystem> fs,
     ffi.Pointer<ffi.Int8> folder,
     ffi.Pointer<ffi.Int8> filename,
     ffi.Pointer<CameraFileInfo> info,
@@ -2703,7 +2703,7 @@ class libgphoto2 {
   _dart_gp_filesystem_get_info _gp_filesystem_get_info;
 
   int gp_filesystem_get_file(
-    ffi.Pointer<_CameraFilesystem> fs,
+    ffi.Pointer<CameraFilesystem> fs,
     ffi.Pointer<ffi.Int8> folder,
     ffi.Pointer<ffi.Int8> filename,
     int type,
@@ -2725,7 +2725,7 @@ class libgphoto2 {
   _dart_gp_filesystem_get_file _gp_filesystem_get_file;
 
   int gp_filesystem_read_file(
-    ffi.Pointer<_CameraFilesystem> fs,
+    ffi.Pointer<CameraFilesystem> fs,
     ffi.Pointer<ffi.Int8> folder,
     ffi.Pointer<ffi.Int8> filename,
     int type,
@@ -2752,7 +2752,7 @@ class libgphoto2 {
   _dart_gp_filesystem_read_file _gp_filesystem_read_file;
 
   int gp_filesystem_delete_file(
-    ffi.Pointer<_CameraFilesystem> fs,
+    ffi.Pointer<CameraFilesystem> fs,
     ffi.Pointer<ffi.Int8> folder,
     ffi.Pointer<ffi.Int8> filename,
     ffi.Pointer<ffi.Int32> context,
@@ -2771,7 +2771,7 @@ class libgphoto2 {
   _dart_gp_filesystem_delete_file _gp_filesystem_delete_file;
 
   int gp_filesystem_get_storageinfo(
-    ffi.Pointer<_CameraFilesystem> fs,
+    ffi.Pointer<CameraFilesystem> fs,
     ffi.Pointer<ffi.Pointer<CameraStorageInformation>> arg1,
     ffi.Pointer<ffi.Int32> nrofstorageinformations,
     ffi.Pointer<ffi.Int32> context,
@@ -2790,8 +2790,8 @@ class libgphoto2 {
   _dart_gp_filesystem_get_storageinfo _gp_filesystem_get_storageinfo;
 
   int gp_filesystem_set_funcs(
-    ffi.Pointer<_CameraFilesystem> fs,
-    ffi.Pointer<_CameraFilesystemFuncs> funcs,
+    ffi.Pointer<CameraFilesystem> fs,
+    ffi.Pointer<CameraFilesystemFuncs> funcs,
     ffi.Pointer<ffi.Void> data,
   ) {
     _gp_filesystem_set_funcs ??= _dylib.lookupFunction<
@@ -2807,7 +2807,7 @@ class libgphoto2 {
   _dart_gp_filesystem_set_funcs _gp_filesystem_set_funcs;
 
   int gp_filesystem_put_file(
-    ffi.Pointer<_CameraFilesystem> fs,
+    ffi.Pointer<CameraFilesystem> fs,
     ffi.Pointer<ffi.Int8> folder,
     ffi.Pointer<ffi.Int8> filename,
     int type,
@@ -2829,7 +2829,7 @@ class libgphoto2 {
   _dart_gp_filesystem_put_file _gp_filesystem_put_file;
 
   int gp_filesystem_delete_all(
-    ffi.Pointer<_CameraFilesystem> fs,
+    ffi.Pointer<CameraFilesystem> fs,
     ffi.Pointer<ffi.Int8> folder,
     ffi.Pointer<ffi.Int32> context,
   ) {
@@ -2846,7 +2846,7 @@ class libgphoto2 {
   _dart_gp_filesystem_delete_all _gp_filesystem_delete_all;
 
   int gp_filesystem_make_dir(
-    ffi.Pointer<_CameraFilesystem> fs,
+    ffi.Pointer<CameraFilesystem> fs,
     ffi.Pointer<ffi.Int8> folder,
     ffi.Pointer<ffi.Int8> name,
     ffi.Pointer<ffi.Int32> context,
@@ -2864,7 +2864,7 @@ class libgphoto2 {
   _dart_gp_filesystem_make_dir _gp_filesystem_make_dir;
 
   int gp_filesystem_remove_dir(
-    ffi.Pointer<_CameraFilesystem> fs,
+    ffi.Pointer<CameraFilesystem> fs,
     ffi.Pointer<ffi.Int8> folder,
     ffi.Pointer<ffi.Int8> name,
     ffi.Pointer<ffi.Int32> context,
@@ -2883,7 +2883,7 @@ class libgphoto2 {
   _dart_gp_filesystem_remove_dir _gp_filesystem_remove_dir;
 
   int gp_filesystem_dump(
-    ffi.Pointer<_CameraFilesystem> fs,
+    ffi.Pointer<CameraFilesystem> fs,
   ) {
     _gp_filesystem_dump ??=
         _dylib.lookupFunction<_c_gp_filesystem_dump, _dart_gp_filesystem_dump>(
@@ -2935,7 +2935,7 @@ class libgphoto2 {
   _dart_camera_init _camera_init;
 
   int gp_list_new(
-    ffi.Pointer<ffi.Pointer<_CameraList>> list,
+    ffi.Pointer<ffi.Pointer<CameraList>> list,
   ) {
     _gp_list_new ??=
         _dylib.lookupFunction<_c_gp_list_new, _dart_gp_list_new>('gp_list_new');
@@ -2947,7 +2947,7 @@ class libgphoto2 {
   _dart_gp_list_new _gp_list_new;
 
   int gp_list_ref(
-    ffi.Pointer<_CameraList> list,
+    ffi.Pointer<CameraList> list,
   ) {
     _gp_list_ref ??=
         _dylib.lookupFunction<_c_gp_list_ref, _dart_gp_list_ref>('gp_list_ref');
@@ -2959,7 +2959,7 @@ class libgphoto2 {
   _dart_gp_list_ref _gp_list_ref;
 
   int gp_list_unref(
-    ffi.Pointer<_CameraList> list,
+    ffi.Pointer<CameraList> list,
   ) {
     _gp_list_unref ??= _dylib
         .lookupFunction<_c_gp_list_unref, _dart_gp_list_unref>('gp_list_unref');
@@ -2971,7 +2971,7 @@ class libgphoto2 {
   _dart_gp_list_unref _gp_list_unref;
 
   int gp_list_free(
-    ffi.Pointer<_CameraList> list,
+    ffi.Pointer<CameraList> list,
   ) {
     _gp_list_free ??= _dylib
         .lookupFunction<_c_gp_list_free, _dart_gp_list_free>('gp_list_free');
@@ -2983,7 +2983,7 @@ class libgphoto2 {
   _dart_gp_list_free _gp_list_free;
 
   int gp_list_count(
-    ffi.Pointer<_CameraList> list,
+    ffi.Pointer<CameraList> list,
   ) {
     _gp_list_count ??= _dylib
         .lookupFunction<_c_gp_list_count, _dart_gp_list_count>('gp_list_count');
@@ -2995,7 +2995,7 @@ class libgphoto2 {
   _dart_gp_list_count _gp_list_count;
 
   int gp_list_append(
-    ffi.Pointer<_CameraList> list,
+    ffi.Pointer<CameraList> list,
     ffi.Pointer<ffi.Int8> name,
     ffi.Pointer<ffi.Int8> value,
   ) {
@@ -3012,7 +3012,7 @@ class libgphoto2 {
   _dart_gp_list_append _gp_list_append;
 
   int gp_list_reset(
-    ffi.Pointer<_CameraList> list,
+    ffi.Pointer<CameraList> list,
   ) {
     _gp_list_reset ??= _dylib
         .lookupFunction<_c_gp_list_reset, _dart_gp_list_reset>('gp_list_reset');
@@ -3024,7 +3024,7 @@ class libgphoto2 {
   _dart_gp_list_reset _gp_list_reset;
 
   int gp_list_sort(
-    ffi.Pointer<_CameraList> list,
+    ffi.Pointer<CameraList> list,
   ) {
     _gp_list_sort ??= _dylib
         .lookupFunction<_c_gp_list_sort, _dart_gp_list_sort>('gp_list_sort');
@@ -3036,7 +3036,7 @@ class libgphoto2 {
   _dart_gp_list_sort _gp_list_sort;
 
   int gp_list_find_by_name(
-    ffi.Pointer<_CameraList> list,
+    ffi.Pointer<CameraList> list,
     ffi.Pointer<ffi.Int32> index,
     ffi.Pointer<ffi.Int8> name,
   ) {
@@ -3052,7 +3052,7 @@ class libgphoto2 {
   _dart_gp_list_find_by_name _gp_list_find_by_name;
 
   int gp_list_get_name(
-    ffi.Pointer<_CameraList> list,
+    ffi.Pointer<CameraList> list,
     int index,
     ffi.Pointer<ffi.Pointer<ffi.Int8>> name,
   ) {
@@ -3069,7 +3069,7 @@ class libgphoto2 {
   _dart_gp_list_get_name _gp_list_get_name;
 
   int gp_list_get_value(
-    ffi.Pointer<_CameraList> list,
+    ffi.Pointer<CameraList> list,
     int index,
     ffi.Pointer<ffi.Pointer<ffi.Int8>> value,
   ) {
@@ -3086,7 +3086,7 @@ class libgphoto2 {
   _dart_gp_list_get_value _gp_list_get_value;
 
   int gp_list_set_name(
-    ffi.Pointer<_CameraList> list,
+    ffi.Pointer<CameraList> list,
     int index,
     ffi.Pointer<ffi.Int8> name,
   ) {
@@ -3103,7 +3103,7 @@ class libgphoto2 {
   _dart_gp_list_set_name _gp_list_set_name;
 
   int gp_list_set_value(
-    ffi.Pointer<_CameraList> list,
+    ffi.Pointer<CameraList> list,
     int index,
     ffi.Pointer<ffi.Int8> value,
   ) {
@@ -3120,7 +3120,7 @@ class libgphoto2 {
   _dart_gp_list_set_value _gp_list_set_value;
 
   int gp_list_populate(
-    ffi.Pointer<_CameraList> list,
+    ffi.Pointer<CameraList> list,
     ffi.Pointer<ffi.Int8> format,
     int count,
   ) {
@@ -9918,9 +9918,9 @@ abstract class CameraFolderOperation {
 /// camlibs, but the status regarding use by frontends is questionable.
 class CameraAbilities extends ffi.Struct {}
 
-class _CameraAbilitiesList extends ffi.Struct {}
+class CameraAbilitiesList extends ffi.Struct {}
 
-class _Camera extends ffi.Struct {}
+class Camera extends ffi.Struct {}
 
 /// \brief CameraText structure used in various functions.
 ///
@@ -10399,11 +10399,11 @@ abstract class CameraStorageFilesystemType {
 /// Only the members as specified by the \a fields member are valid.
 class CameraStorageInformation extends ffi.Struct {}
 
-class _CameraFilesystem extends ffi.Struct {}
+class CameraFilesystem extends ffi.Struct {}
 
-class _CameraFilesystemFuncs extends ffi.Struct {}
+class CameraFilesystemFuncs extends ffi.Struct {}
 
-class _CameraList extends ffi.Struct {}
+class CameraList extends ffi.Struct {}
 
 class _CameraWidget extends ffi.Struct {}
 
@@ -10636,9 +10636,9 @@ class GPPortSettingsUsbDiskDirect extends ffi.Struct {}
 /// \brief Port settings for USB Mass Storage raw SCSI ports.
 class GPPortSettingsUsbScsi extends ffi.Struct {}
 
-class _GPPortPrivateLibrary extends ffi.Struct {}
+class GPPortPrivateLibrary extends ffi.Struct {}
 
-class _GPPortPrivateCore extends ffi.Struct {}
+class GPPortPrivateCore extends ffi.Struct {}
 
 /// \brief The GPhoto port structure.
 ///
@@ -11072,91 +11072,91 @@ const int FUZZMODE_PROTOCOL = 0;
 const int FUZZMODE_NORMAL = 1;
 
 typedef _c_gp_abilities_list_new = ffi.Int32 Function(
-  ffi.Pointer<ffi.Pointer<_CameraAbilitiesList>> list,
+  ffi.Pointer<ffi.Pointer<CameraAbilitiesList>> list,
 );
 
 typedef _dart_gp_abilities_list_new = int Function(
-  ffi.Pointer<ffi.Pointer<_CameraAbilitiesList>> list,
+  ffi.Pointer<ffi.Pointer<CameraAbilitiesList>> list,
 );
 
 typedef _c_gp_abilities_list_free = ffi.Int32 Function(
-  ffi.Pointer<_CameraAbilitiesList> list,
+  ffi.Pointer<CameraAbilitiesList> list,
 );
 
 typedef _dart_gp_abilities_list_free = int Function(
-  ffi.Pointer<_CameraAbilitiesList> list,
+  ffi.Pointer<CameraAbilitiesList> list,
 );
 
 typedef _c_gp_abilities_list_load = ffi.Int32 Function(
-  ffi.Pointer<_CameraAbilitiesList> list,
+  ffi.Pointer<CameraAbilitiesList> list,
   ffi.Pointer<ffi.Int32> context,
 );
 
 typedef _dart_gp_abilities_list_load = int Function(
-  ffi.Pointer<_CameraAbilitiesList> list,
+  ffi.Pointer<CameraAbilitiesList> list,
   ffi.Pointer<ffi.Int32> context,
 );
 
 typedef _c_gp_abilities_list_load_dir = ffi.Int32 Function(
-  ffi.Pointer<_CameraAbilitiesList> list,
+  ffi.Pointer<CameraAbilitiesList> list,
   ffi.Pointer<ffi.Int8> dir,
   ffi.Pointer<ffi.Int32> context,
 );
 
 typedef _dart_gp_abilities_list_load_dir = int Function(
-  ffi.Pointer<_CameraAbilitiesList> list,
+  ffi.Pointer<CameraAbilitiesList> list,
   ffi.Pointer<ffi.Int8> dir,
   ffi.Pointer<ffi.Int32> context,
 );
 
 typedef _c_gp_abilities_list_reset = ffi.Int32 Function(
-  ffi.Pointer<_CameraAbilitiesList> list,
+  ffi.Pointer<CameraAbilitiesList> list,
 );
 
 typedef _dart_gp_abilities_list_reset = int Function(
-  ffi.Pointer<_CameraAbilitiesList> list,
+  ffi.Pointer<CameraAbilitiesList> list,
 );
 
 typedef _c_gp_abilities_list_detect = ffi.Int32 Function(
-  ffi.Pointer<_CameraAbilitiesList> list,
+  ffi.Pointer<CameraAbilitiesList> list,
   ffi.Pointer<ffi.Int32> info_list,
   ffi.Pointer<ffi.Int32> l,
   ffi.Pointer<ffi.Int32> context,
 );
 
 typedef _dart_gp_abilities_list_detect = int Function(
-  ffi.Pointer<_CameraAbilitiesList> list,
+  ffi.Pointer<CameraAbilitiesList> list,
   ffi.Pointer<ffi.Int32> info_list,
   ffi.Pointer<ffi.Int32> l,
   ffi.Pointer<ffi.Int32> context,
 );
 
 typedef _c_gp_abilities_list_count = ffi.Int32 Function(
-  ffi.Pointer<_CameraAbilitiesList> list,
+  ffi.Pointer<CameraAbilitiesList> list,
 );
 
 typedef _dart_gp_abilities_list_count = int Function(
-  ffi.Pointer<_CameraAbilitiesList> list,
+  ffi.Pointer<CameraAbilitiesList> list,
 );
 
 typedef _c_gp_abilities_list_lookup_model = ffi.Int32 Function(
-  ffi.Pointer<_CameraAbilitiesList> list,
+  ffi.Pointer<CameraAbilitiesList> list,
   ffi.Pointer<ffi.Int8> model,
 );
 
 typedef _dart_gp_abilities_list_lookup_model = int Function(
-  ffi.Pointer<_CameraAbilitiesList> list,
+  ffi.Pointer<CameraAbilitiesList> list,
   ffi.Pointer<ffi.Int8> model,
 );
 
 typedef _c_gp_abilities_list_get_abilities = ffi.Int32 Function(
-  ffi.Pointer<_CameraAbilitiesList> list,
+  ffi.Pointer<CameraAbilitiesList> list,
   ffi.Int32 index,
   ffi.Pointer<CameraAbilities> abilities,
 );
 
 typedef _dart_gp_abilities_list_get_abilities = int Function(
-  ffi.Pointer<_CameraAbilitiesList> list,
+  ffi.Pointer<CameraAbilitiesList> list,
   int index,
   ffi.Pointer<CameraAbilities> abilities,
 );
@@ -11170,69 +11170,69 @@ typedef _dart_gp_message_codeset = ffi.Pointer<ffi.Int8> Function(
 );
 
 typedef _c_gp_camera_new = ffi.Int32 Function(
-  ffi.Pointer<ffi.Pointer<_Camera>> camera,
+  ffi.Pointer<ffi.Pointer<Camera>> camera,
 );
 
 typedef _dart_gp_camera_new = int Function(
-  ffi.Pointer<ffi.Pointer<_Camera>> camera,
+  ffi.Pointer<ffi.Pointer<Camera>> camera,
 );
 
 typedef _c_gp_camera_set_abilities = ffi.Int32 Function(
-  ffi.Pointer<_Camera> camera,
+  ffi.Pointer<Camera> camera,
   ffi.Int32 abilities,
 );
 
 typedef _dart_gp_camera_set_abilities = int Function(
-  ffi.Pointer<_Camera> camera,
+  ffi.Pointer<Camera> camera,
   int abilities,
 );
 
 typedef _c_gp_camera_get_abilities = ffi.Int32 Function(
-  ffi.Pointer<_Camera> camera,
+  ffi.Pointer<Camera> camera,
   ffi.Pointer<ffi.Int32> abilities,
 );
 
 typedef _dart_gp_camera_get_abilities = int Function(
-  ffi.Pointer<_Camera> camera,
+  ffi.Pointer<Camera> camera,
   ffi.Pointer<ffi.Int32> abilities,
 );
 
 typedef _c_gp_camera_set_port_info = ffi.Int32 Function(
-  ffi.Pointer<_Camera> camera,
+  ffi.Pointer<Camera> camera,
   ffi.Int32 info,
 );
 
 typedef _dart_gp_camera_set_port_info = int Function(
-  ffi.Pointer<_Camera> camera,
+  ffi.Pointer<Camera> camera,
   int info,
 );
 
 typedef _c_gp_camera_get_port_info = ffi.Int32 Function(
-  ffi.Pointer<_Camera> camera,
+  ffi.Pointer<Camera> camera,
   ffi.Pointer<ffi.Int32> info,
 );
 
 typedef _dart_gp_camera_get_port_info = int Function(
-  ffi.Pointer<_Camera> camera,
+  ffi.Pointer<Camera> camera,
   ffi.Pointer<ffi.Int32> info,
 );
 
 typedef _c_gp_camera_set_port_speed = ffi.Int32 Function(
-  ffi.Pointer<_Camera> camera,
+  ffi.Pointer<Camera> camera,
   ffi.Int32 speed,
 );
 
 typedef _dart_gp_camera_set_port_speed = int Function(
-  ffi.Pointer<_Camera> camera,
+  ffi.Pointer<Camera> camera,
   int speed,
 );
 
 typedef _c_gp_camera_get_port_speed = ffi.Int32 Function(
-  ffi.Pointer<_Camera> camera,
+  ffi.Pointer<Camera> camera,
 );
 
 typedef _dart_gp_camera_get_port_speed = int Function(
-  ffi.Pointer<_Camera> camera,
+  ffi.Pointer<Camera> camera,
 );
 
 typedef _c_gp_camera_autodetect = ffi.Int32 Function(
@@ -11246,187 +11246,187 @@ typedef _dart_gp_camera_autodetect = int Function(
 );
 
 typedef _c_gp_camera_init = ffi.Int32 Function(
-  ffi.Pointer<_Camera> camera,
+  ffi.Pointer<Camera> camera,
   ffi.Pointer<ffi.Int32> context,
 );
 
 typedef _dart_gp_camera_init = int Function(
-  ffi.Pointer<_Camera> camera,
+  ffi.Pointer<Camera> camera,
   ffi.Pointer<ffi.Int32> context,
 );
 
 typedef _c_gp_camera_exit = ffi.Int32 Function(
-  ffi.Pointer<_Camera> camera,
+  ffi.Pointer<Camera> camera,
   ffi.Pointer<ffi.Int32> context,
 );
 
 typedef _dart_gp_camera_exit = int Function(
-  ffi.Pointer<_Camera> camera,
+  ffi.Pointer<Camera> camera,
   ffi.Pointer<ffi.Int32> context,
 );
 
 typedef _c_gp_camera_ref = ffi.Int32 Function(
-  ffi.Pointer<_Camera> camera,
+  ffi.Pointer<Camera> camera,
 );
 
 typedef _dart_gp_camera_ref = int Function(
-  ffi.Pointer<_Camera> camera,
+  ffi.Pointer<Camera> camera,
 );
 
 typedef _c_gp_camera_unref = ffi.Int32 Function(
-  ffi.Pointer<_Camera> camera,
+  ffi.Pointer<Camera> camera,
 );
 
 typedef _dart_gp_camera_unref = int Function(
-  ffi.Pointer<_Camera> camera,
+  ffi.Pointer<Camera> camera,
 );
 
 typedef _c_gp_camera_free = ffi.Int32 Function(
-  ffi.Pointer<_Camera> camera,
+  ffi.Pointer<Camera> camera,
 );
 
 typedef _dart_gp_camera_free = int Function(
-  ffi.Pointer<_Camera> camera,
+  ffi.Pointer<Camera> camera,
 );
 
 typedef _c_gp_camera_get_config = ffi.Int32 Function(
-  ffi.Pointer<_Camera> camera,
+  ffi.Pointer<Camera> camera,
   ffi.Pointer<ffi.Pointer<ffi.Int32>> window,
   ffi.Pointer<ffi.Int32> context,
 );
 
 typedef _dart_gp_camera_get_config = int Function(
-  ffi.Pointer<_Camera> camera,
+  ffi.Pointer<Camera> camera,
   ffi.Pointer<ffi.Pointer<ffi.Int32>> window,
   ffi.Pointer<ffi.Int32> context,
 );
 
 typedef _c_gp_camera_list_config = ffi.Int32 Function(
-  ffi.Pointer<_Camera> camera,
+  ffi.Pointer<Camera> camera,
   ffi.Pointer<ffi.Int32> list,
   ffi.Pointer<ffi.Int32> context,
 );
 
 typedef _dart_gp_camera_list_config = int Function(
-  ffi.Pointer<_Camera> camera,
+  ffi.Pointer<Camera> camera,
   ffi.Pointer<ffi.Int32> list,
   ffi.Pointer<ffi.Int32> context,
 );
 
 typedef _c_gp_camera_get_single_config = ffi.Int32 Function(
-  ffi.Pointer<_Camera> camera,
+  ffi.Pointer<Camera> camera,
   ffi.Pointer<ffi.Int8> name,
   ffi.Pointer<ffi.Pointer<ffi.Int32>> widget,
   ffi.Pointer<ffi.Int32> context,
 );
 
 typedef _dart_gp_camera_get_single_config = int Function(
-  ffi.Pointer<_Camera> camera,
+  ffi.Pointer<Camera> camera,
   ffi.Pointer<ffi.Int8> name,
   ffi.Pointer<ffi.Pointer<ffi.Int32>> widget,
   ffi.Pointer<ffi.Int32> context,
 );
 
 typedef _c_gp_camera_set_config = ffi.Int32 Function(
-  ffi.Pointer<_Camera> camera,
+  ffi.Pointer<Camera> camera,
   ffi.Pointer<ffi.Int32> window,
   ffi.Pointer<ffi.Int32> context,
 );
 
 typedef _dart_gp_camera_set_config = int Function(
-  ffi.Pointer<_Camera> camera,
+  ffi.Pointer<Camera> camera,
   ffi.Pointer<ffi.Int32> window,
   ffi.Pointer<ffi.Int32> context,
 );
 
 typedef _c_gp_camera_set_single_config = ffi.Int32 Function(
-  ffi.Pointer<_Camera> camera,
+  ffi.Pointer<Camera> camera,
   ffi.Pointer<ffi.Int8> name,
   ffi.Pointer<ffi.Int32> widget,
   ffi.Pointer<ffi.Int32> context,
 );
 
 typedef _dart_gp_camera_set_single_config = int Function(
-  ffi.Pointer<_Camera> camera,
+  ffi.Pointer<Camera> camera,
   ffi.Pointer<ffi.Int8> name,
   ffi.Pointer<ffi.Int32> widget,
   ffi.Pointer<ffi.Int32> context,
 );
 
 typedef _c_gp_camera_get_summary = ffi.Int32 Function(
-  ffi.Pointer<_Camera> camera,
+  ffi.Pointer<Camera> camera,
   ffi.Pointer<CameraText> summary,
   ffi.Pointer<ffi.Int32> context,
 );
 
 typedef _dart_gp_camera_get_summary = int Function(
-  ffi.Pointer<_Camera> camera,
+  ffi.Pointer<Camera> camera,
   ffi.Pointer<CameraText> summary,
   ffi.Pointer<ffi.Int32> context,
 );
 
 typedef _c_gp_camera_get_manual = ffi.Int32 Function(
-  ffi.Pointer<_Camera> camera,
+  ffi.Pointer<Camera> camera,
   ffi.Pointer<CameraText> manual,
   ffi.Pointer<ffi.Int32> context,
 );
 
 typedef _dart_gp_camera_get_manual = int Function(
-  ffi.Pointer<_Camera> camera,
+  ffi.Pointer<Camera> camera,
   ffi.Pointer<CameraText> manual,
   ffi.Pointer<ffi.Int32> context,
 );
 
 typedef _c_gp_camera_get_about = ffi.Int32 Function(
-  ffi.Pointer<_Camera> camera,
+  ffi.Pointer<Camera> camera,
   ffi.Pointer<CameraText> about,
   ffi.Pointer<ffi.Int32> context,
 );
 
 typedef _dart_gp_camera_get_about = int Function(
-  ffi.Pointer<_Camera> camera,
+  ffi.Pointer<Camera> camera,
   ffi.Pointer<CameraText> about,
   ffi.Pointer<ffi.Int32> context,
 );
 
 typedef _c_gp_camera_capture = ffi.Int32 Function(
-  ffi.Pointer<_Camera> camera,
+  ffi.Pointer<Camera> camera,
   ffi.Int32 type,
   ffi.Pointer<CameraFilePath> path,
   ffi.Pointer<ffi.Int32> context,
 );
 
 typedef _dart_gp_camera_capture = int Function(
-  ffi.Pointer<_Camera> camera,
+  ffi.Pointer<Camera> camera,
   int type,
   ffi.Pointer<CameraFilePath> path,
   ffi.Pointer<ffi.Int32> context,
 );
 
 typedef _c_gp_camera_trigger_capture = ffi.Int32 Function(
-  ffi.Pointer<_Camera> camera,
+  ffi.Pointer<Camera> camera,
   ffi.Pointer<ffi.Int32> context,
 );
 
 typedef _dart_gp_camera_trigger_capture = int Function(
-  ffi.Pointer<_Camera> camera,
+  ffi.Pointer<Camera> camera,
   ffi.Pointer<ffi.Int32> context,
 );
 
 typedef _c_gp_camera_capture_preview = ffi.Int32 Function(
-  ffi.Pointer<_Camera> camera,
+  ffi.Pointer<Camera> camera,
   ffi.Pointer<ffi.Int32> file,
   ffi.Pointer<ffi.Int32> context,
 );
 
 typedef _dart_gp_camera_capture_preview = int Function(
-  ffi.Pointer<_Camera> camera,
+  ffi.Pointer<Camera> camera,
   ffi.Pointer<ffi.Int32> file,
   ffi.Pointer<ffi.Int32> context,
 );
 
 typedef _c_gp_camera_wait_for_event = ffi.Int32 Function(
-  ffi.Pointer<_Camera> camera,
+  ffi.Pointer<Camera> camera,
   ffi.Int32 timeout,
   ffi.Pointer<ffi.Int32> eventtype,
   ffi.Pointer<ffi.Pointer<ffi.Void>> eventdata,
@@ -11434,7 +11434,7 @@ typedef _c_gp_camera_wait_for_event = ffi.Int32 Function(
 );
 
 typedef _dart_gp_camera_wait_for_event = int Function(
-  ffi.Pointer<_Camera> camera,
+  ffi.Pointer<Camera> camera,
   int timeout,
   ffi.Pointer<ffi.Int32> eventtype,
   ffi.Pointer<ffi.Pointer<ffi.Void>> eventdata,
@@ -11442,61 +11442,61 @@ typedef _dart_gp_camera_wait_for_event = int Function(
 );
 
 typedef _c_gp_camera_get_storageinfo = ffi.Int32 Function(
-  ffi.Pointer<_Camera> camera,
+  ffi.Pointer<Camera> camera,
   ffi.Pointer<ffi.Pointer<ffi.Int32>> arg1,
   ffi.Pointer<ffi.Int32> arg2,
   ffi.Pointer<ffi.Int32> context,
 );
 
 typedef _dart_gp_camera_get_storageinfo = int Function(
-  ffi.Pointer<_Camera> camera,
+  ffi.Pointer<Camera> camera,
   ffi.Pointer<ffi.Pointer<ffi.Int32>> arg1,
   ffi.Pointer<ffi.Int32> arg2,
   ffi.Pointer<ffi.Int32> context,
 );
 
 typedef _c_gp_camera_folder_list_files = ffi.Int32 Function(
-  ffi.Pointer<_Camera> camera,
+  ffi.Pointer<Camera> camera,
   ffi.Pointer<ffi.Int8> folder,
   ffi.Pointer<ffi.Int32> list,
   ffi.Pointer<ffi.Int32> context,
 );
 
 typedef _dart_gp_camera_folder_list_files = int Function(
-  ffi.Pointer<_Camera> camera,
+  ffi.Pointer<Camera> camera,
   ffi.Pointer<ffi.Int8> folder,
   ffi.Pointer<ffi.Int32> list,
   ffi.Pointer<ffi.Int32> context,
 );
 
 typedef _c_gp_camera_folder_list_folders = ffi.Int32 Function(
-  ffi.Pointer<_Camera> camera,
+  ffi.Pointer<Camera> camera,
   ffi.Pointer<ffi.Int8> folder,
   ffi.Pointer<ffi.Int32> list,
   ffi.Pointer<ffi.Int32> context,
 );
 
 typedef _dart_gp_camera_folder_list_folders = int Function(
-  ffi.Pointer<_Camera> camera,
+  ffi.Pointer<Camera> camera,
   ffi.Pointer<ffi.Int8> folder,
   ffi.Pointer<ffi.Int32> list,
   ffi.Pointer<ffi.Int32> context,
 );
 
 typedef _c_gp_camera_folder_delete_all = ffi.Int32 Function(
-  ffi.Pointer<_Camera> camera,
+  ffi.Pointer<Camera> camera,
   ffi.Pointer<ffi.Int8> folder,
   ffi.Pointer<ffi.Int32> context,
 );
 
 typedef _dart_gp_camera_folder_delete_all = int Function(
-  ffi.Pointer<_Camera> camera,
+  ffi.Pointer<Camera> camera,
   ffi.Pointer<ffi.Int8> folder,
   ffi.Pointer<ffi.Int32> context,
 );
 
 typedef _c_gp_camera_folder_put_file = ffi.Int32 Function(
-  ffi.Pointer<_Camera> camera,
+  ffi.Pointer<Camera> camera,
   ffi.Pointer<ffi.Int8> folder,
   ffi.Pointer<ffi.Int8> filename,
   ffi.Int32 type,
@@ -11505,7 +11505,7 @@ typedef _c_gp_camera_folder_put_file = ffi.Int32 Function(
 );
 
 typedef _dart_gp_camera_folder_put_file = int Function(
-  ffi.Pointer<_Camera> camera,
+  ffi.Pointer<Camera> camera,
   ffi.Pointer<ffi.Int8> folder,
   ffi.Pointer<ffi.Int8> filename,
   int type,
@@ -11514,35 +11514,35 @@ typedef _dart_gp_camera_folder_put_file = int Function(
 );
 
 typedef _c_gp_camera_folder_make_dir = ffi.Int32 Function(
-  ffi.Pointer<_Camera> camera,
+  ffi.Pointer<Camera> camera,
   ffi.Pointer<ffi.Int8> folder,
   ffi.Pointer<ffi.Int8> name,
   ffi.Pointer<ffi.Int32> context,
 );
 
 typedef _dart_gp_camera_folder_make_dir = int Function(
-  ffi.Pointer<_Camera> camera,
+  ffi.Pointer<Camera> camera,
   ffi.Pointer<ffi.Int8> folder,
   ffi.Pointer<ffi.Int8> name,
   ffi.Pointer<ffi.Int32> context,
 );
 
 typedef _c_gp_camera_folder_remove_dir = ffi.Int32 Function(
-  ffi.Pointer<_Camera> camera,
+  ffi.Pointer<Camera> camera,
   ffi.Pointer<ffi.Int8> folder,
   ffi.Pointer<ffi.Int8> name,
   ffi.Pointer<ffi.Int32> context,
 );
 
 typedef _dart_gp_camera_folder_remove_dir = int Function(
-  ffi.Pointer<_Camera> camera,
+  ffi.Pointer<Camera> camera,
   ffi.Pointer<ffi.Int8> folder,
   ffi.Pointer<ffi.Int8> name,
   ffi.Pointer<ffi.Int32> context,
 );
 
 typedef _c_gp_camera_file_get_info = ffi.Int32 Function(
-  ffi.Pointer<_Camera> camera,
+  ffi.Pointer<Camera> camera,
   ffi.Pointer<ffi.Int8> folder,
   ffi.Pointer<ffi.Int8> file,
   ffi.Pointer<ffi.Int32> info,
@@ -11550,7 +11550,7 @@ typedef _c_gp_camera_file_get_info = ffi.Int32 Function(
 );
 
 typedef _dart_gp_camera_file_get_info = int Function(
-  ffi.Pointer<_Camera> camera,
+  ffi.Pointer<Camera> camera,
   ffi.Pointer<ffi.Int8> folder,
   ffi.Pointer<ffi.Int8> file,
   ffi.Pointer<ffi.Int32> info,
@@ -11558,7 +11558,7 @@ typedef _dart_gp_camera_file_get_info = int Function(
 );
 
 typedef _c_gp_camera_file_set_info = ffi.Int32 Function(
-  ffi.Pointer<_Camera> camera,
+  ffi.Pointer<Camera> camera,
   ffi.Pointer<ffi.Int8> folder,
   ffi.Pointer<ffi.Int8> file,
   ffi.Int32 info,
@@ -11566,7 +11566,7 @@ typedef _c_gp_camera_file_set_info = ffi.Int32 Function(
 );
 
 typedef _dart_gp_camera_file_set_info = int Function(
-  ffi.Pointer<_Camera> camera,
+  ffi.Pointer<Camera> camera,
   ffi.Pointer<ffi.Int8> folder,
   ffi.Pointer<ffi.Int8> file,
   int info,
@@ -11574,7 +11574,7 @@ typedef _dart_gp_camera_file_set_info = int Function(
 );
 
 typedef _c_gp_camera_file_get = ffi.Int32 Function(
-  ffi.Pointer<_Camera> camera,
+  ffi.Pointer<Camera> camera,
   ffi.Pointer<ffi.Int8> folder,
   ffi.Pointer<ffi.Int8> file,
   ffi.Int32 type,
@@ -11583,7 +11583,7 @@ typedef _c_gp_camera_file_get = ffi.Int32 Function(
 );
 
 typedef _dart_gp_camera_file_get = int Function(
-  ffi.Pointer<_Camera> camera,
+  ffi.Pointer<Camera> camera,
   ffi.Pointer<ffi.Int8> folder,
   ffi.Pointer<ffi.Int8> file,
   int type,
@@ -11592,7 +11592,7 @@ typedef _dart_gp_camera_file_get = int Function(
 );
 
 typedef _c_gp_camera_file_read = ffi.Int32 Function(
-  ffi.Pointer<_Camera> camera,
+  ffi.Pointer<Camera> camera,
   ffi.Pointer<ffi.Int8> folder,
   ffi.Pointer<ffi.Int8> file,
   ffi.Int32 type,
@@ -11603,7 +11603,7 @@ typedef _c_gp_camera_file_read = ffi.Int32 Function(
 );
 
 typedef _dart_gp_camera_file_read = int Function(
-  ffi.Pointer<_Camera> camera,
+  ffi.Pointer<Camera> camera,
   ffi.Pointer<ffi.Int8> folder,
   ffi.Pointer<ffi.Int8> file,
   int type,
@@ -11614,70 +11614,70 @@ typedef _dart_gp_camera_file_read = int Function(
 );
 
 typedef _c_gp_camera_file_delete = ffi.Int32 Function(
-  ffi.Pointer<_Camera> camera,
+  ffi.Pointer<Camera> camera,
   ffi.Pointer<ffi.Int8> folder,
   ffi.Pointer<ffi.Int8> file,
   ffi.Pointer<ffi.Int32> context,
 );
 
 typedef _dart_gp_camera_file_delete = int Function(
-  ffi.Pointer<_Camera> camera,
+  ffi.Pointer<Camera> camera,
   ffi.Pointer<ffi.Int8> folder,
   ffi.Pointer<ffi.Int8> file,
   ffi.Pointer<ffi.Int32> context,
 );
 
 typedef CameraTimeoutFunc = ffi.Int32 Function(
-  ffi.Pointer<_Camera>,
+  ffi.Pointer<Camera>,
   ffi.Pointer<ffi.Int32>,
 );
 
 typedef CameraTimeoutStartFunc = ffi.Uint32 Function(
-  ffi.Pointer<_Camera>,
+  ffi.Pointer<Camera>,
   ffi.Uint32,
   ffi.Pointer<ffi.NativeFunction<CameraTimeoutFunc>>,
   ffi.Pointer<ffi.Void>,
 );
 
 typedef CameraTimeoutStopFunc = ffi.Void Function(
-  ffi.Pointer<_Camera>,
+  ffi.Pointer<Camera>,
   ffi.Uint32,
   ffi.Pointer<ffi.Void>,
 );
 
 typedef _c_gp_camera_set_timeout_funcs = ffi.Void Function(
-  ffi.Pointer<_Camera> camera,
+  ffi.Pointer<Camera> camera,
   ffi.Pointer<ffi.NativeFunction<CameraTimeoutStartFunc>> start_func,
   ffi.Pointer<ffi.NativeFunction<CameraTimeoutStopFunc>> stop_func,
   ffi.Pointer<ffi.Void> data,
 );
 
 typedef _dart_gp_camera_set_timeout_funcs = void Function(
-  ffi.Pointer<_Camera> camera,
+  ffi.Pointer<Camera> camera,
   ffi.Pointer<ffi.NativeFunction<CameraTimeoutStartFunc>> start_func,
   ffi.Pointer<ffi.NativeFunction<CameraTimeoutStopFunc>> stop_func,
   ffi.Pointer<ffi.Void> data,
 );
 
 typedef _c_gp_camera_start_timeout = ffi.Int32 Function(
-  ffi.Pointer<_Camera> camera,
+  ffi.Pointer<Camera> camera,
   ffi.Uint32 timeout,
   ffi.Pointer<ffi.NativeFunction<CameraTimeoutFunc>> func,
 );
 
 typedef _dart_gp_camera_start_timeout = int Function(
-  ffi.Pointer<_Camera> camera,
+  ffi.Pointer<Camera> camera,
   int timeout,
   ffi.Pointer<ffi.NativeFunction<CameraTimeoutFunc>> func,
 );
 
 typedef _c_gp_camera_stop_timeout = ffi.Void Function(
-  ffi.Pointer<_Camera> camera,
+  ffi.Pointer<Camera> camera,
   ffi.Uint32 id,
 );
 
 typedef _dart_gp_camera_stop_timeout = void Function(
-  ffi.Pointer<_Camera> camera,
+  ffi.Pointer<Camera> camera,
   int id,
 );
 
@@ -12834,37 +12834,37 @@ typedef _dart_gp_file_slurp = int Function(
 );
 
 typedef _c_gp_filesystem_new = ffi.Int32 Function(
-  ffi.Pointer<ffi.Pointer<_CameraFilesystem>> fs,
+  ffi.Pointer<ffi.Pointer<CameraFilesystem>> fs,
 );
 
 typedef _dart_gp_filesystem_new = int Function(
-  ffi.Pointer<ffi.Pointer<_CameraFilesystem>> fs,
+  ffi.Pointer<ffi.Pointer<CameraFilesystem>> fs,
 );
 
 typedef _c_gp_filesystem_free = ffi.Int32 Function(
-  ffi.Pointer<_CameraFilesystem> fs,
+  ffi.Pointer<CameraFilesystem> fs,
 );
 
 typedef _dart_gp_filesystem_free = int Function(
-  ffi.Pointer<_CameraFilesystem> fs,
+  ffi.Pointer<CameraFilesystem> fs,
 );
 
 typedef _c_gp_filesystem_append = ffi.Int32 Function(
-  ffi.Pointer<_CameraFilesystem> fs,
+  ffi.Pointer<CameraFilesystem> fs,
   ffi.Pointer<ffi.Int8> folder,
   ffi.Pointer<ffi.Int8> filename,
   ffi.Pointer<ffi.Int32> context,
 );
 
 typedef _dart_gp_filesystem_append = int Function(
-  ffi.Pointer<_CameraFilesystem> fs,
+  ffi.Pointer<CameraFilesystem> fs,
   ffi.Pointer<ffi.Int8> folder,
   ffi.Pointer<ffi.Int8> filename,
   ffi.Pointer<ffi.Int32> context,
 );
 
 typedef _c_gp_filesystem_set_file_noop = ffi.Int32 Function(
-  ffi.Pointer<_CameraFilesystem> fs,
+  ffi.Pointer<CameraFilesystem> fs,
   ffi.Pointer<ffi.Int8> folder,
   ffi.Pointer<ffi.Int8> filename,
   ffi.Int32 type,
@@ -12873,7 +12873,7 @@ typedef _c_gp_filesystem_set_file_noop = ffi.Int32 Function(
 );
 
 typedef _dart_gp_filesystem_set_file_noop = int Function(
-  ffi.Pointer<_CameraFilesystem> fs,
+  ffi.Pointer<CameraFilesystem> fs,
   ffi.Pointer<ffi.Int8> folder,
   ffi.Pointer<ffi.Int8> filename,
   int type,
@@ -12882,41 +12882,41 @@ typedef _dart_gp_filesystem_set_file_noop = int Function(
 );
 
 typedef _c_gp_filesystem_delete_file_noop = ffi.Int32 Function(
-  ffi.Pointer<_CameraFilesystem> fs,
+  ffi.Pointer<CameraFilesystem> fs,
   ffi.Pointer<ffi.Int8> folder,
   ffi.Pointer<ffi.Int8> filename,
   ffi.Pointer<ffi.Int32> context,
 );
 
 typedef _dart_gp_filesystem_delete_file_noop = int Function(
-  ffi.Pointer<_CameraFilesystem> fs,
+  ffi.Pointer<CameraFilesystem> fs,
   ffi.Pointer<ffi.Int8> folder,
   ffi.Pointer<ffi.Int8> filename,
   ffi.Pointer<ffi.Int32> context,
 );
 
 typedef _c_gp_filesystem_reset = ffi.Int32 Function(
-  ffi.Pointer<_CameraFilesystem> fs,
+  ffi.Pointer<CameraFilesystem> fs,
 );
 
 typedef _dart_gp_filesystem_reset = int Function(
-  ffi.Pointer<_CameraFilesystem> fs,
+  ffi.Pointer<CameraFilesystem> fs,
 );
 
 typedef _c_gp_filesystem_count = ffi.Int32 Function(
-  ffi.Pointer<_CameraFilesystem> fs,
+  ffi.Pointer<CameraFilesystem> fs,
   ffi.Pointer<ffi.Int8> folder,
   ffi.Pointer<ffi.Int32> context,
 );
 
 typedef _dart_gp_filesystem_count = int Function(
-  ffi.Pointer<_CameraFilesystem> fs,
+  ffi.Pointer<CameraFilesystem> fs,
   ffi.Pointer<ffi.Int8> folder,
   ffi.Pointer<ffi.Int32> context,
 );
 
 typedef _c_gp_filesystem_name = ffi.Int32 Function(
-  ffi.Pointer<_CameraFilesystem> fs,
+  ffi.Pointer<CameraFilesystem> fs,
   ffi.Pointer<ffi.Int8> folder,
   ffi.Int32 filenumber,
   ffi.Pointer<ffi.Pointer<ffi.Int8>> filename,
@@ -12924,7 +12924,7 @@ typedef _c_gp_filesystem_name = ffi.Int32 Function(
 );
 
 typedef _dart_gp_filesystem_name = int Function(
-  ffi.Pointer<_CameraFilesystem> fs,
+  ffi.Pointer<CameraFilesystem> fs,
   ffi.Pointer<ffi.Int8> folder,
   int filenumber,
   ffi.Pointer<ffi.Pointer<ffi.Int8>> filename,
@@ -12932,63 +12932,63 @@ typedef _dart_gp_filesystem_name = int Function(
 );
 
 typedef _c_gp_filesystem_get_folder = ffi.Int32 Function(
-  ffi.Pointer<_CameraFilesystem> fs,
+  ffi.Pointer<CameraFilesystem> fs,
   ffi.Pointer<ffi.Int8> filename,
   ffi.Pointer<ffi.Pointer<ffi.Int8>> folder,
   ffi.Pointer<ffi.Int32> context,
 );
 
 typedef _dart_gp_filesystem_get_folder = int Function(
-  ffi.Pointer<_CameraFilesystem> fs,
+  ffi.Pointer<CameraFilesystem> fs,
   ffi.Pointer<ffi.Int8> filename,
   ffi.Pointer<ffi.Pointer<ffi.Int8>> folder,
   ffi.Pointer<ffi.Int32> context,
 );
 
 typedef _c_gp_filesystem_number = ffi.Int32 Function(
-  ffi.Pointer<_CameraFilesystem> fs,
+  ffi.Pointer<CameraFilesystem> fs,
   ffi.Pointer<ffi.Int8> folder,
   ffi.Pointer<ffi.Int8> filename,
   ffi.Pointer<ffi.Int32> context,
 );
 
 typedef _dart_gp_filesystem_number = int Function(
-  ffi.Pointer<_CameraFilesystem> fs,
+  ffi.Pointer<CameraFilesystem> fs,
   ffi.Pointer<ffi.Int8> folder,
   ffi.Pointer<ffi.Int8> filename,
   ffi.Pointer<ffi.Int32> context,
 );
 
 typedef _c_gp_filesystem_list_files = ffi.Int32 Function(
-  ffi.Pointer<_CameraFilesystem> fs,
+  ffi.Pointer<CameraFilesystem> fs,
   ffi.Pointer<ffi.Int8> folder,
   ffi.Pointer<ffi.Int32> list,
   ffi.Pointer<ffi.Int32> context,
 );
 
 typedef _dart_gp_filesystem_list_files = int Function(
-  ffi.Pointer<_CameraFilesystem> fs,
+  ffi.Pointer<CameraFilesystem> fs,
   ffi.Pointer<ffi.Int8> folder,
   ffi.Pointer<ffi.Int32> list,
   ffi.Pointer<ffi.Int32> context,
 );
 
 typedef _c_gp_filesystem_list_folders = ffi.Int32 Function(
-  ffi.Pointer<_CameraFilesystem> fs,
+  ffi.Pointer<CameraFilesystem> fs,
   ffi.Pointer<ffi.Int8> folder,
   ffi.Pointer<ffi.Int32> list,
   ffi.Pointer<ffi.Int32> context,
 );
 
 typedef _dart_gp_filesystem_list_folders = int Function(
-  ffi.Pointer<_CameraFilesystem> fs,
+  ffi.Pointer<CameraFilesystem> fs,
   ffi.Pointer<ffi.Int8> folder,
   ffi.Pointer<ffi.Int32> list,
   ffi.Pointer<ffi.Int32> context,
 );
 
 typedef _c_gp_filesystem_get_info = ffi.Int32 Function(
-  ffi.Pointer<_CameraFilesystem> fs,
+  ffi.Pointer<CameraFilesystem> fs,
   ffi.Pointer<ffi.Int8> folder,
   ffi.Pointer<ffi.Int8> filename,
   ffi.Pointer<CameraFileInfo> info,
@@ -12996,7 +12996,7 @@ typedef _c_gp_filesystem_get_info = ffi.Int32 Function(
 );
 
 typedef _dart_gp_filesystem_get_info = int Function(
-  ffi.Pointer<_CameraFilesystem> fs,
+  ffi.Pointer<CameraFilesystem> fs,
   ffi.Pointer<ffi.Int8> folder,
   ffi.Pointer<ffi.Int8> filename,
   ffi.Pointer<CameraFileInfo> info,
@@ -13004,7 +13004,7 @@ typedef _dart_gp_filesystem_get_info = int Function(
 );
 
 typedef _c_gp_filesystem_get_file = ffi.Int32 Function(
-  ffi.Pointer<_CameraFilesystem> fs,
+  ffi.Pointer<CameraFilesystem> fs,
   ffi.Pointer<ffi.Int8> folder,
   ffi.Pointer<ffi.Int8> filename,
   ffi.Int32 type,
@@ -13013,7 +13013,7 @@ typedef _c_gp_filesystem_get_file = ffi.Int32 Function(
 );
 
 typedef _dart_gp_filesystem_get_file = int Function(
-  ffi.Pointer<_CameraFilesystem> fs,
+  ffi.Pointer<CameraFilesystem> fs,
   ffi.Pointer<ffi.Int8> folder,
   ffi.Pointer<ffi.Int8> filename,
   int type,
@@ -13022,7 +13022,7 @@ typedef _dart_gp_filesystem_get_file = int Function(
 );
 
 typedef _c_gp_filesystem_read_file = ffi.Int32 Function(
-  ffi.Pointer<_CameraFilesystem> fs,
+  ffi.Pointer<CameraFilesystem> fs,
   ffi.Pointer<ffi.Int8> folder,
   ffi.Pointer<ffi.Int8> filename,
   ffi.Int32 type,
@@ -13033,7 +13033,7 @@ typedef _c_gp_filesystem_read_file = ffi.Int32 Function(
 );
 
 typedef _dart_gp_filesystem_read_file = int Function(
-  ffi.Pointer<_CameraFilesystem> fs,
+  ffi.Pointer<CameraFilesystem> fs,
   ffi.Pointer<ffi.Int8> folder,
   ffi.Pointer<ffi.Int8> filename,
   int type,
@@ -13044,47 +13044,47 @@ typedef _dart_gp_filesystem_read_file = int Function(
 );
 
 typedef _c_gp_filesystem_delete_file = ffi.Int32 Function(
-  ffi.Pointer<_CameraFilesystem> fs,
+  ffi.Pointer<CameraFilesystem> fs,
   ffi.Pointer<ffi.Int8> folder,
   ffi.Pointer<ffi.Int8> filename,
   ffi.Pointer<ffi.Int32> context,
 );
 
 typedef _dart_gp_filesystem_delete_file = int Function(
-  ffi.Pointer<_CameraFilesystem> fs,
+  ffi.Pointer<CameraFilesystem> fs,
   ffi.Pointer<ffi.Int8> folder,
   ffi.Pointer<ffi.Int8> filename,
   ffi.Pointer<ffi.Int32> context,
 );
 
 typedef _c_gp_filesystem_get_storageinfo = ffi.Int32 Function(
-  ffi.Pointer<_CameraFilesystem> fs,
+  ffi.Pointer<CameraFilesystem> fs,
   ffi.Pointer<ffi.Pointer<CameraStorageInformation>> arg1,
   ffi.Pointer<ffi.Int32> nrofstorageinformations,
   ffi.Pointer<ffi.Int32> context,
 );
 
 typedef _dart_gp_filesystem_get_storageinfo = int Function(
-  ffi.Pointer<_CameraFilesystem> fs,
+  ffi.Pointer<CameraFilesystem> fs,
   ffi.Pointer<ffi.Pointer<CameraStorageInformation>> arg1,
   ffi.Pointer<ffi.Int32> nrofstorageinformations,
   ffi.Pointer<ffi.Int32> context,
 );
 
 typedef _c_gp_filesystem_set_funcs = ffi.Int32 Function(
-  ffi.Pointer<_CameraFilesystem> fs,
-  ffi.Pointer<_CameraFilesystemFuncs> funcs,
+  ffi.Pointer<CameraFilesystem> fs,
+  ffi.Pointer<CameraFilesystemFuncs> funcs,
   ffi.Pointer<ffi.Void> data,
 );
 
 typedef _dart_gp_filesystem_set_funcs = int Function(
-  ffi.Pointer<_CameraFilesystem> fs,
-  ffi.Pointer<_CameraFilesystemFuncs> funcs,
+  ffi.Pointer<CameraFilesystem> fs,
+  ffi.Pointer<CameraFilesystemFuncs> funcs,
   ffi.Pointer<ffi.Void> data,
 );
 
 typedef _c_gp_filesystem_put_file = ffi.Int32 Function(
-  ffi.Pointer<_CameraFilesystem> fs,
+  ffi.Pointer<CameraFilesystem> fs,
   ffi.Pointer<ffi.Int8> folder,
   ffi.Pointer<ffi.Int8> filename,
   ffi.Int32 type,
@@ -13093,7 +13093,7 @@ typedef _c_gp_filesystem_put_file = ffi.Int32 Function(
 );
 
 typedef _dart_gp_filesystem_put_file = int Function(
-  ffi.Pointer<_CameraFilesystem> fs,
+  ffi.Pointer<CameraFilesystem> fs,
   ffi.Pointer<ffi.Int8> folder,
   ffi.Pointer<ffi.Int8> filename,
   int type,
@@ -13102,51 +13102,51 @@ typedef _dart_gp_filesystem_put_file = int Function(
 );
 
 typedef _c_gp_filesystem_delete_all = ffi.Int32 Function(
-  ffi.Pointer<_CameraFilesystem> fs,
+  ffi.Pointer<CameraFilesystem> fs,
   ffi.Pointer<ffi.Int8> folder,
   ffi.Pointer<ffi.Int32> context,
 );
 
 typedef _dart_gp_filesystem_delete_all = int Function(
-  ffi.Pointer<_CameraFilesystem> fs,
+  ffi.Pointer<CameraFilesystem> fs,
   ffi.Pointer<ffi.Int8> folder,
   ffi.Pointer<ffi.Int32> context,
 );
 
 typedef _c_gp_filesystem_make_dir = ffi.Int32 Function(
-  ffi.Pointer<_CameraFilesystem> fs,
+  ffi.Pointer<CameraFilesystem> fs,
   ffi.Pointer<ffi.Int8> folder,
   ffi.Pointer<ffi.Int8> name,
   ffi.Pointer<ffi.Int32> context,
 );
 
 typedef _dart_gp_filesystem_make_dir = int Function(
-  ffi.Pointer<_CameraFilesystem> fs,
+  ffi.Pointer<CameraFilesystem> fs,
   ffi.Pointer<ffi.Int8> folder,
   ffi.Pointer<ffi.Int8> name,
   ffi.Pointer<ffi.Int32> context,
 );
 
 typedef _c_gp_filesystem_remove_dir = ffi.Int32 Function(
-  ffi.Pointer<_CameraFilesystem> fs,
+  ffi.Pointer<CameraFilesystem> fs,
   ffi.Pointer<ffi.Int8> folder,
   ffi.Pointer<ffi.Int8> name,
   ffi.Pointer<ffi.Int32> context,
 );
 
 typedef _dart_gp_filesystem_remove_dir = int Function(
-  ffi.Pointer<_CameraFilesystem> fs,
+  ffi.Pointer<CameraFilesystem> fs,
   ffi.Pointer<ffi.Int8> folder,
   ffi.Pointer<ffi.Int8> name,
   ffi.Pointer<ffi.Int32> context,
 );
 
 typedef _c_gp_filesystem_dump = ffi.Int32 Function(
-  ffi.Pointer<_CameraFilesystem> fs,
+  ffi.Pointer<CameraFilesystem> fs,
 );
 
 typedef _dart_gp_filesystem_dump = int Function(
-  ffi.Pointer<_CameraFilesystem> fs,
+  ffi.Pointer<CameraFilesystem> fs,
 );
 
 typedef _c_camera_id = ffi.Int32 Function(
@@ -13176,141 +13176,141 @@ typedef _dart_camera_init = int Function(
 );
 
 typedef _c_gp_list_new = ffi.Int32 Function(
-  ffi.Pointer<ffi.Pointer<_CameraList>> list,
+  ffi.Pointer<ffi.Pointer<CameraList>> list,
 );
 
 typedef _dart_gp_list_new = int Function(
-  ffi.Pointer<ffi.Pointer<_CameraList>> list,
+  ffi.Pointer<ffi.Pointer<CameraList>> list,
 );
 
 typedef _c_gp_list_ref = ffi.Int32 Function(
-  ffi.Pointer<_CameraList> list,
+  ffi.Pointer<CameraList> list,
 );
 
 typedef _dart_gp_list_ref = int Function(
-  ffi.Pointer<_CameraList> list,
+  ffi.Pointer<CameraList> list,
 );
 
 typedef _c_gp_list_unref = ffi.Int32 Function(
-  ffi.Pointer<_CameraList> list,
+  ffi.Pointer<CameraList> list,
 );
 
 typedef _dart_gp_list_unref = int Function(
-  ffi.Pointer<_CameraList> list,
+  ffi.Pointer<CameraList> list,
 );
 
 typedef _c_gp_list_free = ffi.Int32 Function(
-  ffi.Pointer<_CameraList> list,
+  ffi.Pointer<CameraList> list,
 );
 
 typedef _dart_gp_list_free = int Function(
-  ffi.Pointer<_CameraList> list,
+  ffi.Pointer<CameraList> list,
 );
 
 typedef _c_gp_list_count = ffi.Int32 Function(
-  ffi.Pointer<_CameraList> list,
+  ffi.Pointer<CameraList> list,
 );
 
 typedef _dart_gp_list_count = int Function(
-  ffi.Pointer<_CameraList> list,
+  ffi.Pointer<CameraList> list,
 );
 
 typedef _c_gp_list_append = ffi.Int32 Function(
-  ffi.Pointer<_CameraList> list,
+  ffi.Pointer<CameraList> list,
   ffi.Pointer<ffi.Int8> name,
   ffi.Pointer<ffi.Int8> value,
 );
 
 typedef _dart_gp_list_append = int Function(
-  ffi.Pointer<_CameraList> list,
+  ffi.Pointer<CameraList> list,
   ffi.Pointer<ffi.Int8> name,
   ffi.Pointer<ffi.Int8> value,
 );
 
 typedef _c_gp_list_reset = ffi.Int32 Function(
-  ffi.Pointer<_CameraList> list,
+  ffi.Pointer<CameraList> list,
 );
 
 typedef _dart_gp_list_reset = int Function(
-  ffi.Pointer<_CameraList> list,
+  ffi.Pointer<CameraList> list,
 );
 
 typedef _c_gp_list_sort = ffi.Int32 Function(
-  ffi.Pointer<_CameraList> list,
+  ffi.Pointer<CameraList> list,
 );
 
 typedef _dart_gp_list_sort = int Function(
-  ffi.Pointer<_CameraList> list,
+  ffi.Pointer<CameraList> list,
 );
 
 typedef _c_gp_list_find_by_name = ffi.Int32 Function(
-  ffi.Pointer<_CameraList> list,
+  ffi.Pointer<CameraList> list,
   ffi.Pointer<ffi.Int32> index,
   ffi.Pointer<ffi.Int8> name,
 );
 
 typedef _dart_gp_list_find_by_name = int Function(
-  ffi.Pointer<_CameraList> list,
+  ffi.Pointer<CameraList> list,
   ffi.Pointer<ffi.Int32> index,
   ffi.Pointer<ffi.Int8> name,
 );
 
 typedef _c_gp_list_get_name = ffi.Int32 Function(
-  ffi.Pointer<_CameraList> list,
+  ffi.Pointer<CameraList> list,
   ffi.Int32 index,
   ffi.Pointer<ffi.Pointer<ffi.Int8>> name,
 );
 
 typedef _dart_gp_list_get_name = int Function(
-  ffi.Pointer<_CameraList> list,
+  ffi.Pointer<CameraList> list,
   int index,
   ffi.Pointer<ffi.Pointer<ffi.Int8>> name,
 );
 
 typedef _c_gp_list_get_value = ffi.Int32 Function(
-  ffi.Pointer<_CameraList> list,
+  ffi.Pointer<CameraList> list,
   ffi.Int32 index,
   ffi.Pointer<ffi.Pointer<ffi.Int8>> value,
 );
 
 typedef _dart_gp_list_get_value = int Function(
-  ffi.Pointer<_CameraList> list,
+  ffi.Pointer<CameraList> list,
   int index,
   ffi.Pointer<ffi.Pointer<ffi.Int8>> value,
 );
 
 typedef _c_gp_list_set_name = ffi.Int32 Function(
-  ffi.Pointer<_CameraList> list,
+  ffi.Pointer<CameraList> list,
   ffi.Int32 index,
   ffi.Pointer<ffi.Int8> name,
 );
 
 typedef _dart_gp_list_set_name = int Function(
-  ffi.Pointer<_CameraList> list,
+  ffi.Pointer<CameraList> list,
   int index,
   ffi.Pointer<ffi.Int8> name,
 );
 
 typedef _c_gp_list_set_value = ffi.Int32 Function(
-  ffi.Pointer<_CameraList> list,
+  ffi.Pointer<CameraList> list,
   ffi.Int32 index,
   ffi.Pointer<ffi.Int8> value,
 );
 
 typedef _dart_gp_list_set_value = int Function(
-  ffi.Pointer<_CameraList> list,
+  ffi.Pointer<CameraList> list,
   int index,
   ffi.Pointer<ffi.Int8> value,
 );
 
 typedef _c_gp_list_populate = ffi.Int32 Function(
-  ffi.Pointer<_CameraList> list,
+  ffi.Pointer<CameraList> list,
   ffi.Pointer<ffi.Int8> format,
   ffi.Int32 count,
 );
 
 typedef _dart_gp_list_populate = int Function(
-  ffi.Pointer<_CameraList> list,
+  ffi.Pointer<CameraList> list,
   ffi.Pointer<ffi.Int8> format,
   int count,
 );
@@ -18213,85 +18213,85 @@ typedef _dart_vcamera_new = ffi.Pointer<vcamera> Function(
 );
 
 typedef CameraPrePostFunc = ffi.Int32 Function(
-  ffi.Pointer<_Camera>,
+  ffi.Pointer<Camera>,
   ffi.Pointer<ffi.Int32>,
 );
 
 typedef CameraExitFunc = ffi.Int32 Function(
-  ffi.Pointer<_Camera>,
+  ffi.Pointer<Camera>,
   ffi.Pointer<ffi.Int32>,
 );
 
 typedef CameraGetConfigFunc = ffi.Int32 Function(
-  ffi.Pointer<_Camera>,
+  ffi.Pointer<Camera>,
   ffi.Pointer<ffi.Pointer<ffi.Int32>>,
   ffi.Pointer<ffi.Int32>,
 );
 
 typedef CameraSetConfigFunc = ffi.Int32 Function(
-  ffi.Pointer<_Camera>,
+  ffi.Pointer<Camera>,
   ffi.Pointer<ffi.Int32>,
   ffi.Pointer<ffi.Int32>,
 );
 
 typedef CameraListConfigFunc = ffi.Int32 Function(
-  ffi.Pointer<_Camera>,
+  ffi.Pointer<Camera>,
   ffi.Pointer<ffi.Int32>,
   ffi.Pointer<ffi.Int32>,
 );
 
 typedef CameraGetSingleConfigFunc = ffi.Int32 Function(
-  ffi.Pointer<_Camera>,
+  ffi.Pointer<Camera>,
   ffi.Pointer<ffi.Int8>,
   ffi.Pointer<ffi.Pointer<ffi.Int32>>,
   ffi.Pointer<ffi.Int32>,
 );
 
 typedef CameraSetSingleConfigFunc = ffi.Int32 Function(
-  ffi.Pointer<_Camera>,
+  ffi.Pointer<Camera>,
   ffi.Pointer<ffi.Int8>,
   ffi.Pointer<ffi.Int32>,
   ffi.Pointer<ffi.Int32>,
 );
 
 typedef CameraCaptureFunc = ffi.Int32 Function(
-  ffi.Pointer<_Camera>,
+  ffi.Pointer<Camera>,
   ffi.Int32,
   ffi.Pointer<CameraFilePath>,
   ffi.Pointer<ffi.Int32>,
 );
 
 typedef CameraTriggerCaptureFunc = ffi.Int32 Function(
-  ffi.Pointer<_Camera>,
+  ffi.Pointer<Camera>,
   ffi.Pointer<ffi.Int32>,
 );
 
 typedef CameraCapturePreviewFunc = ffi.Int32 Function(
-  ffi.Pointer<_Camera>,
+  ffi.Pointer<Camera>,
   ffi.Pointer<ffi.Int32>,
   ffi.Pointer<ffi.Int32>,
 );
 
 typedef CameraSummaryFunc = ffi.Int32 Function(
-  ffi.Pointer<_Camera>,
+  ffi.Pointer<Camera>,
   ffi.Pointer<CameraText>,
   ffi.Pointer<ffi.Int32>,
 );
 
 typedef CameraManualFunc = ffi.Int32 Function(
-  ffi.Pointer<_Camera>,
+  ffi.Pointer<Camera>,
   ffi.Pointer<CameraText>,
   ffi.Pointer<ffi.Int32>,
 );
 
 typedef CameraAboutFunc = ffi.Int32 Function(
-  ffi.Pointer<_Camera>,
+  ffi.Pointer<Camera>,
   ffi.Pointer<CameraText>,
   ffi.Pointer<ffi.Int32>,
 );
 
 typedef CameraWaitForEvent = ffi.Int32 Function(
-  ffi.Pointer<_Camera>,
+  ffi.Pointer<Camera>,
   ffi.Int32,
   ffi.Pointer<ffi.Int32>,
   ffi.Pointer<ffi.Pointer<ffi.Void>>,

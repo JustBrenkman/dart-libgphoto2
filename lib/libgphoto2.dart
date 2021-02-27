@@ -26,3 +26,6 @@
 library libgphoto2;
 
 export './src/generated_bindings.dart';
+export './src/dylib.dart';
+export './src/camera.dart';
+export './src/context.dart';
