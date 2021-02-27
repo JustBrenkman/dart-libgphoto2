@@ -226,7 +226,7 @@ class libgphoto2 {
 
   int gp_camera_set_port_info(
     ffi.Pointer<Camera> camera,
-    int info,
+    GPPortInfo info,
   ) {
     _gp_camera_set_port_info ??= _dylib.lookupFunction<
         _c_gp_camera_set_port_info,
@@ -4146,7 +4146,7 @@ class libgphoto2 {
   _dart_gpi_jpeg_write _gpi_jpeg_write;
 
   int gp_port_info_new(
-    ffi.Pointer<ffi.Pointer<_GPPortInfo>> info,
+    ffi.Pointer<ffi.Pointer<GPPortInfo>> info,
   ) {
     _gp_port_info_new ??=
         _dylib.lookupFunction<_c_gp_port_info_new, _dart_gp_port_info_new>(
@@ -4159,7 +4159,7 @@ class libgphoto2 {
   _dart_gp_port_info_new _gp_port_info_new;
 
   int gp_port_info_get_name(
-    ffi.Pointer<_GPPortInfo> info,
+    ffi.Pointer<GPPortInfo> info,
     ffi.Pointer<ffi.Pointer<ffi.Int8>> name,
   ) {
     _gp_port_info_get_name ??= _dylib.lookupFunction<_c_gp_port_info_get_name,
@@ -4173,7 +4173,7 @@ class libgphoto2 {
   _dart_gp_port_info_get_name _gp_port_info_get_name;
 
   int gp_port_info_set_name(
-    ffi.Pointer<_GPPortInfo> info,
+    ffi.Pointer<GPPortInfo> info,
     ffi.Pointer<ffi.Int8> name,
   ) {
     _gp_port_info_set_name ??= _dylib.lookupFunction<_c_gp_port_info_set_name,
@@ -4187,7 +4187,7 @@ class libgphoto2 {
   _dart_gp_port_info_set_name _gp_port_info_set_name;
 
   int gp_port_info_get_path(
-    ffi.Pointer<_GPPortInfo> info,
+    ffi.Pointer<GPPortInfo> info,
     ffi.Pointer<ffi.Pointer<ffi.Int8>> path,
   ) {
     _gp_port_info_get_path ??= _dylib.lookupFunction<_c_gp_port_info_get_path,
@@ -4201,7 +4201,7 @@ class libgphoto2 {
   _dart_gp_port_info_get_path _gp_port_info_get_path;
 
   int gp_port_info_set_path(
-    ffi.Pointer<_GPPortInfo> info,
+    ffi.Pointer<GPPortInfo> info,
     ffi.Pointer<ffi.Int8> path,
   ) {
     _gp_port_info_set_path ??= _dylib.lookupFunction<_c_gp_port_info_set_path,
@@ -4215,7 +4215,7 @@ class libgphoto2 {
   _dart_gp_port_info_set_path _gp_port_info_set_path;
 
   int gp_port_info_get_type(
-    ffi.Pointer<_GPPortInfo> info,
+    ffi.Pointer<GPPortInfo> info,
     ffi.Pointer<ffi.Int32> type,
   ) {
     _gp_port_info_get_type ??= _dylib.lookupFunction<_c_gp_port_info_get_type,
@@ -4229,7 +4229,7 @@ class libgphoto2 {
   _dart_gp_port_info_get_type _gp_port_info_get_type;
 
   int gp_port_info_set_type(
-    ffi.Pointer<_GPPortInfo> info,
+    ffi.Pointer<GPPortInfo> info,
     int type,
   ) {
     _gp_port_info_set_type ??= _dylib.lookupFunction<_c_gp_port_info_set_type,
@@ -4243,7 +4243,7 @@ class libgphoto2 {
   _dart_gp_port_info_set_type _gp_port_info_set_type;
 
   int gp_port_info_get_library_filename(
-    ffi.Pointer<_GPPortInfo> info,
+    ffi.Pointer<GPPortInfo> info,
     ffi.Pointer<ffi.Pointer<ffi.Int8>> lib,
   ) {
     _gp_port_info_get_library_filename ??= _dylib.lookupFunction<
@@ -4259,7 +4259,7 @@ class libgphoto2 {
   _dart_gp_port_info_get_library_filename _gp_port_info_get_library_filename;
 
   int gp_port_info_set_library_filename(
-    ffi.Pointer<_GPPortInfo> info,
+    ffi.Pointer<GPPortInfo> info,
     ffi.Pointer<ffi.Int8> lib,
   ) {
     _gp_port_info_set_library_filename ??= _dylib.lookupFunction<
@@ -4300,7 +4300,7 @@ class libgphoto2 {
 
   int gp_port_info_list_append(
     ffi.Pointer<_GPPortInfoList> list,
-    ffi.Pointer<_GPPortInfo> info,
+    ffi.Pointer<GPPortInfo> info,
   ) {
     _gp_port_info_list_append ??= _dylib.lookupFunction<
         _c_gp_port_info_list_append,
@@ -4371,7 +4371,7 @@ class libgphoto2 {
   int gp_port_info_list_get_info(
     ffi.Pointer<_GPPortInfoList> list,
     int n,
-    ffi.Pointer<ffi.Pointer<_GPPortInfo>> info,
+    ffi.Pointer<ffi.Pointer<GPPortInfo>> info,
   ) {
     _gp_port_info_list_get_info ??= _dylib.lookupFunction<
         _c_gp_port_info_list_get_info,
@@ -10528,7 +10528,7 @@ abstract class GPPortType {
 ///
 /// This is not to be confused with the driver configurable port settings
 /// in \ref GPPortSettings.
-class _GPPortInfo extends ffi.Struct {}
+class GPPortInfo extends ffi.Struct {}
 
 class _GPPortInfoList extends ffi.Struct {}
 
@@ -11204,7 +11204,7 @@ typedef _c_gp_camera_set_port_info = ffi.Int32 Function(
 
 typedef _dart_gp_camera_set_port_info = int Function(
   ffi.Pointer<Camera> camera,
-  int info,
+  GPPortInfo info,
 );
 
 typedef _c_gp_camera_get_port_info = ffi.Int32 Function(
@@ -14026,90 +14026,90 @@ typedef _dart_gpi_jpeg_write = int Function(
 );
 
 typedef _c_gp_port_info_new = ffi.Int32 Function(
-  ffi.Pointer<ffi.Pointer<_GPPortInfo>> info,
+  ffi.Pointer<ffi.Pointer<GPPortInfo>> info,
 );
 
 typedef _dart_gp_port_info_new = int Function(
-  ffi.Pointer<ffi.Pointer<_GPPortInfo>> info,
+  ffi.Pointer<ffi.Pointer<GPPortInfo>> info,
 );
 
 typedef _c_gp_port_info_get_name = ffi.Int32 Function(
-  ffi.Pointer<_GPPortInfo> info,
+  ffi.Pointer<GPPortInfo> info,
   ffi.Pointer<ffi.Pointer<ffi.Int8>> name,
 );
 
 typedef _dart_gp_port_info_get_name = int Function(
-  ffi.Pointer<_GPPortInfo> info,
+  ffi.Pointer<GPPortInfo> info,
   ffi.Pointer<ffi.Pointer<ffi.Int8>> name,
 );
 
 typedef _c_gp_port_info_set_name = ffi.Int32 Function(
-  ffi.Pointer<_GPPortInfo> info,
+  ffi.Pointer<GPPortInfo> info,
   ffi.Pointer<ffi.Int8> name,
 );
 
 typedef _dart_gp_port_info_set_name = int Function(
-  ffi.Pointer<_GPPortInfo> info,
+  ffi.Pointer<GPPortInfo> info,
   ffi.Pointer<ffi.Int8> name,
 );
 
 typedef _c_gp_port_info_get_path = ffi.Int32 Function(
-  ffi.Pointer<_GPPortInfo> info,
+  ffi.Pointer<GPPortInfo> info,
   ffi.Pointer<ffi.Pointer<ffi.Int8>> path,
 );
 
 typedef _dart_gp_port_info_get_path = int Function(
-  ffi.Pointer<_GPPortInfo> info,
+  ffi.Pointer<GPPortInfo> info,
   ffi.Pointer<ffi.Pointer<ffi.Int8>> path,
 );
 
 typedef _c_gp_port_info_set_path = ffi.Int32 Function(
-  ffi.Pointer<_GPPortInfo> info,
+  ffi.Pointer<GPPortInfo> info,
   ffi.Pointer<ffi.Int8> path,
 );
 
 typedef _dart_gp_port_info_set_path = int Function(
-  ffi.Pointer<_GPPortInfo> info,
+  ffi.Pointer<GPPortInfo> info,
   ffi.Pointer<ffi.Int8> path,
 );
 
 typedef _c_gp_port_info_get_type = ffi.Int32 Function(
-  ffi.Pointer<_GPPortInfo> info,
+  ffi.Pointer<GPPortInfo> info,
   ffi.Pointer<ffi.Int32> type,
 );
 
 typedef _dart_gp_port_info_get_type = int Function(
-  ffi.Pointer<_GPPortInfo> info,
+  ffi.Pointer<GPPortInfo> info,
   ffi.Pointer<ffi.Int32> type,
 );
 
 typedef _c_gp_port_info_set_type = ffi.Int32 Function(
-  ffi.Pointer<_GPPortInfo> info,
+  ffi.Pointer<GPPortInfo> info,
   ffi.Int32 type,
 );
 
 typedef _dart_gp_port_info_set_type = int Function(
-  ffi.Pointer<_GPPortInfo> info,
+  ffi.Pointer<GPPortInfo> info,
   int type,
 );
 
 typedef _c_gp_port_info_get_library_filename = ffi.Int32 Function(
-  ffi.Pointer<_GPPortInfo> info,
+  ffi.Pointer<GPPortInfo> info,
   ffi.Pointer<ffi.Pointer<ffi.Int8>> lib,
 );
 
 typedef _dart_gp_port_info_get_library_filename = int Function(
-  ffi.Pointer<_GPPortInfo> info,
+  ffi.Pointer<GPPortInfo> info,
   ffi.Pointer<ffi.Pointer<ffi.Int8>> lib,
 );
 
 typedef _c_gp_port_info_set_library_filename = ffi.Int32 Function(
-  ffi.Pointer<_GPPortInfo> info,
+  ffi.Pointer<GPPortInfo> info,
   ffi.Pointer<ffi.Int8> lib,
 );
 
 typedef _dart_gp_port_info_set_library_filename = int Function(
-  ffi.Pointer<_GPPortInfo> info,
+  ffi.Pointer<GPPortInfo> info,
   ffi.Pointer<ffi.Int8> lib,
 );
 
@@ -14131,12 +14131,12 @@ typedef _dart_gp_port_info_list_free = int Function(
 
 typedef _c_gp_port_info_list_append = ffi.Int32 Function(
   ffi.Pointer<_GPPortInfoList> list,
-  ffi.Pointer<_GPPortInfo> info,
+  ffi.Pointer<GPPortInfo> info,
 );
 
 typedef _dart_gp_port_info_list_append = int Function(
   ffi.Pointer<_GPPortInfoList> list,
-  ffi.Pointer<_GPPortInfo> info,
+  ffi.Pointer<GPPortInfo> info,
 );
 
 typedef _c_gp_port_info_list_load = ffi.Int32 Function(
@@ -14178,13 +14178,13 @@ typedef _dart_gp_port_info_list_lookup_name = int Function(
 typedef _c_gp_port_info_list_get_info = ffi.Int32 Function(
   ffi.Pointer<_GPPortInfoList> list,
   ffi.Int32 n,
-  ffi.Pointer<ffi.Pointer<_GPPortInfo>> info,
+  ffi.Pointer<ffi.Pointer<GPPortInfo>> info,
 );
 
 typedef _dart_gp_port_info_list_get_info = int Function(
   ffi.Pointer<_GPPortInfoList> list,
   int n,
-  ffi.Pointer<ffi.Pointer<_GPPortInfo>> info,
+  ffi.Pointer<ffi.Pointer<GPPortInfo>> info,
 );
 
 typedef _c_gp_port_message_codeset = ffi.Pointer<ffi.Int8> Function(

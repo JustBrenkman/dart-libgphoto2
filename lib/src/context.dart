@@ -37,27 +37,21 @@ class GPContext {
 
   static Pointer<Pointer> _gpPortInfoListPointer;
   static Pointer get gpPortInfoListPointer {
-    print("got here 3.1");
     if (_gpPortInfoListPointer == null) {
-      print("got here 3.2");
       _gpPortInfoListPointer = allocate();
-      print("got here 3.3");
       int ret;
-      print("got here 3.4");
       ret = dylib.gp_port_info_list_new(_gpPortInfoListPointer);
       if (ret < 0) {
         free(_gpPortInfoListPointer);
         _gpPortInfoListPointer = null;
         return null;
       }
-      print("got here 3.5");
       ret = dylib.gp_port_info_list_load(_gpPortInfoListPointer.value);
       if (ret < 0) {
         free(_gpPortInfoListPointer);
         _gpPortInfoListPointer = null;
         return null;
       }
-      print("got here 3.6");
       ret = dylib.gp_port_info_list_count(_gpPortInfoListPointer.value);
       if (ret < 0) {
         free(_gpPortInfoListPointer);
