@@ -1,81 +1,28 @@
 import 'dart:ffi';
+import 'package:ffi/ffi.dart';
 import 'package:libgphoto2/libgphoto2.dart';
 import 'package:libgphoto2/src/dylib.dart';
 
-import 'allocation.dart';
 import 'camera.dart';
 
-class GPContext {
-  static Pointer _gpContext;
-  static Pointer get gpcontext {
-    if (_gpContext == null) _gpContext = dylib.gp_context_new();
+class Context {
+  static Pointer<GPContext> _gpContext = dylib.gp_context_new();
+  static Pointer<GPContext> get gpcontext {
     return _gpContext;
-  }
-
-  static Pointer<Pointer<CameraAbilitiesList>> _abilitiesPointer;
-  static Pointer get abilitiesPointer {
-    if (_abilitiesPointer == null) {
-      _abilitiesPointer = allocate();
-      int ret;
-      ret = dylib.gp_abilities_list_new(_abilitiesPointer);
-      if (ret < 0) {
-        free(_abilitiesPointer);
-        _abilitiesPointer = null;
-        return null;
-      }
-      ret = dylib.gp_abilities_list_load(
-          _abilitiesPointer.value, gpcontext.cast());
-      if (ret < 0) {
-        free(_abilitiesPointer);
-        _abilitiesPointer = null;
-        return null;
-      }
-    }
-
-    return _abilitiesPointer.value;
-  }
-
-  static Pointer<Pointer> _gpPortInfoListPointer;
-  static Pointer get gpPortInfoListPointer {
-    if (_gpPortInfoListPointer == null) {
-      _gpPortInfoListPointer = allocate();
-      int ret;
-      ret = dylib.gp_port_info_list_new(_gpPortInfoListPointer);
-      if (ret < 0) {
-        free(_gpPortInfoListPointer);
-        _gpPortInfoListPointer = null;
-        return null;
-      }
-      ret = dylib.gp_port_info_list_load(_gpPortInfoListPointer.value);
-      if (ret < 0) {
-        free(_gpPortInfoListPointer);
-        _gpPortInfoListPointer = null;
-        return null;
-      }
-      ret = dylib.gp_port_info_list_count(_gpPortInfoListPointer.value);
-      if (ret < 0) {
-        free(_gpPortInfoListPointer);
-        _gpPortInfoListPointer = null;
-        return null;
-      }
-    }
-
-    return _gpPortInfoListPointer.value;
   }
 
   static List<GPCamera> getConnectedCameras() {
     List<GPCamera> cameras = [];
-    Pointer<Pointer<Int8>> name = allocate();
-    Pointer<Pointer<Int8>> value = allocate();
-    Pointer<Pointer<CameraList>> list = allocate<Pointer<CameraList>>();
+    Pointer<Pointer<Int8>> name = malloc();
+    Pointer<Pointer<Int8>> value = malloc();
+    Pointer<Pointer<CameraList>> list = malloc();
     int ret = dylib.gp_list_new(list);
     dylib.gp_list_reset(list.value);
-    int count = dylib.gp_camera_autodetect(list.value.cast(), gpcontext.cast());
-
+    int count = dylib.gp_camera_autodetect(list.value, gpcontext);
     for (int i = 0; i < count; i++) {
       dylib.gp_list_get_name(list.value.cast(), i, name);
       dylib.gp_list_get_value(list.value.cast(), i, value);
-      cameras.add(GPCamera(name.value, value.value));
+      cameras.add(GPCamera(name.value.cast(), value.value.cast()));
     }
 
     return cameras;

@@ -1,9 +1,10 @@
 import 'dart:ffi' as ffi;
 import 'dart:io';
 
+import 'package:path/path.dart';
 import 'package:libgphoto2/src/generated_bindings.dart';
 
-libgphoto2 _dylib;
+libgphoto2? _dylib;
 libgphoto2 get dylib => _dylib ??= libgphoto2(LibraryLoader.load());
 
 extension StringWith on String {
@@ -34,8 +35,9 @@ abstract class LibraryLoader {
   }
 
   static String resolvePath() {
-    return fixupName(
-        Directory.current.absolute.path + '\\libraries\\windows\\libgphoto2');
+    return "/usr/lib/x86_64-linux-gnu/libgphoto2.so";
+    // return fixupName(join(
+    //     Directory.current.absolute.path, 'libraries', 'linux', "libgphoto2"));
   }
 
   static ffi.DynamicLibrary load() {
